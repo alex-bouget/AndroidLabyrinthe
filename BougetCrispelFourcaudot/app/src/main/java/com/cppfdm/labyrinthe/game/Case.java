@@ -23,7 +23,7 @@ public class Case {
      * @param y : y position of the Case
      */
     public Case(int x, int y) {
-        this.pos = new Coord(x, y); 
+        this.pos = new Coord(x, y);
         this.neighbours = new Case[4];
     }
 }
