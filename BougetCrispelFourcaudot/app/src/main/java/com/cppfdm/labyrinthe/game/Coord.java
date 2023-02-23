@@ -16,4 +16,20 @@ public class Coord {
         this.x = x;
         this.y = y;
     }
+
+    /**
+     * Getter of x
+     * @return the x element
+     */
+    public int getX() {
+        return x;
+    }
+
+    /**
+     * Getter of  y
+     * @return the y element
+     */
+    public int getY() {
+        return y;
+    }
 }
