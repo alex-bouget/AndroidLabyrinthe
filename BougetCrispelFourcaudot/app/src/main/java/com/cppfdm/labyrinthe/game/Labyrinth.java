@@ -42,4 +42,11 @@ public class Labyrinth {
         return this.cases[c.getX()][c.getY()];
     }
 
+    /**
+     * Get the start Coordinate
+     * @return the Coordinate object
+     */
+    public Coord getStartCoord() {
+        return this.start.getCoord();
+    }
 }

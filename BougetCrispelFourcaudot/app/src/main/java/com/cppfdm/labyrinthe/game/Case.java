@@ -26,4 +26,12 @@ public class Case {
         this.pos = new Coord(x, y);
         this.neighbours = new Case[4];
     }
+
+    /**
+     * Get a copy of the Coordinate of a Case
+     * @return the Coordinate object
+     */
+    public Coord getCoord() {
+        return new Coord(this.pos.getX(), this.pos.getY());
+    }
 }
