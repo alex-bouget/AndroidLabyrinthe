@@ -1,5 +1,6 @@
 package com.cppfdm.labyrinthe;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -17,26 +18,24 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        runLabyrintheChoose();
+        return;
+    }
+
+    /**
+     * Run choose Labyrinthe
+     */
+    public void runLabyrintheChoose() {
         Intent intent = new Intent();
         intent.setClass(this, LabyrintheChooserActivity.class);
-        startActivity(intent);
-        return;
-        /*
-        AssetManager assetManager = getAssets();
-        BufferedReader bufferedReader = null;
-        String data = "";
-        try {
-            InputStream level2 = getAssets().open("laby/level2.txt");
-            bufferedReader = new BufferedReader(new InputStreamReader(level2));
-            StringBuilder f = new StringBuilder();
-            String tmp = "";
-            while ((tmp = bufferedReader.readLine()) != null) {
-                f.append("\n").append(tmp);
-            }
-            data = f.toString();
-        } catch (IOException e) {
-            System.out.println(e);
+        startActivityForResult(intent, LabyrintheChooserActivity.INTENT_ID);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        if (requestCode == LabyrintheChooserActivity.INTENT_ID) {
+            //TODO
         }
-        System.out.println(data);*/
+        super.onActivityResult(requestCode, resultCode, data);
     }
 }
