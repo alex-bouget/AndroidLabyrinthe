@@ -13,4 +13,68 @@ public class Player {
         this.laby = laby_;
         this.pos = laby_.getStartCoord();
     }
+
+    /**
+     * Get the case object where the player is
+     * @return the Case
+     */
+    public Case getCurrentCase() {
+        return this.laby.getCase(this.pos);
+    }
+
+    /**
+     * Make the player move left
+     * @return if the movement has been done
+     */
+    public boolean moveLeft() {
+        Coord target = new Coord(this.pos.getX()-1, this.pos.getY());
+        for (Case c : this.getCurrentCase().getNeighbours()) {
+            if (c.getCoord().equals(target)) {
+                this.pos = target;
+            }
+        }
+        return this.pos.equals(target);
+    }
+
+    /**
+     * Make the player move right
+     * @return if the movement has been done
+     */
+    public boolean moveRight() {
+        Coord target = new Coord(this.pos.getX()+1, this.pos.getY());
+        for (Case c : this.getCurrentCase().getNeighbours()) {
+            if (c.getCoord().equals(target)) {
+                this.pos = target;
+            }
+        }
+        return this.pos.equals(target);
+    }
+
+    /**
+     * make the player move up
+     * @return if the movement has been done
+     */
+    public boolean moveUp() {
+        Coord target = new Coord(this.pos.getX(), this.pos.getY()-1);
+        for (Case c : this.getCurrentCase().getNeighbours()) {
+            if (c.getCoord().equals(target)) {
+                this.pos = target;
+            }
+        }
+        return this.pos.equals(target);
+    }
+
+    /**
+     * make the player move down
+     * @return if the movement has been done
+     */
+    public boolean moveDown() {
+        Coord target = new Coord(this.pos.getX(), this.pos.getY()+1);
+        for (Case c : this.getCurrentCase().getNeighbours()) {
+            if (c.getCoord().equals(target)) {
+                this.pos = target;
+            }
+        }
+        return this.pos.equals(target);
+    }
 }
