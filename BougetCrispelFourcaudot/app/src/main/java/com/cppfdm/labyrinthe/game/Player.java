@@ -29,6 +29,7 @@ public class Player {
     public boolean moveLeft() {
         Coord target = new Coord(this.pos.getX()-1, this.pos.getY());
         for (Case c : this.getCurrentCase().getNeighbours()) {
+            if (c == null) { continue; }
             if (c.getCoord().equals(target)) {
                 this.pos = target;
             }
@@ -43,6 +44,7 @@ public class Player {
     public boolean moveRight() {
         Coord target = new Coord(this.pos.getX()+1, this.pos.getY());
         for (Case c : this.getCurrentCase().getNeighbours()) {
+            if (c == null) { continue; }
             if (c.getCoord().equals(target)) {
                 this.pos = target;
             }
@@ -72,6 +74,7 @@ public class Player {
     public boolean moveDown() {
         Coord target = new Coord(this.pos.getX(), this.pos.getY()+1);
         for (Case c : this.getCurrentCase().getNeighbours()) {
+            if (c == null) { continue; }
             if (c.getCoord().equals(target)) {
                 this.pos = target;
             }
