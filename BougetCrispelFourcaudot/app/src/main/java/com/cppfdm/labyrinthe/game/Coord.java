@@ -35,6 +35,11 @@ public class Coord {
         return y;
     }
 
+    /**
+     * Is the object equals
+     * @param o the object to test
+     * @return true if equals
+     */
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -43,6 +48,10 @@ public class Coord {
         return x == coord.x && y == coord.y;
     }
 
+    /**
+     * Hashcode function
+     * @return the hashcode of the object
+     */
     @Override
     public int hashCode() {
         return Objects.hash(x, y);
