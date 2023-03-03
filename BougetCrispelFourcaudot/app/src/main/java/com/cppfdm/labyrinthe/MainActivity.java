@@ -4,13 +4,10 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.content.res.AssetManager;
 import android.os.Bundle;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
+import com.cppfdm.labyrinthe.game.Labyrinth;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -19,7 +16,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         runLabyrintheChoose();
-        return;
     }
 
     /**
@@ -31,10 +27,20 @@ public class MainActivity extends AppCompatActivity {
         startActivityForResult(intent, LabyrintheChooserActivity.INTENT_ID);
     }
 
+    /**
+     * Callback of activity
+     *
+     * @param requestCode the id of the activity
+     * @param resultCode the result code of the activity
+     * @param data the intent returned by the activity
+     */
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         if (requestCode == LabyrintheChooserActivity.INTENT_ID) {
-            //TODO
+            if (resultCode == RESULT_OK) {
+                Labyrinth labyrinth = (Labyrinth) Serializer.get(data.getStringExtra("labyrinth"));
+                //TODO
+            }
         }
         super.onActivityResult(requestCode, resultCode, data);
     }

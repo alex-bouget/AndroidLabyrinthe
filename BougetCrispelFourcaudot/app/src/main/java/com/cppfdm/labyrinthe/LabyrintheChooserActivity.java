@@ -1,5 +1,6 @@
 package com.cppfdm.labyrinthe;
 
+import android.content.Intent;
 import android.content.res.AssetManager;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -11,10 +12,14 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.cppfdm.labyrinthe.game.Coord;
+import com.cppfdm.labyrinthe.game.Labyrinth;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
 
 public class LabyrintheChooserActivity extends AppCompatActivity {
     /**
@@ -108,8 +113,7 @@ public class LabyrintheChooserActivity extends AppCompatActivity {
             toast.show();
             return;
         }
-        Object map = null;
-        String data = null;
+        String data;
         // Read the file
         try {
             InputStream level2 = getAssets().open(filePath);
@@ -122,11 +126,36 @@ public class LabyrintheChooserActivity extends AppCompatActivity {
             }
             data = f.toString();
         } catch (IOException e) {
+            // View message error
             Toast toast = Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_SHORT);
             toast.show();
             return;
         }
-        //TODO
+        // Decode in coordonats
+        String[] eachLine = data.split("\n");
+        ArrayList<Coord> coordinate = new ArrayList<>();
+        for (String l: eachLine) {
+            if (l.trim().equals("")) {
+                continue;
+            }
+            String[] d = l.split(" ");
+            coordinate.add(new Coord(Integer.parseInt(d[0]), Integer.parseInt(d[1])));
+        }
+        // Get size of the labyrinth
+        int row = coordinate.get(0).getX();
+        int col = coordinate.get(0).getY();
+        coordinate.remove(0);
+
+        // create labyrinth object
+        Coord start = coordinate.get(0);
+        Coord end = coordinate.get(1);
+        Labyrinth map = new Labyrinth(row, col, start, end, coordinate);
+
+        Intent intent = new Intent();
+        intent.putExtra("labyrinth", Serializer.addToSerializer(map));
+
+        setResult(RESULT_OK, intent);
+
         finish();
     }
 }
