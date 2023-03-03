@@ -49,4 +49,16 @@ public class Labyrinth {
     public Coord getStartCoord() {
         return this.start.getCoord();
     }
+
+    /**
+     * Getter of ROW parameter
+     * @return number of rows
+     */
+    public int getROW() { return this.ROW; }
+
+    /**
+     * Getter of COL parameters
+     * @return number of cols
+     */
+    public int getCOL() { return this.COL; }
 }
