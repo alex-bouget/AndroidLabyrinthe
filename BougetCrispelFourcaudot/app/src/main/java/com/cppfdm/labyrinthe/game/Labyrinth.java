@@ -1,6 +1,5 @@
 package com.cppfdm.labyrinthe.game;
 
-import java.util.ArrayList;
 import java.util.Collection;
 
 public class Labyrinth {
