@@ -9,12 +9,29 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:gravity="center_horizontal"
         android:orientation="vertical">
 
         <SurfaceView
             android:id="@+id/game"
             android:layout_width="match_parent"
             android:layout_height="381dp" />
+
+        <LinearLayout
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_horizontal">
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="UP"
+                android:layout_weight="0.2"
+                android:onClick="moveUp"
+                />
+        </LinearLayout>
+
     </LinearLayout>
 
 
