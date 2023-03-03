@@ -49,8 +49,10 @@ public class Case {
         // Add results in this.neighbours
         int index = 0;
         for (Coord c : nextTo) {
+            // Is the case nextTo this ?
             if (Math.abs(c.getX()-this.pos.getX()) + Math.abs(c.getY()-this.pos.getY()) != 1) {
                 Case current = laby.getCase(c);
+                // Is the case exist ?
                 if (current != null) {
                     this.neighbours[index] = current;
                     index++;

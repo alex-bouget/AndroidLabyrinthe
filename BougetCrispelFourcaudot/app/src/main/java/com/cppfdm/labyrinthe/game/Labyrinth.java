@@ -36,6 +36,7 @@ public class Labyrinth {
             this.cases[c.getY()][c.getX()] = new Case(c);
         }
 
+        // Generate the neighbours of each Cases
         for (Coord c : cases_) {
             this.cases[c.getY()][c.getX()].generateNeighbours(this);
         }
