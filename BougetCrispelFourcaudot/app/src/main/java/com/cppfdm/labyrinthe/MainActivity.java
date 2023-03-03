@@ -10,15 +10,30 @@ import com.cppfdm.labyrinthe.game.Labyrinth;
 import com.cppfdm.labyrinthe.view.LabyrinthViewer;
 import com.cppfdm.labyrinthe.view.Viewer;
 
+import android.view.SurfaceView;
+import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
     Viewer paint;
 
+    /***
+     * Called when the appliction is created
+     *
+     * @param savedInstanceState the instance that the application have to create
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        
+        
         setContentView(R.layout.activity_test);
         paint = (Viewer) findViewById(R.id.viewer);
+
+
+        setContentView(R.layout.activity_main);
+        SurfaceView game = (SurfaceView) findViewById(R.id.game);
+        game.setMinimumHeight(game.getWidth());
+
         runLabyrintheChoose();
     }
 
@@ -49,4 +64,41 @@ public class MainActivity extends AppCompatActivity {
         }
         super.onActivityResult(requestCode, resultCode, data);
     }
+
+    /***
+     * Do a left move for the player
+     *
+     * @param view view where the action come from
+     */
+    public void moveLeft(View view){
+
+    }
+
+    /***
+     * Do a right move for the player
+     *
+     * @param view view where the action come from
+     */
+    public void moveRight(View view){
+
+    }
+
+    /***
+     * Do a up move for the player
+     *
+     * @param view view where the action come from
+     */
+    public void moveUp(View view){
+
+    }
+
+    /***
+     * Do a down move for the player
+     *
+     * @param view view where the action come from
+     */
+    public void moveDown(View view){
+
+    }
+
 }
