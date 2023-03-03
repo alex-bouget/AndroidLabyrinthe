@@ -35,6 +35,10 @@ public class Case {
         return new Coord(this.pos.getX(), this.pos.getY());
     }
 
+    /**
+     * Generate the neighbours of this case
+     * @param laby the Labyrinth of the Case
+     */
     protected void generateNeighbours(Labyrinth laby) {
         int row = laby.getROW();
         int col = laby.getCOL();
