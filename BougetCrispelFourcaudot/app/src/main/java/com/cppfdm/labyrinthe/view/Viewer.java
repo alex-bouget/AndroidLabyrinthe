@@ -17,24 +17,28 @@ public class Viewer extends AbstractViewer {
     public Viewer(Context context) {
         super(context);
     }
+
     public Viewer(Context context, AttributeSet attrs) {
         super(context, attrs);
     }
+
     public Viewer(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
     }
+
     public Viewer(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
         super(context, attrs, defStyleAttr, defStyleRes);
     }
 
     public void addDrawable(Drawable drawable) {
         drawables.add(drawable);
+        drawable.setDrawableParent(this);
     }
 
     @Override
     public void paint(Canvas canvas, Paint paint) {
-        canvas.drawColor(Color.BLACK);
-        for (Drawable d: drawables) {
+        canvas.drawColor(Color.WHITE);
+        for (Drawable d : drawables) {
             d.paint(canvas, paint);
         }
     }
