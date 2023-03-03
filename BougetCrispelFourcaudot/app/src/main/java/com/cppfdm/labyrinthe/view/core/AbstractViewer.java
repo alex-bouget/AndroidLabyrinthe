@@ -8,50 +8,85 @@ import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 
 public abstract class AbstractViewer extends SurfaceView implements CoreRunnerCallback, Drawable {
-    private CoreRunner core;
-    private boolean isRun = false;
+    private final CoreRunner core = new CoreRunner(this);
 
+    /**
+     * Constructor
+     * @param context the context
+     */
     public AbstractViewer(Context context) {
         super(context);
-        core = new CoreRunner(this);
-    }
-    public AbstractViewer(Context context, AttributeSet attrs) {
-        super(context, attrs);
-        core = new CoreRunner(this);
-    }
-    public AbstractViewer(Context context, AttributeSet attrs, int defStyleAttr) {
-        super(context, attrs, defStyleAttr);
-        core = new CoreRunner(this);
-    }
-    public AbstractViewer(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
-        super(context, attrs, defStyleAttr, defStyleRes);
-        core = new CoreRunner(this);
     }
 
+    /**
+     * Constructor
+     * @param context the context
+     * @param attrs attributes
+     */
+    public AbstractViewer(Context context, AttributeSet attrs) {
+        super(context, attrs);
+    }
+
+    /**
+     * Constructor
+     * @param context the context
+     * @param attrs attributes
+     * @param defStyleAttr styles attributes
+     */
+    public AbstractViewer(Context context, AttributeSet attrs, int defStyleAttr) {
+        super(context, attrs, defStyleAttr);
+    }
+
+    /**
+     * Constructor
+     * @param context the context
+     * @param attrs attributes
+     * @param defStyleAttr styles attributes
+     * @param defStyleRes styles resources
+     */
+    public AbstractViewer(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
+        super(context, attrs, defStyleAttr, defStyleRes);
+    }
+
+    /**
+     * Start the viewer
+     */
     public void start() {
         core.startCore();
     }
 
+    /**
+     * Stop the viewer
+     */
     public void stop() {
         core.stopCore();
     }
 
+    /**
+     * Resume the viewer
+     */
     public void resume() {
         core.resumeCore();
     }
 
+    /**
+     * Pause the viewer
+     */
     public void pause() {
         core.pauseCore();
     }
 
+    /**
+     * Callback of the coreRunner
+     */
     @Override
     public void coreRunnerCallback() {
         SurfaceHolder holder = getHolder();
-        Canvas canvas = holder.lockCanvas();
+        Canvas canvas = holder.lockCanvas(); // Get the canvas
         if (canvas != null) {
             Paint paint = new Paint();
-            this.paint(canvas, paint);
-            holder.unlockCanvasAndPost(canvas);
+            this.paint(canvas, paint); // Draw the viewer
+            holder.unlockCanvasAndPost(canvas); // Load the canvas
         }
     }
 }
