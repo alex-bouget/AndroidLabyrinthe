@@ -57,6 +57,7 @@ public class Player {
     public boolean moveUp() {
         Coord target = new Coord(this.pos.getX(), this.pos.getY()-1);
         for (Case c : this.getCurrentCase().getNeighbours()) {
+            if (c == null) { continue; }
             if (c.getCoord().equals(target)) {
                 this.pos = target;
             }
