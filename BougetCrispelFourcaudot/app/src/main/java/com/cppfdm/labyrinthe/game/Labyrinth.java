@@ -44,7 +44,7 @@ public class Labyrinth {
      * @param c Coordinates of the case
      * @return the Case object
      */
-    private Case getCase(Coord c) {
+    protected Case getCase(Coord c) {
         return this.cases[c.getX()][c.getY()];
     }
 
