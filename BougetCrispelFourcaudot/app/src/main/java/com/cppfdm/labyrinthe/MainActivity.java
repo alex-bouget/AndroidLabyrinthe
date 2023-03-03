@@ -7,14 +7,18 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import com.cppfdm.labyrinthe.game.Labyrinth;
+import com.cppfdm.labyrinthe.view.LabyrinthViewer;
+import com.cppfdm.labyrinthe.view.Viewer;
 
 
 public class MainActivity extends AppCompatActivity {
+    Viewer paint;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test);
+        paint = (Viewer) findViewById(R.id.viewer);
         runLabyrintheChoose();
     }
 
@@ -39,7 +43,8 @@ public class MainActivity extends AppCompatActivity {
         if (requestCode == LabyrintheChooserActivity.INTENT_ID) {
             if (resultCode == RESULT_OK) {
                 Labyrinth labyrinth = (Labyrinth) Serializer.get(data.getStringExtra("labyrinth"));
-                //TODO
+                paint.addDrawable(new LabyrinthViewer(labyrinth));
+                paint.start();
             }
         }
         super.onActivityResult(requestCode, resultCode, data);

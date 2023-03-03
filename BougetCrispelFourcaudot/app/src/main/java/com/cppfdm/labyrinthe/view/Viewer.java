@@ -15,6 +15,10 @@ public class Viewer extends AbstractViewer {
         super(context);
     }
 
+    public void addDrawable(Drawable drawable) {
+        drawables.add(drawable);
+    }
+
     @Override
     public void paint(Canvas canvas) {
         for (Drawable d: drawables) {
