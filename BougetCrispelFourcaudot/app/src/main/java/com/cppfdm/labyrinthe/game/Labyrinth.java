@@ -33,8 +33,13 @@ public class Labyrinth {
         }
         // Add the cases in the labyrinth
         for (Coord c : cases_) {
-            this.cases[c.getX()][c.getY()] = new Case(c);
+            this.cases[c.getY()][c.getX()] = new Case(c);
         }
+
+        for (Coord c : cases_) {
+            this.cases[c.getY()][c.getX()].generateNeighbours(this);
+        }
+
         start = this.getCase(start_);
         end = this.getCase(end_);
     }
@@ -45,7 +50,7 @@ public class Labyrinth {
      * @return the Case object
      */
     protected Case getCase(Coord c) {
-        return this.cases[c.getX()][c.getY()];
+        return this.cases[c.getY()][c.getX()];
     }
 
     /**
