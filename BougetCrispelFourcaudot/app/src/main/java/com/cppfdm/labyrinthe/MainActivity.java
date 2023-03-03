@@ -30,9 +30,9 @@ public class MainActivity extends AppCompatActivity {
         paint = (Viewer) findViewById(R.id.viewer);
 
 
-        setContentView(R.layout.activity_main);
+        /*setContentView(R.layout.activity_main);
         SurfaceView game = (SurfaceView) findViewById(R.id.game);
-        game.setMinimumHeight(game.getWidth());
+        game.setMinimumHeight(game.getWidth());*/
 
         runLabyrintheChoose();
     }

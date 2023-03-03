@@ -2,6 +2,7 @@ package com.cppfdm.labyrinthe.view.core;
 
 import android.content.Context;
 import android.graphics.Canvas;
+import android.graphics.Paint;
 import android.util.AttributeSet;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
@@ -12,6 +13,18 @@ public abstract class AbstractViewer extends SurfaceView implements CoreRunnerCa
 
     public AbstractViewer(Context context) {
         super(context);
+        core = new CoreRunner(this);
+    }
+    public AbstractViewer(Context context, AttributeSet attrs) {
+        super(context, attrs);
+        core = new CoreRunner(this);
+    }
+    public AbstractViewer(Context context, AttributeSet attrs, int defStyleAttr) {
+        super(context, attrs, defStyleAttr);
+        core = new CoreRunner(this);
+    }
+    public AbstractViewer(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
+        super(context, attrs, defStyleAttr, defStyleRes);
         core = new CoreRunner(this);
     }
 
@@ -36,7 +49,8 @@ public abstract class AbstractViewer extends SurfaceView implements CoreRunnerCa
         SurfaceHolder holder = getHolder();
         Canvas canvas = holder.lockCanvas();
         if (canvas != null) {
-            draw(canvas);
+            Paint paint = new Paint();
+            this.paint(canvas, paint);
             holder.unlockCanvasAndPost(canvas);
         }
     }
