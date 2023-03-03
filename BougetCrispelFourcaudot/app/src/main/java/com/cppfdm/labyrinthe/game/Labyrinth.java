@@ -25,9 +25,22 @@ public class Labyrinth {
         this.ROW = row_;
         this.COL = col_;
         this.cases = new Case[row_][col_];
-        for (Coord c : cases_) {
-            this.cases[c.getX()][c.getY()] = new Case(c);
+        // fill the table with null to prevent null pointer exception
+        for (int i = 0; i < row_; i++) {
+            for (int j = 0; j < col_; j++) {
+                this.cases[i][j] = null;
+            }
         }
+        // Add the cases in the labyrinth
+        for (Coord c : cases_) {
+            this.cases[c.getY()][c.getX()] = new Case(c);
+        }
+
+        // Generate the neighbours of each Cases
+        for (Coord c : cases_) {
+            this.cases[c.getY()][c.getX()].generateNeighbours(this);
+        }
+
         start = this.getCase(start_);
         end = this.getCase(end_);
     }
@@ -37,8 +50,8 @@ public class Labyrinth {
      * @param c Coordinates of the case
      * @return the Case object
      */
-    private Case getCase(Coord c) {
-        return this.cases[c.getX()][c.getY()];
+    protected Case getCase(Coord c) {
+        return this.cases[c.getY()][c.getX()];
     }
 
     /**
@@ -48,4 +61,16 @@ public class Labyrinth {
     public Coord getStartCoord() {
         return this.start.getCoord();
     }
+
+    /**
+     * Getter of ROW parameter
+     * @return number of rows
+     */
+    public int getROW() { return this.ROW; }
+
+    /**
+     * Getter of COL parameters
+     * @return number of cols
+     */
+    public int getCOL() { return this.COL; }
 }
