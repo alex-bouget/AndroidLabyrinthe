@@ -8,7 +8,13 @@ import android.os.Bundle;
 import android.view.SurfaceView;
 import android.view.View;
 
+import com.cppfdm.labyrinthe.game.Labyrinth;
+
 public class MainActivity extends AppCompatActivity {
+
+    //Displayed labyrinth
+    private Labyrinth labyrinth;
+    private final int MAP_CODE = 14;
 
     /***
      * Called when the appliction is created
@@ -26,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * Run choose Labyrinthe
+     * Run choose Labyrinth
      */
     public void runLabyrintheChoose() {
         Intent intent = new Intent();
@@ -45,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         if (requestCode == LabyrintheChooserActivity.INTENT_ID) {
             if (resultCode == RESULT_OK) {
-                Labyrinth labyrinth = (Labyrinth) Serializer.get(data.getStringExtra("labyrinth"));
+                labyrinth = (Labyrinth) Serializer.get(data.getStringExtra("labyrinth"));
                 //TODO
             }
         }
@@ -88,4 +94,15 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    /***
+     * Show the map of selected labyrinth to the player
+     *
+     * @param view view where the action come from
+     */
+    public void showMap(View view){
+        Intent intent = new Intent();
+        intent.setClass(this, MapActivity.class);
+        intent.putExtra("labyrinth",Serializer.addToSerializer(labyrinth));
+        startActivityForResult(intent, MAP_CODE);
+    }
 }
