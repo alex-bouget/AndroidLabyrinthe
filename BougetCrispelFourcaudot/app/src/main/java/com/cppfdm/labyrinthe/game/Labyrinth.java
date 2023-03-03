@@ -26,6 +26,13 @@ public class Labyrinth {
         this.ROW = row_;
         this.COL = col_;
         this.cases = new Case[row_][col_];
+        // fill the table with null to prevent null pointer exception
+        for (int i = 0; i < row_; i++) {
+            for (int j = 0; j < col_; j++) {
+                this.cases[i][j] = null;
+            }
+        }
+        // Add the cases in the labyrinth
         for (Coord c : cases_) {
             this.cases[c.getX()][c.getY()] = new Case(c);
         }
