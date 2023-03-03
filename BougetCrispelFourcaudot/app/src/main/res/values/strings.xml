@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">BougetFourcaudotLaby</string>
+    <string name="app_name">BougetCrispelFourcaudotLaby</string>
+    <string name="LabyChooser_choice">Choisir</string>
+    <string name="LabyChooser_msg_not">Aucun labyrinthe choisie</string>
 </resources>
