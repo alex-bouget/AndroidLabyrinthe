@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import com.cppfdm.labyrinthe.game.Labyrinth;
+import com.cppfdm.labyrinthe.game.Player;
 import com.cppfdm.labyrinthe.view.LabyrinthViewer;
 import com.cppfdm.labyrinthe.view.Viewer;
 
@@ -14,8 +15,10 @@ import android.view.SurfaceView;
 import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
-    Viewer game;
-    LabyrinthViewer viewer;
+    private Viewer game;
+    private Player hero;
+    private final int MAP_CODE = 14;
+    private LabyrinthViewer viewer;
 
     /***
      * Called when the appliction is created
@@ -103,4 +106,16 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+
+    /***
+     * Show the map of selected labyrinth to the player
+     *
+     * @param view view where the action come from
+     */
+    public void showMap(View view){
+        Intent intent = new Intent();
+        intent.setClass(this, MapActivity.class);
+        intent.putExtra("hero",Serializer.addToSerializer(hero));
+        startActivityForResult(intent, MAP_CODE);
+    }
 }
