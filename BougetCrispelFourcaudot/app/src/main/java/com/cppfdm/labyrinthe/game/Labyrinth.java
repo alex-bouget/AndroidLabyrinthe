@@ -63,6 +63,14 @@ public class Labyrinth {
     }
 
     /**
+     * Get the end Coordinate
+     * @return the Coordinate object
+     */
+    public Coord getEndCoord() {
+        return this.end.getCoord();
+    }
+
+    /**
      * Getter of ROW parameter
      * @return number of rows
      */
