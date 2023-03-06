@@ -14,7 +14,8 @@ import android.view.SurfaceView;
 import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
-    Viewer paint;
+    Viewer game;
+    LabyrinthViewer viewer;
 
     /***
      * Called when the appliction is created
@@ -24,15 +25,11 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        
-        
-        setContentView(R.layout.activity_test);
-        paint = (Viewer) findViewById(R.id.viewer);
 
 
-        /*setContentView(R.layout.activity_main);
-        SurfaceView game = (SurfaceView) findViewById(R.id.game);
-        game.setMinimumHeight(game.getWidth());*/
+        setContentView(R.layout.activity_main);
+        game = (Viewer) findViewById(R.id.game);
+        game.setMinimumHeight(game.getWidth());
 
         runLabyrintheChoose();
     }
@@ -58,8 +55,9 @@ public class MainActivity extends AppCompatActivity {
         if (requestCode == LabyrintheChooserActivity.INTENT_ID) {
             if (resultCode == RESULT_OK) {
                 Labyrinth labyrinth = (Labyrinth) Serializer.get(data.getStringExtra("labyrinth"));
-                paint.addDrawable(new LabyrinthViewer(labyrinth));
-                paint.start();
+                viewer = new LabyrinthViewer(labyrinth);
+                game.addDrawable(viewer);
+                game.start();
             }
         }
         super.onActivityResult(requestCode, resultCode, data);
@@ -71,6 +69,7 @@ public class MainActivity extends AppCompatActivity {
      * @param view view where the action come from
      */
     public void moveLeft(View view){
+        viewer.offsetX += LabyrinthViewer.scale;
 
     }
 
@@ -80,6 +79,7 @@ public class MainActivity extends AppCompatActivity {
      * @param view view where the action come from
      */
     public void moveRight(View view){
+        viewer.offsetX -= LabyrinthViewer.scale;
 
     }
 
@@ -89,6 +89,7 @@ public class MainActivity extends AppCompatActivity {
      * @param view view where the action come from
      */
     public void moveUp(View view){
+        viewer.offsetY += LabyrinthViewer.scale;
 
     }
 
@@ -98,6 +99,7 @@ public class MainActivity extends AppCompatActivity {
      * @param view view where the action come from
      */
     public void moveDown(View view){
+        viewer.offsetY -= LabyrinthViewer.scale;
 
     }
 

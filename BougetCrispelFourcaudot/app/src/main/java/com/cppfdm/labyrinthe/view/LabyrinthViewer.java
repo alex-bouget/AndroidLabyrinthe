@@ -11,21 +11,37 @@ import android.graphics.RectF;
 
 import com.cppfdm.labyrinthe.R;
 import com.cppfdm.labyrinthe.game.Case;
+import com.cppfdm.labyrinthe.game.Coord;
 import com.cppfdm.labyrinthe.game.Labyrinth;
 import com.cppfdm.labyrinthe.view.core.AbstractDrawable;
 import com.cppfdm.labyrinthe.view.core.Drawable;
 
+/**
+ * Test for the viewer
+ */
 public class LabyrinthViewer extends AbstractDrawable {
-    public final static int scale = 32;
+    public final static int scale = 64; // Scale of the tiles
+    public int offsetX = 0;
+    public int offsetY = 0;
     Labyrinth labyrinth;
     Bitmap mur;
     Bitmap ground;
-    Viewer root;
+    Viewer root; // The root viewer (Viewer class)
 
+    /**
+     * Constructor
+     *
+     * @param labyrinth the labyrinth
+     */
     public LabyrinthViewer(Labyrinth labyrinth) {
         this.labyrinth = labyrinth;
     }
 
+    /**
+     * Set the parent and get the root for catch the bitmap
+     *
+     * @param drawable parent
+     */
     @Override
     public void setDrawableParent(Drawable drawable) {
         super.setDrawableParent(drawable);
@@ -38,6 +54,14 @@ public class LabyrinthViewer extends AbstractDrawable {
         ground = resizeBitmap(groundNotSized, scale, scale);
     }
 
+    /**
+     * Resize a bitmap
+     *
+     * @param toResize the Bitmap
+     * @param sizeX the sizeX of the resized bitmap
+     * @param sizeY the sizeY of the resized bitmap
+     * @return
+     */
     Bitmap resizeBitmap(Bitmap toResize, int sizeX, int sizeY) {
         // https://www.okhelp.cz/android/resize-a-bitmap-image-android-example/
         Paint paint = new Paint();
@@ -55,14 +79,21 @@ public class LabyrinthViewer extends AbstractDrawable {
     }
 
 
+    /**
+     * Draw the labyrinth
+     *
+     * @param canvas element for paint inside
+     * @param paint can be useful
+     */
     @Override
     public void paint(Canvas canvas, Paint paint) {
         for (int xSize = 0; xSize < labyrinth.getCOL(); xSize++) {
             for (int ySize = 0; ySize < labyrinth.getROW(); ySize++) {
-                if (labyrinth.cases[xSize][ySize] == null) {
-                    canvas.drawBitmap(mur, xSize * scale, ySize * scale, paint);
+                Case c = labyrinth.getCase(new Coord(xSize, ySize));
+                if (c == null) {
+                    canvas.drawBitmap(mur, xSize * scale + offsetX, ySize * scale + offsetY, paint);
                 } else {
-                    canvas.drawBitmap(ground, xSize*scale, ySize*scale, paint);
+                    canvas.drawBitmap(ground, xSize*scale + offsetX, ySize*scale + offsetY, paint);
                 }
             }
         }
