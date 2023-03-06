@@ -15,7 +15,10 @@ public class MainActivity extends AppCompatActivity {
 
     //Displayed labyrinth
     private Labyrinth labyrinth;
+
+    //The hero of the legande
     private Player hero;
+
     private final int MAP_CODE = 14;
 
     /***
