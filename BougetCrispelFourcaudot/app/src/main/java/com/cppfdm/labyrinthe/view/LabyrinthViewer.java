@@ -65,16 +65,25 @@ public class LabyrinthViewer extends AbstractDrawable {
     Bitmap resizeBitmap(Bitmap toResize, int sizeX, int sizeY) {
         // https://www.okhelp.cz/android/resize-a-bitmap-image-android-example/
         Paint paint = new Paint();
-        Bitmap resized = Bitmap.createBitmap(sizeX, sizeY, Bitmap.Config.ARGB_8888);
-        RectF rectf = new RectF(0, 0, sizeX, sizeY);
-        Canvas c = new Canvas(resized);
+        Bitmap resized = Bitmap.createBitmap(sizeX, sizeY, Bitmap.Config.ARGB_8888); // Create a new bitmap
+
+        RectF rectf = new RectF(0, 0, sizeX, sizeY);  // A rectangle that is the new size
+
+        Canvas canvas = new Canvas(resized); // Canvas on the resized bitmap
+
         Path path = new Path();
         path.addRect(rectf, Path.Direction.CW);
-        c.clipPath(path);
-        c.drawBitmap(toResize, new Rect(0, 0, toResize.getWidth(), toResize.getHeight()), new Rect(0, 0, sizeX, sizeY), paint);
+        canvas.clipPath(path); // Lock the canvas with the size of the rectangle
+
+        canvas.drawBitmap(toResize, new Rect(0, 0, toResize.getWidth(), toResize.getHeight()), new Rect(0, 0, sizeX, sizeY), paint);
+        // Draw the not resized on the resized bitmap
+
         Matrix matrix = new Matrix();
         matrix.postScale(1f, 1f);
+
         Bitmap resizedBitmap = Bitmap.createBitmap(resized, 0, 0, sizeX, sizeY, matrix, true);
+        // Filter the last bitmap (delete the pixel outside the canvas
+
         return resizedBitmap;
     }
 
@@ -89,11 +98,11 @@ public class LabyrinthViewer extends AbstractDrawable {
     public void paint(Canvas canvas, Paint paint) {
         for (int xSize = 0; xSize < labyrinth.getCOL(); xSize++) {
             for (int ySize = 0; ySize < labyrinth.getROW(); ySize++) {
-                Case c = labyrinth.getCase(new Coord(xSize, ySize));
-                if (c == null) {
+                Case aCase = labyrinth.getCase(new Coord(xSize, ySize));
+                if (aCase == null) {
                     canvas.drawBitmap(mur, xSize * scale + offsetX, ySize * scale + offsetY, paint);
                 } else {
-                    canvas.drawBitmap(ground, xSize*scale + offsetX, ySize*scale + offsetY, paint);
+                    canvas.drawBitmap(ground, xSize * scale + offsetX, ySize * scale + offsetY, paint);
                 }
             }
         }
