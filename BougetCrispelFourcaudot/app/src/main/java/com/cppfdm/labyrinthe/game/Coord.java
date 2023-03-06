@@ -1,5 +1,7 @@
 package com.cppfdm.labyrinthe.game;
 
+import java.util.Objects;
+
 /**
  * Class to store and make easy operation on Cartesian coordinates
  */
@@ -31,5 +33,27 @@ public class Coord {
      */
     public int getY() {
         return y;
+    }
+
+    /**
+     * Is the object equals
+     * @param o the object to test
+     * @return true if equals
+     */
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Coord coord = (Coord) o;
+        return x == coord.x && y == coord.y;
+    }
+
+    /**
+     * Hashcode function
+     * @return the hashcode of the object
+     */
+    @Override
+    public int hashCode() {
+        return Objects.hash(x, y);
     }
 }
