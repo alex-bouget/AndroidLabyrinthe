@@ -27,14 +27,15 @@
             android:orientation="horizontal"
             android:layout_marginTop='50dp'
             android:gravity="center_horizontal">
-            <!--UP button-->
+
+            <!--CLOSE button-->
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="Close"
                 android:layout_weight="0.2"
-                android:onClick=""
+                android:onClick="closeMap"
                 />
         </LinearLayout>
     </LinearLayout>

@@ -9,11 +9,13 @@ import android.view.SurfaceView;
 import android.view.View;
 
 import com.cppfdm.labyrinthe.game.Labyrinth;
+import com.cppfdm.labyrinthe.game.Player;
 
 public class MainActivity extends AppCompatActivity {
 
     //Displayed labyrinth
     private Labyrinth labyrinth;
+    private Player hero;
     private final int MAP_CODE = 14;
 
     /***
@@ -102,7 +104,7 @@ public class MainActivity extends AppCompatActivity {
     public void showMap(View view){
         Intent intent = new Intent();
         intent.setClass(this, MapActivity.class);
-        intent.putExtra("labyrinth",Serializer.addToSerializer(labyrinth));
+        intent.putExtra("hero",Serializer.addToSerializer(hero));
         startActivityForResult(intent, MAP_CODE);
     }
 }
