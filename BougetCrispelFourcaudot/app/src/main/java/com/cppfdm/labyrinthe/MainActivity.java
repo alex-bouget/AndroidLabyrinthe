@@ -7,7 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import com.cppfdm.labyrinthe.game.Labyrinth;
-import com.cppfdm.labyrinthe.game.Player;
+import com.cppfdm.labyrinthe.game.hero;
 import com.cppfdm.labyrinthe.view.LabyrinthViewer;
 import com.cppfdm.labyrinthe.view.Viewer;
 
@@ -16,7 +16,7 @@ import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
     private Viewer game;
-    private Player hero;
+    private hero hero;
     private final int MAP_CODE = 14;
     private LabyrinthViewer viewer;
 
@@ -97,7 +97,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /***
-     * Do a up move for the player
+     * Do a up move for the hero
      *
      * @param view view where the action come from
      */
@@ -108,7 +108,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /***
-     * Do a down move for the player
+     * Do a down move for the hero
      *
      * @param view view where the action come from
      */
@@ -120,7 +120,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     /***
-     * Show the map of selected labyrinth to the player
+     * Show the map of selected labyrinth to the hero
      *
      * @param view view where the action come from
      */
