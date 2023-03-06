@@ -15,9 +15,10 @@ import android.view.SurfaceView;
 import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
-    Viewer game;
-    LabyrinthViewer viewer;
-    Player player;
+    private Viewer game;
+    private Player hero;
+    private final int MAP_CODE = 14;
+    private LabyrinthViewer viewer;
 
     /***
      * Called when the appliction is created
@@ -57,10 +58,10 @@ public class MainActivity extends AppCompatActivity {
         if (requestCode == LabyrintheChooserActivity.INTENT_ID) {
             if (resultCode == RESULT_OK) {
                 Labyrinth labyrinth = (Labyrinth) Serializer.get(data.getStringExtra("labyrinth"));
-                player = new Player(labyrinth);
+                hero = new Player(labyrinth);
                 viewer = new LabyrinthViewer(labyrinth);
-                viewer.offsetX = -player.getCurrentCase().getCoord().getX() * LabyrinthViewer.scale;
-                viewer.offsetY = -player.getCurrentCase().getCoord().getY() * LabyrinthViewer.scale;
+                viewer.offsetX = -hero.getCurrentCase().getCoord().getX() * LabyrinthViewer.scale;
+                viewer.offsetY = -hero.getCurrentCase().getCoord().getY() * LabyrinthViewer.scale;
                 game.addDrawable(viewer);
                 game.start();
             }
@@ -69,8 +70,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void updateView() {
-        viewer.offsetX = -player.getCurrentCase().getCoord().getX() * LabyrinthViewer.scale;
-        viewer.offsetY = -player.getCurrentCase().getCoord().getY() * LabyrinthViewer.scale;
+        viewer.offsetX = -hero.getCurrentCase().getCoord().getX() * LabyrinthViewer.scale;
+        viewer.offsetY = -hero.getCurrentCase().getCoord().getY() * LabyrinthViewer.scale;
     }
 
     /***
@@ -79,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
      * @param view view where the action come from
      */
     public void moveLeft(View view){
-        player.moveLeft();
+        hero.moveLeft();
         System.out.println(player.getCurrentCase().getCoord());
         updateView();
     }
@@ -90,8 +91,8 @@ public class MainActivity extends AppCompatActivity {
      * @param view view where the action come from
      */
     public void moveRight(View view){
-        player.moveRight();
-        System.out.println(player.getCurrentCase().getCoord());
+        hero.moveRight();
+        System.out.println(hero.getCurrentCase().getCoord());
         updateView();
     }
 
@@ -101,8 +102,8 @@ public class MainActivity extends AppCompatActivity {
      * @param view view where the action come from
      */
     public void moveUp(View view){
-        System.out.println(player.moveUp());
-        System.out.println(player.getCurrentCase().getCoord());
+        System.out.println(hero.moveUp());
+        System.out.println(hero.getCurrentCase().getCoord());
         updateView();
     }
 
@@ -112,9 +113,21 @@ public class MainActivity extends AppCompatActivity {
      * @param view view where the action come from
      */
     public void moveDown(View view){
-        player.moveDown();
-        System.out.println(player.getCurrentCase().getCoord());
+        hero.moveDown();
+        System.out.println(hero.getCurrentCase().getCoord());
         updateView();
     }
 
+
+    /***
+     * Show the map of selected labyrinth to the player
+     *
+     * @param view view where the action come from
+     */
+    public void showMap(View view){
+        Intent intent = new Intent();
+        intent.setClass(this, MapActivity.class);
+        intent.putExtra("hero",Serializer.addToSerializer(hero));
+        startActivityForResult(intent, MAP_CODE);
+    }
 }
