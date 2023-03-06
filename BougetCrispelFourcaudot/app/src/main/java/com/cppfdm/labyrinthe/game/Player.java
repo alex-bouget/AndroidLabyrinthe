@@ -23,6 +23,12 @@ public class Player {
     }
 
     /**
+     * Getter of laby
+     * @return the Labyrinth object
+     */
+    public Labyrinth getLaby() { return this.laby; }
+
+    /**
      * Make the player move left
      * @return if the movement has been done
      */
