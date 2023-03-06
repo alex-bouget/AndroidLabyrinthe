@@ -23,7 +23,7 @@ public class GameViewer extends AbstractDrawable {
     Bitmap ground;
     Bitmap[] playerFrame;
 
-    GameViewer(Player player) {
+    public GameViewer(Player player) {
         this.player = player;
     }
 
@@ -53,6 +53,10 @@ public class GameViewer extends AbstractDrawable {
 
     @Override
     public void paint(Canvas canvas, Paint paint) {
+        int width = root.getWidth();
+        int height = root.getHeight();
+        System.out.println(width);
+        System.out.println(height);
         Labyrinth labyrinth = player.getLaby();
         Coord playerCase = player.getCurrentCase().getCoord();
         for (int xSize = 0; xSize < labyrinth.getCOL(); xSize++) {
@@ -61,18 +65,19 @@ public class GameViewer extends AbstractDrawable {
                 if (aCase == null) {
                     canvas.drawBitmap(
                             mur,
-                            (xSize - playerCase.getX()) * scale,
-                            (ySize - playerCase.getY()) * scale,
+                            (xSize - playerCase.getX()) * scale + (int)(width/2),
+                            (ySize - playerCase.getY()) * scale + (int)(height/2),
                             paint
                     );
                 } else {
                     canvas.drawBitmap(ground,
-                            (xSize - playerCase.getX()) * scale,
-                            (ySize - playerCase.getY()) * scale,
+                            (xSize - playerCase.getX()) * scale + (int)(width/2),
+                            (ySize - playerCase.getY()) * scale + (int)(height/2),
                             paint
                     );
                 }
             }
         }
+        canvas.drawRect((float) (width/2), (float)(width/2), (float)scale, (float)scale, paint);
     }
 }

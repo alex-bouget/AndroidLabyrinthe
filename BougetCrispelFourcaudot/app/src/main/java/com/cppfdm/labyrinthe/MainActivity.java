@@ -8,6 +8,7 @@ import android.os.Bundle;
 
 import com.cppfdm.labyrinthe.game.Labyrinth;
 import com.cppfdm.labyrinthe.game.Player;
+import com.cppfdm.labyrinthe.gameView.GameViewer;
 import com.cppfdm.labyrinthe.view.LabyrinthViewer;
 import com.cppfdm.labyrinthe.view.Viewer;
 
@@ -18,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
     private Viewer game;
     private Player hero;
     private final int MAP_CODE = 14;
-    private LabyrinthViewer viewer;
+    private GameViewer viewer;
 
     /***
      * Called when the appliction is created
@@ -59,22 +60,12 @@ public class MainActivity extends AppCompatActivity {
             if (resultCode == RESULT_OK) {
                 Labyrinth labyrinth = (Labyrinth) Serializer.get(data.getStringExtra("labyrinth"));
                 hero = new Player(labyrinth);
-                viewer = new LabyrinthViewer(labyrinth);
-                viewer.offsetX = -hero.getCurrentCase().getCoord().getX() * LabyrinthViewer.scale;
-                viewer.offsetY = -hero.getCurrentCase().getCoord().getY() * LabyrinthViewer.scale;
+                viewer = new GameViewer(hero);
                 game.addDrawable(viewer);
                 game.start();
             }
         }
         super.onActivityResult(requestCode, resultCode, data);
-    }
-
-    /**
-     * Update the offset of the viewer
-     */
-    public void updateView() {
-        viewer.offsetX = -hero.getCurrentCase().getCoord().getX() * LabyrinthViewer.scale;
-        viewer.offsetY = -hero.getCurrentCase().getCoord().getY() * LabyrinthViewer.scale;
     }
 
     /***
@@ -85,7 +76,6 @@ public class MainActivity extends AppCompatActivity {
     public void moveLeft(View view){
         hero.moveLeft();
         System.out.println(hero.getCurrentCase().getCoord());
-        updateView();
     }
 
     /***
@@ -96,7 +86,6 @@ public class MainActivity extends AppCompatActivity {
     public void moveRight(View view){
         hero.moveRight();
         System.out.println(hero.getCurrentCase().getCoord());
-        updateView();
     }
 
     /***
@@ -107,7 +96,6 @@ public class MainActivity extends AppCompatActivity {
     public void moveUp(View view){
         System.out.println(hero.moveUp());
         System.out.println(hero.getCurrentCase().getCoord());
-        updateView();
     }
 
     /***
@@ -118,7 +106,6 @@ public class MainActivity extends AppCompatActivity {
     public void moveDown(View view){
         hero.moveDown();
         System.out.println(hero.getCurrentCase().getCoord());
-        updateView();
     }
 
 
