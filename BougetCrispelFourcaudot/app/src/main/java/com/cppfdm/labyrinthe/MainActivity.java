@@ -59,13 +59,18 @@ public class MainActivity extends AppCompatActivity {
                 Labyrinth labyrinth = (Labyrinth) Serializer.get(data.getStringExtra("labyrinth"));
                 player = new Player(labyrinth);
                 viewer = new LabyrinthViewer(labyrinth);
-                viewer.offsetX = player.getCurrentCase().getCoord().getX() * LabyrinthViewer.scale;
-                viewer.offsetY = player.getCurrentCase().getCoord().getY() * LabyrinthViewer.scale;
+                viewer.offsetX = -player.getCurrentCase().getCoord().getX() * LabyrinthViewer.scale;
+                viewer.offsetY = -player.getCurrentCase().getCoord().getY() * LabyrinthViewer.scale;
                 game.addDrawable(viewer);
                 game.start();
             }
         }
         super.onActivityResult(requestCode, resultCode, data);
+    }
+
+    public void updateView() {
+        viewer.offsetX = -player.getCurrentCase().getCoord().getX() * LabyrinthViewer.scale;
+        viewer.offsetY = -player.getCurrentCase().getCoord().getY() * LabyrinthViewer.scale;
     }
 
     /***
@@ -76,8 +81,7 @@ public class MainActivity extends AppCompatActivity {
     public void moveLeft(View view){
         player.moveLeft();
         System.out.println(player.getCurrentCase().getCoord());
-        viewer.offsetX = player.getCurrentCase().getCoord().getX() * LabyrinthViewer.scale;
-        viewer.offsetY = player.getCurrentCase().getCoord().getY() * LabyrinthViewer.scale;
+        updateView();
     }
 
     /***
@@ -86,10 +90,9 @@ public class MainActivity extends AppCompatActivity {
      * @param view view where the action come from
      */
     public void moveRight(View view){
-        player.moveLeft();
+        player.moveRight();
         System.out.println(player.getCurrentCase().getCoord());
-        viewer.offsetX = player.getCurrentCase().getCoord().getX() * LabyrinthViewer.scale;
-        viewer.offsetY = player.getCurrentCase().getCoord().getY() * LabyrinthViewer.scale;
+        updateView();
     }
 
     /***
@@ -98,10 +101,9 @@ public class MainActivity extends AppCompatActivity {
      * @param view view where the action come from
      */
     public void moveUp(View view){
-        player.moveLeft();
+        System.out.println(player.moveUp());
         System.out.println(player.getCurrentCase().getCoord());
-        viewer.offsetX = player.getCurrentCase().getCoord().getX() * LabyrinthViewer.scale;
-        viewer.offsetY = player.getCurrentCase().getCoord().getY() * LabyrinthViewer.scale;
+        updateView();
     }
 
     /***
@@ -110,10 +112,9 @@ public class MainActivity extends AppCompatActivity {
      * @param view view where the action come from
      */
     public void moveDown(View view){
-        player.moveLeft();
+        player.moveDown();
         System.out.println(player.getCurrentCase().getCoord());
-        viewer.offsetX = player.getCurrentCase().getCoord().getX() * LabyrinthViewer.scale;
-        viewer.offsetY = player.getCurrentCase().getCoord().getY() * LabyrinthViewer.scale;
+        updateView();
     }
 
 }
