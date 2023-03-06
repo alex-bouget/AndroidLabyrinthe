@@ -84,7 +84,7 @@ public class MainActivity extends AppCompatActivity {
      */
     public void moveLeft(View view){
         hero.moveLeft();
-        System.out.println(player.getCurrentCase().getCoord());
+        System.out.println(hero.getCurrentCase().getCoord());
         updateView();
     }
 
