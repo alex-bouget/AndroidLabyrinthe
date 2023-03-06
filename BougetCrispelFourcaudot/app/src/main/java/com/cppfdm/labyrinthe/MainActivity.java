@@ -5,21 +5,20 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.SurfaceView;
-import android.view.View;
 
 import com.cppfdm.labyrinthe.game.Labyrinth;
 import com.cppfdm.labyrinthe.game.Player;
+import com.cppfdm.labyrinthe.view.LabyrinthViewer;
+import com.cppfdm.labyrinthe.view.Viewer;
+
+import android.view.SurfaceView;
+import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
-
-    //Displayed labyrinth
-    private Labyrinth labyrinth;
-
-    //The hero of the legande
+    private Viewer game;
     private Player hero;
-
     private final int MAP_CODE = 14;
+    private LabyrinthViewer viewer;
 
     /***
      * Called when the appliction is created
@@ -29,15 +28,17 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
         setContentView(R.layout.activity_main);
-        SurfaceView game = (SurfaceView) findViewById(R.id.game);
+        game = (Viewer) findViewById(R.id.game);
         game.setMinimumHeight(game.getWidth());
 
         runLabyrintheChoose();
     }
 
     /**
-     * Run choose Labyrinth
+     * Run choose Labyrinthe
      */
     public void runLabyrintheChoose() {
         Intent intent = new Intent();
@@ -56,8 +57,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         if (requestCode == LabyrintheChooserActivity.INTENT_ID) {
             if (resultCode == RESULT_OK) {
-                labyrinth = (Labyrinth) Serializer.get(data.getStringExtra("labyrinth"));
-                //TODO
+                Labyrinth labyrinth = (Labyrinth) Serializer.get(data.getStringExtra("labyrinth"));
+                viewer = new LabyrinthViewer(labyrinth);
+                game.addDrawable(viewer);
+                game.start();
             }
         }
         super.onActivityResult(requestCode, resultCode, data);
@@ -69,6 +72,7 @@ public class MainActivity extends AppCompatActivity {
      * @param view view where the action come from
      */
     public void moveLeft(View view){
+        viewer.offsetX += LabyrinthViewer.scale;
 
     }
 
@@ -78,6 +82,7 @@ public class MainActivity extends AppCompatActivity {
      * @param view view where the action come from
      */
     public void moveRight(View view){
+        viewer.offsetX -= LabyrinthViewer.scale;
 
     }
 
@@ -87,6 +92,7 @@ public class MainActivity extends AppCompatActivity {
      * @param view view where the action come from
      */
     public void moveUp(View view){
+        viewer.offsetY += LabyrinthViewer.scale;
 
     }
 
@@ -96,8 +102,10 @@ public class MainActivity extends AppCompatActivity {
      * @param view view where the action come from
      */
     public void moveDown(View view){
+        viewer.offsetY -= LabyrinthViewer.scale;
 
     }
+
 
     /***
      * Show the map of selected labyrinth to the player
