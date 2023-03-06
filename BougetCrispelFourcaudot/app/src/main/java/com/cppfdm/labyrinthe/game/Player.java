@@ -81,4 +81,12 @@ public class Player {
         }
         return this.pos.equals(target);
     }
+
+    /**
+     * Return if player finish the labyrinth
+     * @return true if the labyrinth finished, false else
+     */
+    public boolean isWin() {
+        return this.pos.equals(laby.getEndCoord());
+    }
 }
