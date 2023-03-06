@@ -50,7 +50,7 @@ public class Labyrinth {
      * @param c Coordinates of the case
      * @return the Case object
      */
-    protected Case getCase(Coord c) {
+    public Case getCase(Coord c) {
         return this.cases[c.getY()][c.getX()];
     }
 
