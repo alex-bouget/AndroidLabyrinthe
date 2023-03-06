@@ -15,7 +15,7 @@
 
         <!--Drawable surface for the labyrinth-->
         <!--Height set with dp th correspond to Density-independant Pixel-->
-        <SurfaceView
+        <com.cppfdm.labyrinthe.view.Viewer
             android:id="@+id/game"
             android:layout_width="match_parent"
             android:layout_height="320dp" />

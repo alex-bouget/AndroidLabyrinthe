@@ -36,6 +36,12 @@ public class Case {
     }
 
     /**
+     * Get the neighbours of a Case
+     * @return the neighbours
+     */
+    public Case[] getNeighbours() { return this.neighbours; }
+
+    /**
      * Generate the neighbours of this case
      * @param laby the Labyrinth of the Case
      */
