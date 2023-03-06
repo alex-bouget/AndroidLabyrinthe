@@ -53,9 +53,26 @@ public class GameViewer extends AbstractDrawable {
 
     @Override
     public void paint(Canvas canvas, Paint paint) {
-        Labyrinth labyrinth = player.get
+        Labyrinth labyrinth = player.getLaby();
+        Coord playerCase = player.getCurrentCase().getCoord();
+        for (int xSize = 0; xSize < labyrinth.getCOL(); xSize++) {
+            for (int ySize = 0; ySize < labyrinth.getROW(); ySize++) {
+                Case aCase = labyrinth.getCase(new Coord(xSize, ySize));
+                if (aCase == null) {
+                    canvas.drawBitmap(
+                            mur,
+                            (xSize - playerCase.getX()) * scale,
+                            (ySize - playerCase.getY()) * scale,
+                            paint
+                    );
+                } else {
+                    canvas.drawBitmap(ground,
+                            (xSize - playerCase.getX()) * scale,
+                            (ySize - playerCase.getY()) * scale,
+                            paint
+                    );
+                }
+            }
+        }
     }
-
-
-
 }
