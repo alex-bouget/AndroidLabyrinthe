@@ -57,6 +57,11 @@ public class Coord {
         return Objects.hash(x, y);
     }
 
+    /**
+     * Transform a coordinates to string
+     *
+     * @return string
+     */
     @Override
     public String toString() {
         return "Coord{" +

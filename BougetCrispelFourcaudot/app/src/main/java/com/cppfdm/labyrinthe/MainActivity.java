@@ -69,6 +69,9 @@ public class MainActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
     }
 
+    /**
+     * Update the offset of the viewer
+     */
     public void updateView() {
         viewer.offsetX = -hero.getCurrentCase().getCoord().getX() * LabyrinthViewer.scale;
         viewer.offsetY = -hero.getCurrentCase().getCoord().getY() * LabyrinthViewer.scale;
