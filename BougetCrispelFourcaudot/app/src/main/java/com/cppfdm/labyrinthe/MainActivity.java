@@ -11,8 +11,10 @@ import com.cppfdm.labyrinthe.game.Player;
 import com.cppfdm.labyrinthe.view.LabyrinthViewer;
 import com.cppfdm.labyrinthe.view.Viewer;
 
-import android.view.SurfaceView;
+import android.util.DisplayMetrics;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.LinearLayout;
 
 public class MainActivity extends AppCompatActivity {
     private Viewer game;
@@ -28,9 +30,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-
         setContentView(R.layout.activity_main);
+        initComponent();
         game = (Viewer) findViewById(R.id.game);
         game.setMinimumHeight(game.getWidth());
 
@@ -115,7 +116,18 @@ public class MainActivity extends AppCompatActivity {
     public void showMap(View view){
         Intent intent = new Intent();
         intent.setClass(this, MapActivity.class);
-        intent.putExtra("hero",Serializer.addToSerializer(hero));
+        intent.putExtra("hero",Serializer.addToSerializer(this.hero));
         startActivityForResult(intent, MAP_CODE);
+    }
+
+    private void initComponent(){
+        DisplayMetrics displayMetrics = new DisplayMetrics();
+        getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
+        int height = displayMetrics.heightPixels;
+        int width = displayMetrics.widthPixels;
+        LinearLayout up = findViewById(R.id.up);
+        up.getLayoutParams().width = (int)(width/5);
+        up.getLayoutParams().height = (int)(width/5);
+        up.setPadding(0,0,0,0);
     }
 }
