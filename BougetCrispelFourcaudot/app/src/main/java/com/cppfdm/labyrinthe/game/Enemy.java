@@ -25,7 +25,7 @@ public class Enemy {
      * Setter of pos parameter
      * @param c the new position
      */
-    public void setpos(Coord c) {
+    public void setPos(Coord c) {
         this.pos = c;
     }
 }
