@@ -70,6 +70,14 @@ public class Labyrinth {
     }
 
     /**
+     * Getter of Enemies
+     * @return enemies attribute
+     */
+    public Enemy[] getEnemies() {
+        return enemies;
+    }
+
+    /**
      * get a Case from his Coordinates
      * @param c Coordinates of the case
      * @return the Case object
