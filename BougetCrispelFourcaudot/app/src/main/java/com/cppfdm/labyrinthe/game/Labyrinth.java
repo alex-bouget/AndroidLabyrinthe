@@ -8,13 +8,13 @@ public class Labyrinth {
     // Dimensions of the labyrinth
     final int ROW;
     final int COL;
-    final int NB_ENEMIES = 10;
     // All cases
     Case[][] cases;
     // Important Case
     Case start;
     Case end;
     // Enemies
+    final int NB_ENEMIES = 10;
     Enemy[] enemies;
 
     /**
