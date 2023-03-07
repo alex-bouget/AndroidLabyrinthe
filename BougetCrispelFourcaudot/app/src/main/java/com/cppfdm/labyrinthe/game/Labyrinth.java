@@ -70,6 +70,16 @@ public class Labyrinth {
     }
 
     /**
+     * Move all the enemies to a random neighbour
+     */
+    public void moveEnemies() {
+        for (Enemy enemy : this.enemies) {
+            Coord newPos = this.getCase(enemy.getPos()).getRandomNeighbour().getCoord();
+            enemy.setPos(newPos);
+        }
+    }
+
+    /**
      * Getter of Enemies
      * @return enemies attribute
      */
