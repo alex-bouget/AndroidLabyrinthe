@@ -95,4 +95,17 @@ public class Player {
     public boolean isWin() {
         return this.pos.equals(laby.getEndCoord());
     }
+
+    /**
+     * Return if the player collide with one of the enemy
+     * @return true if the is a collision, false else
+     */
+    public boolean isDead() {
+        for (Enemy enemy : this.laby.getEnemies()) {
+            if (this.pos.equals(enemy.getPos())) {
+                return true;
+            }
+        }
+        return false;
+    }
 }
