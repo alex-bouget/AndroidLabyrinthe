@@ -2,6 +2,7 @@ package com.cppfdm.labyrinthe.game;
 
 public class Enemy {
 
+    // Position of the enemy
     Coord pos;
 
     /**
