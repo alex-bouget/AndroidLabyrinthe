@@ -1,17 +1,21 @@
 package com.cppfdm.labyrinthe.game;
 
 import java.util.Collection;
+import java.util.Random;
 
 public class Labyrinth {
 
     // Dimensions of the labyrinth
     final int ROW;
     final int COL;
+    final int NB_ENEMIES = 10;
     // All cases
     Case[][] cases;
     // Important Case
     Case start;
     Case end;
+    // Enemies
+    Enemy[] enemies;
 
     /**
      * Constructor of the Labyrinth
@@ -43,6 +47,26 @@ public class Labyrinth {
 
         start = this.getCase(start_);
         end = this.getCase(end_);
+
+        // Create enemies
+        enemies = new Enemy[this.NB_ENEMIES];
+        for (int i = 0; i < this.NB_ENEMIES; i++) {
+            enemies[i] = new Enemy(this.generateRandomEnemyCoord());
+        }
+    }
+
+    /**
+     * Generate a Coordinate object in a random non wall case and not on start case
+     * @return the correct Coord object
+     */
+    public Coord generateRandomEnemyCoord() {
+        Random random = new Random();
+        Coord res;
+        do {
+            Coord randomCoord = new Coord(random.nextInt(this.getROW()), random.nextInt(this.getCOL()));
+            res = this.getCase(randomCoord).getCoord();
+        } while (res == null || res.equals(this.start.getCoord()));
+        return res;
     }
 
     /**
