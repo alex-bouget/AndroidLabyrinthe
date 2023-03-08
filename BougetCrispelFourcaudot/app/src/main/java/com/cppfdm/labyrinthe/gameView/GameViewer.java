@@ -88,14 +88,14 @@ public class GameViewer extends AbstractDrawable {
         canvas.drawBitmap(
                 tileset.getExitTiles(),
                 (exitCoordinates.getX() - playerCase.getX()) * scale + (width / 2),
-                (exitCoordinates.getX() - playerCase.getY()) * scale + (height / 2),
+                (exitCoordinates.getY() - playerCase.getY()) * scale + (height / 2),
                 paint
         );
         Coord beginCoordinates = labyrinth.getStartCoord();
         canvas.drawBitmap(
                 tileset.getStartTiles(),
                 (beginCoordinates.getX() - playerCase.getX()) * scale + (width / 2),
-                (beginCoordinates.getX() - playerCase.getY()) * scale + (height / 2),
+                (beginCoordinates.getY() - playerCase.getY()) * scale + (height / 2),
                 paint
         );
         playerViewer.paint(canvas, paint);
