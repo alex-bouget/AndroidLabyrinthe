@@ -77,14 +77,14 @@ public class GameViewer extends AbstractDrawable {
                 if (aCase == null) {
                     canvas.drawBitmap(
                             mur,
-                            (xSize - playerCase.getX()) * scale + (int)(width/2),
-                            (ySize - playerCase.getY()) * scale + (int)(height/2),
+                            (xSize - playerCase.getX()) * scale + (width/2),
+                            (ySize - playerCase.getY()) * scale + (height/2),
                             paint
                     );
                 } else {
                     canvas.drawBitmap(ground,
-                            (xSize - playerCase.getX()) * scale + (int)(width/2),
-                            (ySize - playerCase.getY()) * scale + (int)(height/2),
+                            (xSize - playerCase.getX()) * scale + (width/2),
+                            (ySize - playerCase.getY()) * scale + (height/2),
                             paint
                     );
                 }
