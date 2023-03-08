@@ -8,21 +8,26 @@ import com.cppfdm.labyrinthe.game.Case;
 import com.cppfdm.labyrinthe.game.Coord;
 import com.cppfdm.labyrinthe.game.Enemy;
 import com.cppfdm.labyrinthe.game.Player;
+import com.cppfdm.labyrinthe.view.core.Drawable;
 
 public class EnemyViewer extends SpritesViewer {
     Enemy enemy;
-    Player player;
+    GameViewer gameViewer;
 
     /**
      * Constructor
      *
      * @param enemy the enemy to view
-     * @param player the player
      */
-    public EnemyViewer(Enemy enemy, Player player) {
+    public EnemyViewer(Enemy enemy) {
         super("sprites/monster/", "sprites/monster/spriteLoader.txt");
         this.enemy = enemy;
-        this.player = player;
+    }
+
+    @Override
+    public void setDrawableParent(Drawable drawable) {
+        super.setDrawableParent(drawable);
+        gameViewer = (GameViewer) getDrawableParent();
     }
 
     /**
@@ -33,12 +38,13 @@ public class EnemyViewer extends SpritesViewer {
      */
     @Override
     public void paint(Canvas canvas, Paint paint) {
-        Coord playerCoordinates = player.getCurrentCase().getCoord();
         Bitmap sprite = sprites.handleSprite();
+        Coord coordinates = gameViewer.calcPosition(enemy.getPos());
         canvas.drawBitmap(
                 sprite,
-                (enemy.getPos().getX() - playerCoordinates.getX()) * scale + canvas.getWidth() / 2,
-                (enemy.getPos().getY() - playerCoordinates.getY()) * scale + (canvas.getHeight() / 2) - (sprite.getHeight() - scale),
-                paint);
+                coordinates.getX(),
+                coordinates.getY() - (sprite.getHeight() - scale),
+                paint
+        );
     }
 }
