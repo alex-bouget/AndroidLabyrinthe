@@ -23,14 +23,20 @@ public class Player {
     }
 
     /**
+     * Getter of laby
+     * @return the Labyrinth object
+     */
+    public Labyrinth getLaby() { return this.laby; }
+
+    /**
      * Make the player move left
      * @return if the movement has been done
      */
     public boolean moveLeft() {
         Coord target = new Coord(this.pos.getX()-1, this.pos.getY());
-        for (Case c : this.getCurrentCase().getNeighbours()) {
-            if (c == null) { continue; }
-            if (c.getCoord().equals(target)) {
+        for (Case current : this.getCurrentCase().getNeighbours()) {
+            if (current == null) { continue; }
+            if (current.getCoord().equals(target)) {
                 this.pos = target;
             }
         }
@@ -43,9 +49,9 @@ public class Player {
      */
     public boolean moveRight() {
         Coord target = new Coord(this.pos.getX()+1, this.pos.getY());
-        for (Case c : this.getCurrentCase().getNeighbours()) {
-            if (c == null) { continue; }
-            if (c.getCoord().equals(target)) {
+        for (Case current : this.getCurrentCase().getNeighbours()) {
+            if (current == null) { continue; }
+            if (current.getCoord().equals(target)) {
                 this.pos = target;
             }
         }
@@ -58,9 +64,9 @@ public class Player {
      */
     public boolean moveUp() {
         Coord target = new Coord(this.pos.getX(), this.pos.getY()-1);
-        for (Case c : this.getCurrentCase().getNeighbours()) {
-            if (c == null) { continue; }
-            if (c.getCoord().equals(target)) {
+        for (Case current : this.getCurrentCase().getNeighbours()) {
+            if (current == null) { continue; }
+            if (current.getCoord().equals(target)) {
                 this.pos = target;
             }
         }
@@ -73,12 +79,33 @@ public class Player {
      */
     public boolean moveDown() {
         Coord target = new Coord(this.pos.getX(), this.pos.getY()+1);
-        for (Case c : this.getCurrentCase().getNeighbours()) {
-            if (c == null) { continue; }
-            if (c.getCoord().equals(target)) {
+        for (Case current : this.getCurrentCase().getNeighbours()) {
+            if (current == null) { continue; }
+            if (current.getCoord().equals(target)) {
                 this.pos = target;
             }
         }
         return this.pos.equals(target);
+    }
+
+    /**
+     * Return if player finish the labyrinth
+     * @return true if the labyrinth finished, false else
+     */
+    public boolean isWin() {
+        return this.pos.equals(laby.getEndCoord());
+    }
+
+    /**
+     * Return if the player collide with one of the enemy
+     * @return true if the is a collision, false else
+     */
+    public boolean isDead() {
+        for (Enemy enemy : this.laby.getEnemies()) {
+            if (this.pos.equals(enemy.getPos())) {
+                return true;
+            }
+        }
+        return false;
     }
 }

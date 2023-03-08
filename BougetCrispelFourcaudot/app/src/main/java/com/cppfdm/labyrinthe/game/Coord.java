@@ -56,4 +56,17 @@ public class Coord {
     public int hashCode() {
         return Objects.hash(x, y);
     }
+
+    /**
+     * Transform a coordinates to string
+     *
+     * @return string
+     */
+    @Override
+    public String toString() {
+        return "Coord{" +
+                "x=" + x +
+                ", y=" + y +
+                '}';
+    }
 }

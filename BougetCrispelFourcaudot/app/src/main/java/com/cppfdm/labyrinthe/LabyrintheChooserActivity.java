@@ -14,11 +14,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.cppfdm.labyrinthe.game.Coord;
 import com.cppfdm.labyrinthe.game.Labyrinth;
+import com.cppfdm.labyrinthe.utils.AssetsCommand;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.util.ArrayList;
 
 public class LabyrintheChooserActivity extends AppCompatActivity {
@@ -113,25 +111,8 @@ public class LabyrintheChooserActivity extends AppCompatActivity {
             toast.show();
             return;
         }
-        String data;
-        // Read the file
-        try {
-            InputStream level2 = getAssets().open(filePath);
-            BufferedReader buffer = new BufferedReader(new InputStreamReader(level2));
-            StringBuilder f = new StringBuilder();
-
-            String tmp;
-            while ((tmp = buffer.readLine()) != null) {
-                f.append("\n").append(tmp);
-            }
-            data = f.toString();
-        } catch (IOException e) {
-            // View message error
-            Toast toast = Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_SHORT);
-            toast.show();
-            return;
-        }
-        // Decode in coordonats
+        String data = AssetsCommand.readFile(view, filePath);
+        // Decode in coordinates
         String[] eachLine = data.split("\n");
         ArrayList<Coord> coordinate = new ArrayList<>();
         for (String l: eachLine) {

@@ -1,0 +1,4 @@
+LUp1.gif>LUp2.gif>LUp3.gif>LUp4.gif>LUp5.gif>LUp6.gif>LUp7.gif>LUp8.gif
+LLeft1.gif>LLeft2.gif>LLeft3.gif>LLeft4.gif>LLeft5.gif>LLeft6.gif
+LDown1.gif>LDown2.gif>LDown3.gif>LDown4.gif>LDown5.gif>LDown6.gif>LDown7.gif>LDown8.gif
+LRight1.gif>LRight2.gif>LRight3.gif>LRight4.gif>LRight5.gif>LRight6.gif

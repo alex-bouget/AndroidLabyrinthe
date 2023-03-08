@@ -8,9 +8,8 @@ import android.os.Bundle;
 
 import com.cppfdm.labyrinthe.game.Labyrinth;
 import com.cppfdm.labyrinthe.game.Player;
-import com.cppfdm.labyrinthe.view.LabyrinthViewer;
+import com.cppfdm.labyrinthe.gameView.GameViewer;
 import com.cppfdm.labyrinthe.view.Viewer;
-
 import android.util.DisplayMetrics;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
     private Viewer game;
     private Player hero;
     private final int MAP_CODE = 14;
-    private LabyrinthViewer viewer;
+    private GameViewer viewer;
 
     /***
      * Called when the appliction is created
@@ -60,7 +59,8 @@ public class MainActivity extends AppCompatActivity {
         if (requestCode == LabyrintheChooserActivity.INTENT_ID) {
             if (resultCode == RESULT_OK) {
                 Labyrinth labyrinth = (Labyrinth) Serializer.get(data.getStringExtra("labyrinth"));
-                viewer = new LabyrinthViewer(labyrinth);
+                hero = new Player(labyrinth);
+                viewer = new GameViewer(hero);
                 game.addDrawable(viewer);
                 game.start();
             }
@@ -74,8 +74,8 @@ public class MainActivity extends AppCompatActivity {
      * @param view view where the action come from
      */
     public void moveLeft(View view){
-        viewer.offsetX += LabyrinthViewer.scale;
-
+        hero.moveLeft();
+        System.out.println(hero.getCurrentCase().getCoord());
     }
 
     /***
@@ -84,8 +84,8 @@ public class MainActivity extends AppCompatActivity {
      * @param view view where the action come from
      */
     public void moveRight(View view){
-        viewer.offsetX -= LabyrinthViewer.scale;
-
+        hero.moveRight();
+        System.out.println(hero.getCurrentCase().getCoord());
     }
 
     /***
@@ -94,8 +94,8 @@ public class MainActivity extends AppCompatActivity {
      * @param view view where the action come from
      */
     public void moveUp(View view){
-        viewer.offsetY += LabyrinthViewer.scale;
-
+        System.out.println(hero.moveUp());
+        System.out.println(hero.getCurrentCase().getCoord());
     }
 
     /***
@@ -104,8 +104,8 @@ public class MainActivity extends AppCompatActivity {
      * @param view view where the action come from
      */
     public void moveDown(View view){
-        viewer.offsetY -= LabyrinthViewer.scale;
-
+        hero.moveDown();
+        System.out.println(hero.getCurrentCase().getCoord());
     }
 
 

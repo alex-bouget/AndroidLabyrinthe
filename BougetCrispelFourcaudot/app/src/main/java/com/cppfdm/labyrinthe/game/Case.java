@@ -1,5 +1,7 @@
 package com.cppfdm.labyrinthe.game;
 
+import java.util.Random;
+
 /**
  * Case class who represent a Case in the labyrinth
  */
@@ -51,16 +53,18 @@ public class Case {
 
         // Generate the coordinate of each case's neighbours
         Coord[] nextTo = new Coord[4];
-        nextTo[0] = new Coord((this.pos.getX()+1) % col, this.pos.getY()); // right
-        nextTo[1] = new Coord((this.pos.getX()-1) % col, this.pos.getY()); // left
-        nextTo[2] = new Coord(this.pos.getX(), (this.pos.getY()-1) % row); // up
-        nextTo[3] = new Coord(this.pos.getX(), (this.pos.getY()+1) % row); // down
+        // java modulo can return negative number,
+        // so we add row or col to wrap the modulo to its positive side
+        nextTo[0] = new Coord((this.pos.getX()+1+col) % col, this.pos.getY()); // right
+        nextTo[1] = new Coord((this.pos.getX()-1+col) % col, this.pos.getY()); // left
+        nextTo[2] = new Coord(this.pos.getX(), (this.pos.getY()-1+row) % row); // up
+        nextTo[3] = new Coord(this.pos.getX(), (this.pos.getY()+1+row) % row); // down
 
         // Add results in this.neighbours
         int index = 0;
         for (Coord c : nextTo) {
             // Is the case nextTo this ?
-            if (Math.abs(c.getX()-this.pos.getX()) + Math.abs(c.getY()-this.pos.getY()) != 1) {
+            if (Math.abs(c.getX()-this.pos.getX()) + Math.abs(c.getY()-this.pos.getY()) == 1) {
                 Case current = laby.getCase(c);
                 // Is the case exist ?
                 if (current != null) {
@@ -69,5 +73,23 @@ public class Case {
                 }
             }
         }
+    }
+
+    /**
+     * Get a random non-null neighbour
+     * @return the Case object
+     */
+    public Case getRandomNeighbour() {
+        // Handle no neighbour
+        if (this.neighbours[0] == null) {
+            return this;
+        }
+        Case neighbour;
+        Random random = new Random();
+        do {
+            int index = random.nextInt(4);
+            neighbour = this.neighbours[index];
+        } while (neighbour == null);
+        return neighbour;
     }
 }
