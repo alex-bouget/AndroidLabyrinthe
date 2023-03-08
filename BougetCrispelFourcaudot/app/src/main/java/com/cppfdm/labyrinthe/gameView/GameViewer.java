@@ -16,13 +16,19 @@ import com.cppfdm.labyrinthe.view.core.Drawable;
 import com.cppfdm.labyrinthe.view.tileset.TilesetResizer;
 
 public class GameViewer extends AbstractDrawable {
+    private static final int ENEMY_DELAY = 10;
+    public static final int ANIMATION_DELAY = 3;
+
     private int scale = 64;
     Viewer root;
     Player player;
     EnemyViewer[] enemyViewers;
     PlayerViewer playerViewer;
     TilesetResizer tileset;
-    private static final int enemyDelay = 10;
+    private Coord lastCoordinates;
+    private int xOffset = 0;
+    private int yOffset = 0;
+    private int animationFrame = 1;
     int enemyCalc = 0;
 
 
@@ -33,6 +39,16 @@ public class GameViewer extends AbstractDrawable {
      */
     public GameViewer(Player player) {
         this.player = player;
+        lastCoordinates = player.getCurrentCase().getCoord();
+    }
+
+    /**
+     * get the offset of the animation
+     *
+     * @return coordinates with offset
+     */
+    public Coord getOffset() {
+        return new Coord(xOffset, yOffset);
     }
 
     /**
@@ -44,7 +60,7 @@ public class GameViewer extends AbstractDrawable {
         this.scale = scale;
         tileset.resized(scale);
         playerViewer.resize(scale);
-        for (EnemyViewer enemyViewer: enemyViewers) {
+        for (EnemyViewer enemyViewer : enemyViewers) {
             enemyViewer.resize(scale);
         }
     }
@@ -65,11 +81,26 @@ public class GameViewer extends AbstractDrawable {
         playerViewer.setDrawableParent(this);
         Enemy[] enemies = player.getLaby().getEnemies();
         enemyViewers = new EnemyViewer[enemies.length];
-        for (int i=0; i<enemies.length; i++) {
+        for (int i = 0; i < enemies.length; i++) {
             enemyViewers[i] = new EnemyViewer(enemies[i], player);
             enemyViewers[i].setDrawableParent(this);
         }
         resize(scale);
+    }
+
+    /**
+     * Calculate the positions
+     *
+     * @param position position
+     * @return Coordinates of the position
+     */
+    public Coord calcPosition(Coord position) {
+        int width = root.getWidth();
+        int height = root.getHeight();
+        Coord playerCase = player.getCurrentCase().getCoord();
+        int x = (position.getX() - playerCase.getX()) * scale + (width / 2) - xOffset + (xOffset / ANIMATION_DELAY) * animationFrame;
+        int y = (position.getY() - playerCase.getY()) * scale + (height / 2) - yOffset + (yOffset / ANIMATION_DELAY) * animationFrame;
+        return new Coord(x, y);
     }
 
     /**
@@ -80,45 +111,59 @@ public class GameViewer extends AbstractDrawable {
      */
     @Override
     public void paint(Canvas canvas, Paint paint) {
-        if (enemyCalc >= enemyDelay) {
+        if (enemyCalc >= ENEMY_DELAY) {
             player.getLaby().moveEnemies();
-            enemyCalc =0;
+            enemyCalc = 0;
         }
         enemyCalc++;
+        if (!lastCoordinates.equals(player.getCurrentCase().getCoord())) {
+            Coord newCoordinates = player.getCurrentCase().getCoord();
+            xOffset = (lastCoordinates.getX() - newCoordinates.getX()) * scale;
+            yOffset = (lastCoordinates.getY() - newCoordinates.getY()) * scale;
+            System.out.println(xOffset);
+            System.out.println(yOffset);
+            lastCoordinates = newCoordinates;
+        }
 
-        int width = root.getWidth();
-        int height = root.getHeight();
         Labyrinth labyrinth = player.getLaby();
-        Coord playerCase = player.getCurrentCase().getCoord();
         for (int xSize = 0; xSize < labyrinth.getCOL(); xSize++) {
             for (int ySize = 0; ySize < labyrinth.getROW(); ySize++) {
                 Case aCase = labyrinth.getCase(new Coord(xSize, ySize));
                 Bitmap bitmap = tileset.getTiles(aCase);
+                Coord bitPos = calcPosition(new Coord(xSize, ySize));
                 canvas.drawBitmap(
                         bitmap,
-                        (xSize - playerCase.getX()) * scale + (width / 2),
-                        (ySize - playerCase.getY()) * scale + (height / 2),
+                        bitPos.getX(),
+                        bitPos.getY(),
                         paint
                 );
             }
         }
-        Coord exitCoordinates = labyrinth.getEndCoord();
+        Coord exitPos = calcPosition(labyrinth.getEndCoord());
         canvas.drawBitmap(
                 tileset.getExitTiles(),
-                (exitCoordinates.getX() - playerCase.getX()) * scale + (width / 2),
-                (exitCoordinates.getY() - playerCase.getY()) * scale + (height / 2),
+                exitPos.getX(),
+                exitPos.getY(),
                 paint
         );
-        Coord beginCoordinates = labyrinth.getStartCoord();
+        Coord beginPos = calcPosition(labyrinth.getStartCoord());
         canvas.drawBitmap(
                 tileset.getStartTiles(),
-                (beginCoordinates.getX() - playerCase.getX()) * scale + (width / 2),
-                (beginCoordinates.getY() - playerCase.getY()) * scale + (height / 2),
+                beginPos.getX(),
+                beginPos.getY(),
                 paint
         );
         playerViewer.paint(canvas, paint);
-        for (EnemyViewer enemyViewer: enemyViewers) {
+        for (EnemyViewer enemyViewer : enemyViewers) {
             enemyViewer.paint(canvas, paint);
+        }
+        if (xOffset != 0 || yOffset != 0) {
+            animationFrame++;
+            if (animationFrame >= ANIMATION_DELAY) {
+                xOffset = 0;
+                yOffset = 0;
+                animationFrame = 1;
+            }
         }
     }
 }
