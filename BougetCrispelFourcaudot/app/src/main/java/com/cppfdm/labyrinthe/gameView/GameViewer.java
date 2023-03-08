@@ -10,6 +10,7 @@ import com.cppfdm.labyrinthe.game.Enemy;
 import com.cppfdm.labyrinthe.game.Labyrinth;
 import com.cppfdm.labyrinthe.game.Player;
 import com.cppfdm.labyrinthe.gameView.tileset.DefaultTileset;
+import com.cppfdm.labyrinthe.gameView.tileset.GrassTileSet;
 import com.cppfdm.labyrinthe.view.Viewer;
 import com.cppfdm.labyrinthe.view.core.AbstractDrawable;
 import com.cppfdm.labyrinthe.view.core.Drawable;
@@ -60,7 +61,7 @@ public class GameViewer extends AbstractDrawable {
         super.setDrawableParent(drawable);
 
         root = (Viewer) getDrawableRoot();
-        tileset = new TilesetResizer(new DefaultTileset(root));
+        tileset = new TilesetResizer(new GrassTileSet(root, player.getLaby()));
         playerViewer = new PlayerViewer();
         playerViewer.setDrawableParent(this);
         Enemy[] enemies = player.getLaby().getEnemies();
@@ -94,6 +95,7 @@ public class GameViewer extends AbstractDrawable {
             for (int ySize = 0; ySize < labyrinth.getROW(); ySize++) {
                 Case aCase = labyrinth.getCase(new Coord(xSize, ySize));
                 Bitmap bitmap = tileset.getTiles(aCase);
+                System.out.println(tileset.getTilesName(aCase));
                 canvas.drawBitmap(
                         bitmap,
                         (xSize - playerCase.getX()) * scale + (width / 2),
