@@ -86,7 +86,7 @@ public class GameViewer extends AbstractDrawable {
             enemyViewers[i] = new EnemyViewer(enemies[i]);
             enemyViewers[i].setDrawableParent(this);
         }
-        int newScale = Math.min(root.getHeight(), root.getWidth())/((2*7)-2);
+        int newScale = Math.min(root.getHeight(), root.getWidth())/((2*NUMBER_VIEW)-2);
         resize(newScale);
     }
 
