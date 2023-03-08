@@ -21,8 +21,12 @@ public class GameViewer extends AbstractDrawable {
     Player player;
     Bitmap mur;
     Bitmap ground;
-    Bitmap[] playerFrame;
 
+    /**
+     * Constructor
+     *
+     * @param player the player
+     */
     public GameViewer(Player player) {
         this.player = player;
     }
@@ -41,6 +45,11 @@ public class GameViewer extends AbstractDrawable {
         resized(scale);
     }
 
+    /**
+     * Resized the labyrinth and all bitmap
+     *
+     * @param scale scale in pixel
+     */
     public void resized(int scale) {
         this.scale = scale;
         Bitmap murNotSized = BitmapFactory.decodeResource(root.getContext().getResources(), R.drawable.mur0);
@@ -50,13 +59,16 @@ public class GameViewer extends AbstractDrawable {
         ground = ViewerCommand.resizeBitmap(groundNotSized, scale, scale);
     }
 
-
+    /**
+     * Paint the element
+     *
+     * @param canvas element for paint inside
+     * @param paint can be useful
+     */
     @Override
     public void paint(Canvas canvas, Paint paint) {
         int width = root.getWidth();
         int height = root.getHeight();
-        System.out.println(width);
-        System.out.println(height);
         Labyrinth labyrinth = player.getLaby();
         Coord playerCase = player.getCurrentCase().getCoord();
         for (int xSize = 0; xSize < labyrinth.getCOL(); xSize++) {
@@ -78,6 +90,6 @@ public class GameViewer extends AbstractDrawable {
                 }
             }
         }
-        canvas.drawRect((float) (width/2), (float)(width/2), (float)scale, (float)scale, paint);
+        canvas.drawRect((float)(width/2), (float)(height/2), (float)(width/2)+(float)scale, (float)(height/2)+(float)scale, paint);
     }
 }
