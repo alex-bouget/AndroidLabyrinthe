@@ -5,6 +5,7 @@ import android.graphics.BitmapFactory;
 import android.view.View;
 
 import com.cppfdm.labyrinthe.game.Case;
+import com.cppfdm.labyrinthe.view.ViewerCommand;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -46,7 +47,7 @@ public abstract class AbstractTileset implements TilesInterfaces {
      * @return true if success
      */
     protected boolean addBitmap(String key, int id) {
-        Bitmap bitmap = BitmapFactory.decodeResource(v.getContext().getResources(), id);
+        Bitmap bitmap = ViewerCommand.getBitmap(v, id);
         return addBitmap(key, bitmap);
     }
 
@@ -58,14 +59,7 @@ public abstract class AbstractTileset implements TilesInterfaces {
      * @return true if success
      */
     protected boolean addBitmap(String key, String values) {
-        InputStream is;
-        try {
-            is = v.getResources().getAssets().open(values);
-        } catch (IOException e) {
-            e.printStackTrace();
-            return false;
-        }
-        Bitmap bitmap = BitmapFactory.decodeStream(is);
+        Bitmap bitmap = ViewerCommand.getBitmap(v, values);
         return addBitmap(key, bitmap);
     }
 
