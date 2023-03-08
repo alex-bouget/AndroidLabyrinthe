@@ -1,6 +1,7 @@
 package com.cppfdm.labyrinthe.game;
 
 import java.util.Collection;
+import java.util.Random;
 
 public class Labyrinth {
 
@@ -12,6 +13,9 @@ public class Labyrinth {
     // Important Case
     Case start;
     Case end;
+    // Enemies
+    final int NB_ENEMIES = 10;
+    Enemy[] enemies;
 
     /**
      * Constructor of the Labyrinth
@@ -43,6 +47,44 @@ public class Labyrinth {
 
         start = this.getCase(start_);
         end = this.getCase(end_);
+
+        // Create enemies
+        enemies = new Enemy[this.NB_ENEMIES];
+        for (int i = 0; i < this.NB_ENEMIES; i++) {
+            enemies[i] = new Enemy(this.generateRandomEnemyCoord());
+        }
+    }
+
+    /**
+     * Generate a Coordinate object in a random non wall case and not on start case
+     * @return the correct Coord object
+     */
+    public Coord generateRandomEnemyCoord() {
+        Random random = new Random();
+        Coord res;
+        do {
+            Coord randomCoord = new Coord(random.nextInt(this.getROW()), random.nextInt(this.getCOL()));
+            res = this.getCase(randomCoord).getCoord();
+        } while (res == null || res.equals(this.start.getCoord()));
+        return res;
+    }
+
+    /**
+     * Move all the enemies to a random neighbour
+     */
+    public void moveEnemies() {
+        for (Enemy enemy : this.enemies) {
+            Coord newPos = this.getCase(enemy.getPos()).getRandomNeighbour().getCoord();
+            enemy.setPos(newPos);
+        }
+    }
+
+    /**
+     * Getter of Enemies
+     * @return enemies attribute
+     */
+    public Enemy[] getEnemies() {
+        return enemies;
     }
 
     /**

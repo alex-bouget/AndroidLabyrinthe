@@ -1,5 +1,7 @@
 package com.cppfdm.labyrinthe.game;
 
+import java.util.Random;
+
 /**
  * Case class who represent a Case in the labyrinth
  */
@@ -71,5 +73,23 @@ public class Case {
                 }
             }
         }
+    }
+
+    /**
+     * Get a random non-null neighbour
+     * @return the Case object
+     */
+    public Case getRandomNeighbour() {
+        // Handle no neighbour
+        if (this.neighbours[0] == null) {
+            return this;
+        }
+        Case neighbour;
+        Random random = new Random();
+        do {
+            int index = random.nextInt(4);
+            neighbour = this.neighbours[index];
+        } while (neighbour == null);
+        return neighbour;
     }
 }
