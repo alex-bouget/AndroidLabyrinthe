@@ -15,7 +15,7 @@ public class ViewerCommand {
      * @param toResize the Bitmap
      * @param sizeX the sizeX of the resized bitmap
      * @param sizeY the sizeY of the resized bitmap
-     * @return
+     * @return Bitmap
      */
     public static Bitmap resizeBitmap(Bitmap toResize, int sizeX, int sizeY) {
         // https://www.okhelp.cz/android/resize-a-bitmap-image-android-example/
@@ -36,10 +36,9 @@ public class ViewerCommand {
         Matrix matrix = new Matrix();
         matrix.postScale(1f, 1f);
 
-        Bitmap resizedBitmap = Bitmap.createBitmap(resized, 0, 0, sizeX, sizeY, matrix, true);
         // Filter the last bitmap (delete the pixel outside the canvas
 
-        return resizedBitmap;
+        return Bitmap.createBitmap(resized, 0, 0, sizeX, sizeY, matrix, true);
     }
 
 }
