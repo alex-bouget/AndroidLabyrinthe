@@ -13,6 +13,9 @@ public class Sprites {
     private View v;
     private ArrayList<Bitmap>[] sprites;
     private ArrayList<Bitmap>[] resizedSprites;
+    int movement = 2;
+    float animationPath = 0;
+    int frame = 0;
 
     /**
      * Constructor
@@ -58,11 +61,35 @@ public class Sprites {
         }
     }
 
+    public void changeMovement(int movement) {
+        if (movement > 3 || movement < 0) {
+            return;
+        }
+        this.movement = movement;
+    }
+
+    public int getSize() {
+        return this.resizedSprites[movement].size();
+    }
+
+    public void setAnimationOn(int frame) {
+        if (frame <= 0) {
+            return;
+        }
+        animationPath = ((float)frame) / getSize();
+        this.frame = 0;
+    }
+
     /**
      * Return the sprite
      * @return bitmap
      */
     public Bitmap handleSprite() {
-        return resizedSprites[2].get(0);
+        frame++;
+        int frameToGet = (int)(frame * animationPath);
+        if (frameToGet > getSize()) {
+            frameToGet = 0;
+        }
+        return resizedSprites[movement].get(frameToGet%getSize());
     }
 }
