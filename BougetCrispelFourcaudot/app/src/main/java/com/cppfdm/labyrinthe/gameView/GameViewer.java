@@ -30,6 +30,16 @@ public class GameViewer extends AbstractDrawable {
         this.player = player;
     }
 
+    /**
+     * Resized the tileset
+     *
+     * @param scale scale
+     */
+    public void resize(int scale) {
+        this.scale = scale;
+        tileset.resized(scale);
+    }
+
 
     /**
      * Set the parent and get the root for catch the bitmap

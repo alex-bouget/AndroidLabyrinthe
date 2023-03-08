@@ -11,8 +11,8 @@ import java.io.InputStream;
 import java.util.HashMap;
 
 public abstract class AbstractTileset implements TilesInterfaces {
-    private HashMap<String, Bitmap> tileset = new HashMap<>();
-    private View v;
+    private final HashMap<String, Bitmap> tileset = new HashMap<>();
+    private final View v;
 
     /**
      * Constructor
@@ -58,7 +58,7 @@ public abstract class AbstractTileset implements TilesInterfaces {
      * @return true if success
      */
     protected boolean addBitmap(String key, String values) {
-        InputStream is = null;
+        InputStream is;
         try {
             is = v.getResources().getAssets().open(values);
         } catch (IOException e) {
