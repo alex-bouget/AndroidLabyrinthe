@@ -1,26 +1,25 @@
 package com.cppfdm.labyrinthe.gameView;
 
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 
-import com.cppfdm.labyrinthe.R;
 import com.cppfdm.labyrinthe.game.Case;
 import com.cppfdm.labyrinthe.game.Coord;
 import com.cppfdm.labyrinthe.game.Labyrinth;
 import com.cppfdm.labyrinthe.game.Player;
+import com.cppfdm.labyrinthe.gameView.tileset.DefaultTileset;
 import com.cppfdm.labyrinthe.view.Viewer;
-import com.cppfdm.labyrinthe.view.ViewerCommand;
 import com.cppfdm.labyrinthe.view.core.AbstractDrawable;
 import com.cppfdm.labyrinthe.view.core.Drawable;
+import com.cppfdm.labyrinthe.view.tileset.TilesetResizer;
 
 public class GameViewer extends AbstractDrawable {
     private int scale = 64;
     Viewer root;
     Player player;
-    Bitmap mur;
-    Bitmap ground;
+    TilesetResizer tileset;
+
 
     /**
      * Constructor
@@ -29,6 +28,16 @@ public class GameViewer extends AbstractDrawable {
      */
     public GameViewer(Player player) {
         this.player = player;
+    }
+
+    /**
+     * Resized the tileset
+     *
+     * @param scale scale
+     */
+    public void resize(int scale) {
+        this.scale = scale;
+        tileset.resized(scale);
     }
 
 
@@ -42,28 +51,15 @@ public class GameViewer extends AbstractDrawable {
         super.setDrawableParent(drawable);
 
         root = (Viewer) getDrawableRoot();
-        resized(scale);
-    }
-
-    /**
-     * Resized the labyrinth and all bitmap
-     *
-     * @param scale scale in pixel
-     */
-    public void resized(int scale) {
-        this.scale = scale;
-        Bitmap murNotSized = BitmapFactory.decodeResource(root.getContext().getResources(), R.drawable.mur0);
-        mur = ViewerCommand.resizeBitmap(murNotSized, scale, scale);
-
-        Bitmap groundNotSized = BitmapFactory.decodeResource(root.getContext().getResources(), R.drawable.ground);
-        ground = ViewerCommand.resizeBitmap(groundNotSized, scale, scale);
+        tileset = new TilesetResizer(new DefaultTileset(root));
+        tileset.resized(scale);
     }
 
     /**
      * Paint the element
      *
      * @param canvas element for paint inside
-     * @param paint can be useful
+     * @param paint  can be useful
      */
     @Override
     public void paint(Canvas canvas, Paint paint) {
@@ -74,22 +70,29 @@ public class GameViewer extends AbstractDrawable {
         for (int xSize = 0; xSize < labyrinth.getCOL(); xSize++) {
             for (int ySize = 0; ySize < labyrinth.getROW(); ySize++) {
                 Case aCase = labyrinth.getCase(new Coord(xSize, ySize));
-                if (aCase == null) {
-                    canvas.drawBitmap(
-                            mur,
-                            (xSize - playerCase.getX()) * scale + (width/2),
-                            (ySize - playerCase.getY()) * scale + (height/2),
-                            paint
-                    );
-                } else {
-                    canvas.drawBitmap(ground,
-                            (xSize - playerCase.getX()) * scale + (width/2),
-                            (ySize - playerCase.getY()) * scale + (height/2),
-                            paint
-                    );
-                }
+                Bitmap bitmap = tileset.getTiles(aCase);
+                canvas.drawBitmap(
+                        bitmap,
+                        (xSize - playerCase.getX()) * scale + (width / 2),
+                        (ySize - playerCase.getY()) * scale + (height / 2),
+                        paint
+                );
             }
         }
-        canvas.drawRect((float)(width/2), (float)(height/2), (float)(width/2)+(float)scale, (float)(height/2)+(float)scale, paint);
+        Coord exitCoordinates = labyrinth.getEndCoord();
+        canvas.drawBitmap(
+                tileset.getExitTiles(),
+                (exitCoordinates.getX() - playerCase.getX()) * scale + (width / 2),
+                (exitCoordinates.getX() - playerCase.getY()) * scale + (height / 2),
+                paint
+        );
+        Coord beginCoordinates = labyrinth.getStartCoord();
+        canvas.drawBitmap(
+                tileset.getStartTiles(),
+                (beginCoordinates.getX() - playerCase.getX()) * scale + (width / 2),
+                (beginCoordinates.getX() - playerCase.getY()) * scale + (height / 2),
+                paint
+        );
+        canvas.drawRect((float) (width / 2), (float) (height / 2), (float) (width / 2) + (float) scale, (float) (height / 2) + (float) scale, paint);
     }
 }

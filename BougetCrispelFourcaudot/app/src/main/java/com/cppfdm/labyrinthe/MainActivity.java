@@ -9,10 +9,8 @@ import android.os.Bundle;
 import com.cppfdm.labyrinthe.game.Labyrinth;
 import com.cppfdm.labyrinthe.game.Player;
 import com.cppfdm.labyrinthe.gameView.GameViewer;
-import com.cppfdm.labyrinthe.view.LabyrinthViewer;
 import com.cppfdm.labyrinthe.view.Viewer;
 
-import android.view.SurfaceView;
 import android.view.View;
 
 public class MainActivity extends AppCompatActivity {

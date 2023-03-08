@@ -61,12 +61,12 @@ public class Labyrinth {
      */
     public Coord generateRandomEnemyCoord() {
         Random random = new Random();
-        Coord res;
+        Case res;
         do {
             Coord randomCoord = new Coord(random.nextInt(this.getROW()), random.nextInt(this.getCOL()));
-            res = this.getCase(randomCoord).getCoord();
-        } while (res == null || res.equals(this.start.getCoord()));
-        return res;
+            res = this.getCase(randomCoord);
+        } while (res == null || res.getCoord().equals(this.start.getCoord()));
+        return res.getCoord();
     }
 
     /**
