@@ -3,6 +3,8 @@ package com.cppfdm.labyrinthe.view.core;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 
+import java.io.IOException;
+
 /**
  * Interface for all element than can be draw by the viewer
  */

@@ -18,6 +18,7 @@ public class GameViewer extends AbstractDrawable {
     private int scale = 64;
     Viewer root;
     Player player;
+    PlayerViewer playerViewer;
     TilesetResizer tileset;
 
 
@@ -38,6 +39,8 @@ public class GameViewer extends AbstractDrawable {
     public void resize(int scale) {
         this.scale = scale;
         tileset.resized(scale);
+        playerViewer.resize(scale);
+
     }
 
 
@@ -52,7 +55,9 @@ public class GameViewer extends AbstractDrawable {
 
         root = (Viewer) getDrawableRoot();
         tileset = new TilesetResizer(new DefaultTileset(root));
-        tileset.resized(scale);
+        playerViewer = new PlayerViewer();
+        playerViewer.setDrawableParent(this);
+        resize(scale);
     }
 
     /**
@@ -93,6 +98,6 @@ public class GameViewer extends AbstractDrawable {
                 (beginCoordinates.getX() - playerCase.getY()) * scale + (height / 2),
                 paint
         );
-        canvas.drawRect((float) (width / 2), (float) (height / 2), (float) (width / 2) + (float) scale, (float) (height / 2) + (float) scale, paint);
+        playerViewer.paint(canvas, paint);
     }
 }
