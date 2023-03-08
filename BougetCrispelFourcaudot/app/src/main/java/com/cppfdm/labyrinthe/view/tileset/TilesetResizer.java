@@ -10,13 +10,14 @@ import java.util.HashMap;
 
 public class TilesetResizer implements TilesInterfaces {
     TilesInterfaces tileset;
-    HashMap<String, Bitmap> tilesetResized;
+    HashMap<String, Bitmap> tilesetResized = new HashMap<>();
 
     public TilesetResizer(TilesInterfaces tileset) {
         this.tileset = tileset;
     }
 
     public void resized(int scale) {
+        tilesetResized.clear();
         HashMap<String, Bitmap> tilesNotResized = tileset.getAllTiles();
         for (String i: tilesNotResized.keySet()) {
             tilesetResized.put(i, ViewerCommand.resizeBitmap(tilesNotResized.get(i), scale, scale));
