@@ -76,7 +76,7 @@ public class Sprites {
         if (frame <= 0) {
             return;
         }
-        animationPath = ((float)frame) / getSize();
+        animationPath = getSize() / (float) frame;
         this.frame = 0;
     }
 

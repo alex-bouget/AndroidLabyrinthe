@@ -36,9 +36,12 @@ public class PlayerViewer extends SpritesViewer {
             Coord newCoordinates = player.getCurrentCase().getCoord();
             int x = (lastCoordinates.getX() - newCoordinates.getX());
             int y = (lastCoordinates.getY() - newCoordinates.getY());
-            int calc = (x) + (y+(1*y));
+            System.out.println(x);
+            System.out.println(y);
+            int calc = Math.abs((x-2)*x) + Math.abs((y-1)*y);
             sprites.changeMovement(calc);
             sprites.setAnimationOn(GameViewer.ANIMATION_DELAY);
+            lastCoordinates = newCoordinates;
         }
         Bitmap sprite = sprites.handleSprite();
         canvas.drawBitmap(sprite, canvas.getWidth()/2, (canvas.getHeight()/2)-(sprite.getHeight()-scale), paint);
