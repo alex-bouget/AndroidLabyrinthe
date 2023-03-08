@@ -93,6 +93,12 @@ public class Labyrinth {
      * @return the Case object
      */
     public Case getCase(Coord c) {
+        if (c.getX() < 0 || c.getY() < 0) {
+            return null;
+        }
+        if (c.getX() >= this.COL || c.getY() >= this.ROW) {
+            return null;
+        }
         return this.cases[c.getY()][c.getX()];
     }
 
