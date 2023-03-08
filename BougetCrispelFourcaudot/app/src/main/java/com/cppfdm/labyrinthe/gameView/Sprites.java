@@ -10,7 +10,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class Sprites {
-    private final View v;
+    private View v;
     private ArrayList<Bitmap>[] sprites;
     private ArrayList<Bitmap>[] resizedSprites;
 
