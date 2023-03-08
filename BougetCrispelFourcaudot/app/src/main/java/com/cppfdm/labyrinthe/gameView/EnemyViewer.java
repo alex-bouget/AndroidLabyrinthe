@@ -29,6 +29,11 @@ public class EnemyViewer extends SpritesViewer {
         lastCoordinates = enemy.getPos();
     }
 
+    /**
+     * Set the parent and get the root for catch the bitmap
+     *
+     * @param drawable parent
+     */
     @Override
     public void setDrawableParent(Drawable drawable) {
         super.setDrawableParent(drawable);

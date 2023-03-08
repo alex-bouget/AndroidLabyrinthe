@@ -61,6 +61,11 @@ public class Sprites {
         }
     }
 
+    /**
+     * Change the list for the movement
+     *
+     * @param movement id of the list
+     */
     public void changeMovement(int movement) {
         if (movement > 3 || movement < 0) {
             return;
@@ -68,10 +73,20 @@ public class Sprites {
         this.movement = movement;
     }
 
+    /**
+     * Get the size of the current list of sprites
+     *
+     * @return the size
+     */
     public int getSize() {
         return this.resizedSprites[movement].size();
     }
 
+    /**
+     * Set number of frame for make the animation
+     *
+     * @param frame number of frame
+     */
     public void setAnimationOn(int frame) {
         if (frame <= 0) {
             return;
