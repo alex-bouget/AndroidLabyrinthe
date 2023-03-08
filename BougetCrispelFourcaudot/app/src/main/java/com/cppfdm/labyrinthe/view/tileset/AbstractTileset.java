@@ -1,14 +1,11 @@
 package com.cppfdm.labyrinthe.view.tileset;
 
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.view.View;
 
 import com.cppfdm.labyrinthe.game.Case;
-import com.cppfdm.labyrinthe.view.ViewerCommand;
+import com.cppfdm.labyrinthe.utils.ViewerCommand;
 
-import java.io.IOException;
-import java.io.InputStream;
 import java.util.HashMap;
 
 public abstract class AbstractTileset implements TilesInterfaces {

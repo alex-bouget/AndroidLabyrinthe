@@ -1,4 +1,4 @@
-package com.cppfdm.labyrinthe.view;
+package com.cppfdm.labyrinthe.utils;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;

@@ -1,5 +1,7 @@
 package com.cppfdm.labyrinthe.view.core;
 
+import java.io.IOException;
+
 public abstract class AbstractDrawable implements Drawable {
     Drawable parent;
 
