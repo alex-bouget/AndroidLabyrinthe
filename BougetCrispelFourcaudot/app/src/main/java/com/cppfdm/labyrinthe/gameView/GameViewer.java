@@ -22,6 +22,8 @@ public class GameViewer extends AbstractDrawable {
     EnemyViewer[] enemyViewers;
     PlayerViewer playerViewer;
     TilesetResizer tileset;
+    private static final int enemyDelay = 10;
+    int enemyCalc = 0;
 
 
     /**
@@ -42,6 +44,9 @@ public class GameViewer extends AbstractDrawable {
         this.scale = scale;
         tileset.resized(scale);
         playerViewer.resize(scale);
+        for (EnemyViewer enemyViewer: enemyViewers) {
+            enemyViewer.resize(scale);
+        }
     }
 
 
@@ -61,7 +66,8 @@ public class GameViewer extends AbstractDrawable {
         Enemy[] enemies = player.getLaby().getEnemies();
         enemyViewers = new EnemyViewer[enemies.length];
         for (int i=0; i<enemies.length; i++) {
-            enemyViewers[i] = new EnemyViewer(enemies[i]);
+            enemyViewers[i] = new EnemyViewer(enemies[i], player);
+            enemyViewers[i].setDrawableParent(this);
         }
         resize(scale);
     }
@@ -74,6 +80,12 @@ public class GameViewer extends AbstractDrawable {
      */
     @Override
     public void paint(Canvas canvas, Paint paint) {
+        if (enemyCalc >= enemyDelay) {
+            player.getLaby().moveEnemies();
+            enemyCalc =0;
+        }
+        enemyCalc++;
+
         int width = root.getWidth();
         int height = root.getHeight();
         Labyrinth labyrinth = player.getLaby();
@@ -105,5 +117,8 @@ public class GameViewer extends AbstractDrawable {
                 paint
         );
         playerViewer.paint(canvas, paint);
+        for (EnemyViewer enemyViewer: enemyViewers) {
+            enemyViewer.paint(canvas, paint);
+        }
     }
 }
