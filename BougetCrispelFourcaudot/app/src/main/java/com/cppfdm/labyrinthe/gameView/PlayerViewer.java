@@ -11,6 +11,9 @@ import com.cppfdm.labyrinthe.view.core.Drawable;
 import java.io.IOException;
 
 public class PlayerViewer extends SpritesViewer {
+    /**
+     * Constructor
+     */
     public PlayerViewer() {
         super("sprites/link/", "sprites/link/spriteLoader.txt");
     }

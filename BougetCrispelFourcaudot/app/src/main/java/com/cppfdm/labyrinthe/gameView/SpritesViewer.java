@@ -1,9 +1,5 @@
 package com.cppfdm.labyrinthe.gameView;
 
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-
 import com.cppfdm.labyrinthe.view.Viewer;
 import com.cppfdm.labyrinthe.view.core.AbstractDrawable;
 import com.cppfdm.labyrinthe.view.core.Drawable;
@@ -17,6 +13,12 @@ public abstract class SpritesViewer extends AbstractDrawable {
     protected String path;
     protected String loaderPath;
 
+    /**
+     * Constructor
+     *
+     * @param path path where the sprites are
+     * @param loaderPath path to the loader
+     */
     public SpritesViewer(String path, String loaderPath) {
         this.path = path;
         this.loaderPath = loaderPath;

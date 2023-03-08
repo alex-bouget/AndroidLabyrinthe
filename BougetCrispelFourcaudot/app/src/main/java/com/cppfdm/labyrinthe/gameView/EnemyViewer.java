@@ -13,6 +13,12 @@ public class EnemyViewer extends SpritesViewer {
     Enemy enemy;
     Player player;
 
+    /**
+     * Constructor
+     *
+     * @param enemy the enemy to view
+     * @param player the player
+     */
     public EnemyViewer(Enemy enemy, Player player) {
         super("sprites/monster/", "sprites/monster/spriteLoader.txt");
         this.enemy = enemy;
