@@ -19,7 +19,13 @@
             android:id="@+id/game"
             android:layout_width="match_parent"
             android:layout_height="320dp" />
-
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:id="@+id/buttons"
+        android:orientation="vertical">
         <!--Layout with UP button-->
         <LinearLayout
             android:layout_width="match_parent"
@@ -32,6 +38,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:gravity="center"
+                android:rotation="90"
+                android:background="@drawable/arrow"
                 android:text=""
                 android:layout_weight="0.2"
                 android:onClick="moveUp"
@@ -40,17 +48,19 @@
 
         <!--Layout with LEFT and RIGHT button-->
         <LinearLayout
-            android:layout_width="250dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_marginTop='5dp'
+            android:id="@+id/leftAndRight"
             android:gravity="center_horizontal">
 
             <!--LEFT button-->
             <Button
-                android:layout_width="10dp"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:gravity="center"
+                android:id="@+id/left"
+                android:background="@drawable/arrow"
                 android:text=""
                 android:layout_weight="0.2"
                 android:onClick="moveLeft"
@@ -58,9 +68,12 @@
 
             <!--RIGHT button-->
             <Button
-                android:layout_width="10dp"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:gravity="center"
+                android:rotation="180"
+                android:background="@drawable/arrow"
+                android:id="@+id/right"
                 android:text=""
                 android:layout_weight="0.2"
                 android:onClick="moveRight"
@@ -70,16 +83,18 @@
 
         <!--Layout with DOWN button-->
         <LinearLayout
-            android:layout_width="100dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_marginTop='5dp'
+            android:id="@+id/down"
             android:gravity="center_horizontal">
 
         <!--DOWN button -->
         <Button
-            android:layout_width="10dp"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:rotation="270"
+            android:background="@drawable/arrow"
             android:gravity="center"
             android:text=""
             android:layout_weight="0.2"
@@ -91,7 +106,8 @@
     <!--Layout with MAP button-->
     <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/map"
         android:orientation="horizontal"
         android:gravity="center_horizontal">
 
@@ -100,7 +116,6 @@
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:gravity="center"
-            android:layout_marginTop='280dp'
             android:background="@drawable/round_button"
             android:text=""
             android:layout_weight="0.2"

@@ -14,6 +14,7 @@ import com.cppfdm.labyrinthe.view.Viewer;
 import android.util.DisplayMetrics;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.LinearLayout;
 
 public class MainActivity extends AppCompatActivity {
@@ -120,14 +121,49 @@ public class MainActivity extends AppCompatActivity {
         startActivityForResult(intent, MAP_CODE);
     }
 
+    /**
+     * initialize all component
+     */
     private void initComponent(){
         DisplayMetrics displayMetrics = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
         int height = displayMetrics.heightPixels;
         int width = displayMetrics.widthPixels;
+
+        Viewer game = findViewById(R.id.game);
+        game.getLayoutParams().width = width;
+        game.getLayoutParams().height = width;
+
+        //UP button layout
         LinearLayout up = findViewById(R.id.up);
-        up.getLayoutParams().width = (int)(width/5);
-        up.getLayoutParams().height = (int)(width/5);
-        up.setPadding(0,0,0,0);
+        up.getLayoutParams().height = (int)((height-game.getLayoutParams().height)/3);
+        up.getLayoutParams().width = up.getLayoutParams().height;
+
+        //LEFT and RIGHT layout
+        LinearLayout lR = findViewById(R.id.leftAndRight);
+        lR.getLayoutParams().height = (int)((height-game.getLayoutParams().height)/3);
+        lR.getLayoutParams().width = (int)(2.5*lR.getLayoutParams().height);
+
+
+
+        //LEFT button
+        Button left = findViewById(R.id.left);
+        left.getLayoutParams().width = lR.getLayoutParams().height;
+
+        //RIGHT button
+        Button right = findViewById(R.id.right);
+        right.getLayoutParams().width = lR.getLayoutParams().height;
+
+        //DOWN button layout
+        LinearLayout down = findViewById(R.id.down);
+        down.getLayoutParams().height = (int)((height-game.getLayoutParams().height)/3);
+        down.getLayoutParams().width = up.getLayoutParams().height;
+
+        //MAP button
+        LinearLayout map = findViewById(R.id.map);
+        map.setPadding(width-width/10,(int)(height/1.8),0,0);
+
+        LinearLayout buttons = findViewById(R.id.buttons);
+        buttons.setPadding(0,game.getLayoutParams().height + (height - game.getLayoutParams().height)/35,0,0);
     }
 }
