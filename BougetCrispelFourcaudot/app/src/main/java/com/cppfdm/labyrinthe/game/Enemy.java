@@ -20,4 +20,12 @@ public class Enemy {
     public Coord getPos() {
         return pos;
     }
+
+    /**
+     * Setter of pos parameter
+     * @param c the new position
+     */
+    public void setPos(Coord c) {
+        this.pos = c;
+    }
 }
