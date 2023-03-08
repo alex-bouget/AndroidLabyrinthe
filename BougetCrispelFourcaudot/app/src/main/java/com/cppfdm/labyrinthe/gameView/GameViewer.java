@@ -55,7 +55,7 @@ public class GameViewer extends AbstractDrawable {
 
         root = (Viewer) getDrawableRoot();
         tileset = new TilesetResizer(new DefaultTileset(root));
-        playerViewer = new PlayerViewer(player);
+        playerViewer = new PlayerViewer();
         playerViewer.setDrawableParent(this);
         resize(scale);
     }

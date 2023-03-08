@@ -9,6 +9,12 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 
 public class AssetsCommand {
+    /**
+     * Read a file in assets
+     * @param v the view
+     * @param path path
+     * @return String file
+     */
     public static String readFile(View v, String path) {
         String data;
         // Read the file

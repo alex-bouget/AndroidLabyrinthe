@@ -16,10 +16,7 @@ import com.cppfdm.labyrinthe.game.Coord;
 import com.cppfdm.labyrinthe.game.Labyrinth;
 import com.cppfdm.labyrinthe.utils.AssetsCommand;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.util.ArrayList;
 
 public class LabyrintheChooserActivity extends AppCompatActivity {

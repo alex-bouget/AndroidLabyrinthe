@@ -46,6 +46,13 @@ public class ViewerCommand {
         return Bitmap.createBitmap(resized, 0, 0, sizeX, sizeY, matrix, true);
     }
 
+    /**
+     * Resize a bitmap
+     *
+     * @param toResize the Bitmap
+     * @param width the width of the resized bitmap
+     * @return
+     */
     public static Bitmap resizeBitmapWidth(Bitmap toResize, int width) {
         float bitWidth = toResize.getWidth();
         float bitHeight = toResize.getHeight();
@@ -54,10 +61,24 @@ public class ViewerCommand {
         return resizeBitmap(toResize, width, (int)((bitHeight*width)/bitWidth));
     }
 
+    /**
+     * Get a bitmap from drawable
+     *
+     * @param v the view
+     * @param id id of the drawable
+     * @return bitmap
+     */
     public static Bitmap getBitmap(View v, int id) {
         return BitmapFactory.decodeResource(v.getContext().getResources(), id);
     }
 
+    /**
+     * Get a bitmap from assets
+     *
+     * @param v the view
+     * @param path path to the asset
+     * @return bitmap
+     */
     public static Bitmap getBitmap(View v, String path) {
         InputStream is;
         try {

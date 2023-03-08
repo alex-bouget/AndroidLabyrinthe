@@ -14,6 +14,14 @@ public class Sprites {
     private ArrayList<Bitmap>[] sprites;
     private ArrayList<Bitmap>[] resizedSprites;
 
+    /**
+     * Constructor
+     *
+     * @param v the view
+     * @param path path to the sprites folder
+     * @param loaderPath sprite loader
+     * @throws IOException
+     */
     public Sprites(View v, String path, String loaderPath) throws IOException {
         this.v = v;
         String loader = AssetsCommand.readFile(v, loaderPath);
@@ -37,6 +45,10 @@ public class Sprites {
         }
     }
 
+    /**
+     * Resized the sprites
+     * @param scale scale
+     */
     public void resized(int scale) {
         for (int i=0; i < resizedSprites.length; i++) {
             resizedSprites[i].clear();
@@ -46,6 +58,10 @@ public class Sprites {
         }
     }
 
+    /**
+     * Return the sprite
+     * @return bitmap
+     */
     public Bitmap handleSprite() {
         return resizedSprites[2].get(0);
     }
