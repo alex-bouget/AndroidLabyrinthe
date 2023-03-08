@@ -17,9 +17,10 @@ import com.cppfdm.labyrinthe.view.tileset.TilesetResizer;
 
 public class GameViewer extends AbstractDrawable {
     private static final int ENEMY_DELAY = 10;
+    private static final int NUMBER_VIEW = 7;
     public static final int ANIMATION_DELAY = 3;
 
-    private int scale = 64;
+    private int scale = 96;
     Viewer root;
     Player player;
     EnemyViewer[] enemyViewers;
@@ -124,8 +125,17 @@ public class GameViewer extends AbstractDrawable {
         }
 
         Labyrinth labyrinth = player.getLaby();
-        for (int xSize = 0; xSize < labyrinth.getCOL(); xSize++) {
-            for (int ySize = 0; ySize < labyrinth.getROW(); ySize++) {
+        Coord playerCoordinates = player.getCurrentCase().getCoord();
+        Coord startView = new Coord(
+                playerCoordinates.getX() - NUMBER_VIEW,
+                playerCoordinates.getY() - NUMBER_VIEW
+        );
+        Coord endView = new Coord(
+                playerCoordinates.getX() + NUMBER_VIEW,
+                playerCoordinates.getY() + NUMBER_VIEW
+        );
+        for (int xSize = startView.getX(); xSize < endView.getX(); xSize++) {
+            for (int ySize = startView.getY(); ySize < endView.getY(); ySize++) {
                 Case aCase = labyrinth.getCase(new Coord(xSize, ySize));
                 Bitmap bitmap = tileset.getTiles(aCase);
                 Coord bitPos = calcPosition(new Coord(xSize, ySize));
