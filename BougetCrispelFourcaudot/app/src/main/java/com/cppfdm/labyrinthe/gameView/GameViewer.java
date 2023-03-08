@@ -17,7 +17,7 @@ import com.cppfdm.labyrinthe.view.tileset.TilesetResizer;
 
 public class GameViewer extends AbstractDrawable {
     private static final int ENEMY_DELAY = 10;
-    private static final int NUMBER_VIEW = 7;
+    private static final int NUMBER_VIEW = 8;
     public static final int ANIMATION_DELAY = 3;
 
     private int scale = 96;
@@ -27,6 +27,7 @@ public class GameViewer extends AbstractDrawable {
     PlayerViewer playerViewer;
     TilesetResizer tileset;
     private Coord lastCoordinates;
+    private Coord tmp;
     private int xOffset = 0;
     private int yOffset = 0;
     private int animationFrame = 1;
@@ -86,7 +87,7 @@ public class GameViewer extends AbstractDrawable {
             enemyViewers[i] = new EnemyViewer(enemies[i]);
             enemyViewers[i].setDrawableParent(this);
         }
-        int newScale = Math.min(root.getHeight(), root.getWidth())/((2*NUMBER_VIEW)-2);
+        int newScale = Math.min(root.getHeight(), root.getWidth())/((2*NUMBER_VIEW)-4);
         resize(newScale);
     }
 
@@ -99,7 +100,7 @@ public class GameViewer extends AbstractDrawable {
     public Coord calcPosition(Coord position) {
         int width = root.getWidth();
         int height = root.getHeight();
-        Coord playerCase = player.getCurrentCase().getCoord();
+        Coord playerCase = tmp;
         int x = (position.getX() - playerCase.getX()) * scale + (width / 2) - xOffset + (xOffset / ANIMATION_DELAY) * animationFrame;
         int y = (position.getY() - playerCase.getY()) * scale + (height / 2) - yOffset + (yOffset / ANIMATION_DELAY) * animationFrame;
         return new Coord(x, y);
@@ -117,23 +118,25 @@ public class GameViewer extends AbstractDrawable {
             player.getLaby().moveEnemies();
             enemyCalc = 0;
         }
+        tmp = player.getCurrentCase().getCoord();
         enemyCalc++;
-        if (!lastCoordinates.equals(player.getCurrentCase().getCoord())) {
-            Coord newCoordinates = player.getCurrentCase().getCoord();
+        if (!lastCoordinates.equals(tmp)) {
+            Coord newCoordinates = tmp;
             xOffset = (lastCoordinates.getX() - newCoordinates.getX()) * scale;
             yOffset = (lastCoordinates.getY() - newCoordinates.getY()) * scale;
             lastCoordinates = newCoordinates;
         }
 
         Labyrinth labyrinth = player.getLaby();
-        Coord playerCoordinates = player.getCurrentCase().getCoord();
+        Coord playerCoordinates = tmp;
+        boolean isWidthBetter = root.getHeight() > root.getWidth();
         Coord startView = new Coord(
-                playerCoordinates.getX() - NUMBER_VIEW,
-                playerCoordinates.getY() - NUMBER_VIEW
+                playerCoordinates.getX() - NUMBER_VIEW + (isWidthBetter ? 1: 0),
+                playerCoordinates.getY() - NUMBER_VIEW + (isWidthBetter ? 0: 1)
         );
         Coord endView = new Coord(
-                playerCoordinates.getX() + NUMBER_VIEW,
-                playerCoordinates.getY() + NUMBER_VIEW
+                playerCoordinates.getX() + NUMBER_VIEW - (isWidthBetter ? 1: 0),
+                playerCoordinates.getY() + NUMBER_VIEW - (isWidthBetter ? 0: 1)
         );
         for (int xSize = startView.getX(); xSize < endView.getX(); xSize++) {
             for (int ySize = startView.getY(); ySize < endView.getY(); ySize++) {
