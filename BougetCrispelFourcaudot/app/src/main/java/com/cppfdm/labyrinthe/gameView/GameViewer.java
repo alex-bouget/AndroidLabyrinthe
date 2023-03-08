@@ -43,12 +43,12 @@ public class GameViewer extends AbstractDrawable {
     }
 
     /**
-     * get the offset of the animation
+     * get the scale
      *
-     * @return coordinates with offset
+     * @return scale
      */
-    public Coord getOffset() {
-        return new Coord(xOffset, yOffset);
+    public int getScale() {
+        return scale;
     }
 
     /**
@@ -120,8 +120,6 @@ public class GameViewer extends AbstractDrawable {
             Coord newCoordinates = player.getCurrentCase().getCoord();
             xOffset = (lastCoordinates.getX() - newCoordinates.getX()) * scale;
             yOffset = (lastCoordinates.getY() - newCoordinates.getY()) * scale;
-            System.out.println(xOffset);
-            System.out.println(yOffset);
             lastCoordinates = newCoordinates;
         }
 

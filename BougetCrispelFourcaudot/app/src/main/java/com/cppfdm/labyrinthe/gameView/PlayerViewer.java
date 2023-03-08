@@ -36,8 +36,6 @@ public class PlayerViewer extends SpritesViewer {
             Coord newCoordinates = player.getCurrentCase().getCoord();
             int x = (lastCoordinates.getX() - newCoordinates.getX());
             int y = (lastCoordinates.getY() - newCoordinates.getY());
-            System.out.println(x);
-            System.out.println(y);
             int calc = Math.abs((x-2)*x) + Math.abs((y-1)*y);
             sprites.changeMovement(calc);
             sprites.setAnimationOn(GameViewer.ANIMATION_DELAY);

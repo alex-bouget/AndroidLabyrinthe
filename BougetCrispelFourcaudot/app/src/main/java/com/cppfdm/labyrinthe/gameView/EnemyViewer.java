@@ -13,6 +13,10 @@ import com.cppfdm.labyrinthe.view.core.Drawable;
 public class EnemyViewer extends SpritesViewer {
     Enemy enemy;
     GameViewer gameViewer;
+    private Coord lastCoordinates;
+    int animationFrame;
+    private int xOffset = 0;
+    private int yOffset = 0;
 
     /**
      * Constructor
@@ -22,6 +26,7 @@ public class EnemyViewer extends SpritesViewer {
     public EnemyViewer(Enemy enemy) {
         super("sprites/monster/", "sprites/monster/spriteLoader.txt");
         this.enemy = enemy;
+        lastCoordinates = enemy.getPos();
     }
 
     @Override
@@ -38,13 +43,36 @@ public class EnemyViewer extends SpritesViewer {
      */
     @Override
     public void paint(Canvas canvas, Paint paint) {
+        if (!lastCoordinates.equals(enemy.getPos())) {
+            Coord newCoordinates = enemy.getPos();
+            int x = (lastCoordinates.getX() - newCoordinates.getX());
+            int y = (lastCoordinates.getY() - newCoordinates.getY());
+            xOffset = x * scale;
+            yOffset = y * scale;
+            int calc = Math.abs((x-2)*x) + Math.abs((y-1)*y);
+            sprites.changeMovement(calc);
+            sprites.setAnimationOn(GameViewer.ANIMATION_DELAY);
+            lastCoordinates = newCoordinates;
+        }
+        Coord coordinatesBefore = gameViewer.calcPosition(enemy.getPos());
+        Coord coordinates = new Coord(
+                coordinatesBefore.getX() + xOffset - (xOffset / GameViewer.ANIMATION_DELAY) * animationFrame,
+                coordinatesBefore.getY() + yOffset - (yOffset / GameViewer.ANIMATION_DELAY) * animationFrame
+        );
         Bitmap sprite = sprites.handleSprite();
-        Coord coordinates = gameViewer.calcPosition(enemy.getPos());
         canvas.drawBitmap(
                 sprite,
                 coordinates.getX(),
                 coordinates.getY() - (sprite.getHeight() - scale),
                 paint
         );
+        if (xOffset != 0 || yOffset != 0) {
+            animationFrame++;
+            if (animationFrame >= GameViewer.ANIMATION_DELAY) {
+                xOffset = 0;
+                yOffset = 0;
+                animationFrame = 1;
+            }
+        }
     }
 }
