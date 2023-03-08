@@ -6,6 +6,7 @@ import android.graphics.Paint;
 
 import com.cppfdm.labyrinthe.game.Case;
 import com.cppfdm.labyrinthe.game.Coord;
+import com.cppfdm.labyrinthe.game.Enemy;
 import com.cppfdm.labyrinthe.game.Labyrinth;
 import com.cppfdm.labyrinthe.game.Player;
 import com.cppfdm.labyrinthe.gameView.tileset.DefaultTileset;
@@ -18,6 +19,7 @@ public class GameViewer extends AbstractDrawable {
     private int scale = 64;
     Viewer root;
     Player player;
+    EnemyViewer[] enemyViewers;
     PlayerViewer playerViewer;
     TilesetResizer tileset;
 
@@ -40,7 +42,6 @@ public class GameViewer extends AbstractDrawable {
         this.scale = scale;
         tileset.resized(scale);
         playerViewer.resize(scale);
-
     }
 
 
@@ -57,6 +58,11 @@ public class GameViewer extends AbstractDrawable {
         tileset = new TilesetResizer(new DefaultTileset(root));
         playerViewer = new PlayerViewer();
         playerViewer.setDrawableParent(this);
+        Enemy[] enemies = player.getLaby().getEnemies();
+        enemyViewers = new EnemyViewer[enemies.length];
+        for (int i=0; i<enemies.length; i++) {
+            enemyViewers[i] = new EnemyViewer(enemies[i]);
+        }
         resize(scale);
     }
 

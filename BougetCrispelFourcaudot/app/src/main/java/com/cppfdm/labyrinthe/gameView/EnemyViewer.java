@@ -4,15 +4,16 @@ import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 
-import com.cppfdm.labyrinthe.view.Viewer;
-import com.cppfdm.labyrinthe.view.core.AbstractDrawable;
-import com.cppfdm.labyrinthe.view.core.Drawable;
+import com.cppfdm.labyrinthe.game.Enemy;
+import com.cppfdm.labyrinthe.game.Player;
 
-import java.io.IOException;
+public class EnemyViewer extends SpritesViewer {
+    Enemy enemy;
+    Player player;
 
-public class PlayerViewer extends SpritesViewer {
-    public PlayerViewer() {
-        super("sprites/link/", "sprites/link/spriteLoader.txt");
+    public EnemyViewer(Enemy enemy) {
+        super("sprites/monster/", "sprites/monster/spriteLoader.txt");
+        this.enemy = enemy;
     }
 
     /**
