@@ -50,6 +50,11 @@ public class LabyrinthViewer extends AbstractDrawable {
         resized(scale);
     }
 
+    /**
+     * Resized the labyrinth and all bitmap
+     *
+     * @param scale scale in pixel
+     */
     public void resized(int scale) {
         Bitmap murNotSized = BitmapFactory.decodeResource(root.getContext().getResources(), R.drawable.mur0);
         mur = ViewerCommand.resizeBitmap(murNotSized, scale, scale);
