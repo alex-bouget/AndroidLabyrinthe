@@ -15,12 +15,14 @@ import com.cppfdm.labyrinthe.view.ViewerCommand;
 import com.cppfdm.labyrinthe.view.core.AbstractDrawable;
 import com.cppfdm.labyrinthe.view.core.Drawable;
 
+import java.util.HashMap;
+
 public class GameViewer extends AbstractDrawable {
     private int scale = 64;
     Viewer root;
     Player player;
-    Bitmap mur;
-    Bitmap ground;
+    HashMap<String, Bitmap> tiles;
+
 
     /**
      * Constructor
@@ -46,17 +48,28 @@ public class GameViewer extends AbstractDrawable {
     }
 
     /**
+     * Add a tiles in the map
+     *
+     * @param name name of the tiles
+     * @param id id of the tiles
+     */
+    protected void addTiles(String name, int id) {
+        Bitmap notSized = BitmapFactory.decodeResource(root.getContext().getResources(), id);
+        tiles.put(name, ViewerCommand.resizeBitmap(notSized, scale, scale));
+    }
+
+    /**
      * Resized the labyrinth and all bitmap
      *
      * @param scale scale in pixel
      */
     public void resized(int scale) {
         this.scale = scale;
-        Bitmap murNotSized = BitmapFactory.decodeResource(root.getContext().getResources(), R.drawable.mur0);
-        mur = ViewerCommand.resizeBitmap(murNotSized, scale, scale);
-
-        Bitmap groundNotSized = BitmapFactory.decodeResource(root.getContext().getResources(), R.drawable.ground);
-        ground = ViewerCommand.resizeBitmap(groundNotSized, scale, scale);
+        tiles = new HashMap<>();
+        addTiles("wall", R.drawable.mur0);
+        addTiles("ground", R.drawable.ground);
+        addTiles("exit", R.drawable.sortie);
+        addTiles("start", R.drawable.bluerock);
     }
 
     /**
@@ -76,20 +89,35 @@ public class GameViewer extends AbstractDrawable {
                 Case aCase = labyrinth.getCase(new Coord(xSize, ySize));
                 if (aCase == null) {
                     canvas.drawBitmap(
-                            mur,
-                            (xSize - playerCase.getX()) * scale + (width/2),
-                            (ySize - playerCase.getY()) * scale + (height/2),
+                            tiles.get("wall"),
+                            (xSize - playerCase.getX()) * scale + (width / 2),
+                            (ySize - playerCase.getY()) * scale + (height / 2),
                             paint
                     );
                 } else {
-                    canvas.drawBitmap(ground,
-                            (xSize - playerCase.getX()) * scale + (width/2),
-                            (ySize - playerCase.getY()) * scale + (height/2),
+                    canvas.drawBitmap(
+                            tiles.get("ground"),
+                            (xSize - playerCase.getX()) * scale + (width / 2),
+                            (ySize - playerCase.getY()) * scale + (height / 2),
                             paint
                     );
                 }
             }
         }
-        canvas.drawRect((float)(width/2), (float)(height/2), (float)(width/2)+(float)scale, (float)(height/2)+(float)scale, paint);
+        Coord exitCoordinates = labyrinth.getEndCoord();
+        canvas.drawBitmap(
+                tiles.get("exit"),
+                (exitCoordinates.getX() - playerCase.getX()) * scale + (width / 2),
+                (exitCoordinates.getX() - playerCase.getY()) * scale + (height / 2),
+                paint
+        );
+        Coord beginCoordinates = labyrinth.getStartCoord();
+        canvas.drawBitmap(
+                tiles.get("start"),
+                (beginCoordinates.getX() - playerCase.getX()) * scale + (width / 2),
+                (beginCoordinates.getX() - playerCase.getY()) * scale + (height / 2),
+                paint
+        );
+        canvas.drawRect((float) (width / 2), (float) (height / 2), (float) (width / 2) + (float) scale, (float) (height / 2) + (float) scale, paint);
     }
 }
