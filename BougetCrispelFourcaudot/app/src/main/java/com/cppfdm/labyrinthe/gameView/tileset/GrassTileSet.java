@@ -90,6 +90,11 @@ public class GrassTileSet extends AbstractTileset {
         return res.toString();
     }
 
+    /**
+     * return the appropriate tile name
+     * @param aCase the case for the tiles
+     * @return the tile name or null if background
+     */
     @Override
     public String getTilesName(Case aCase) {
         if (aCase == null) {
@@ -99,16 +104,28 @@ public class GrassTileSet extends AbstractTileset {
         return this.casesTiles[c.getX()][c.getY()];
     }
 
+    /**
+     * Get the name of the exit tile
+     * @return
+     */
     @Override
     public String getExitTilesName() {
         return "000010000";
     }
 
+    /**
+     * Get the name of the entrance tile
+     * @return the entrance tile name
+     */
     @Override
     public String getStartTilesName() {
         return "000010000";
     }
 
+    /**
+     * Get the background tile name
+     * @return the background tile name
+     */
     @Override
     public String getBackgroundTilesName() {
         return "water" + (int)((frame%8/2)+1);
