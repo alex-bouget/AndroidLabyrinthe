@@ -22,6 +22,7 @@ public class GameViewer extends AbstractDrawable {
     private static final int NUMBER_VIEW = 8;
     public static final int ANIMATION_DELAY = 3;
 
+    private int frame = 0;
     private int scale = 96;
     Viewer root;
     Player player;
@@ -139,6 +140,7 @@ public class GameViewer extends AbstractDrawable {
             animationWinDead = 0;
             return;
         }
+        tileset.setFrame(frame);
         if (enemyCalc >= ENEMY_DELAY) {
             player.getLaby().moveEnemies();
             enemyCalc = 0;
@@ -160,11 +162,20 @@ public class GameViewer extends AbstractDrawable {
                 playerCoordinates.getX() + NUMBER_VIEW,
                 playerCoordinates.getY() + NUMBER_VIEW
         );
+        Bitmap background = tileset.getBackgroundTiles();
         for (int xSize = startView.getX(); xSize < endView.getX(); xSize++) {
             for (int ySize = startView.getY(); ySize < endView.getY(); ySize++) {
                 Case aCase = labyrinth.getCase(new Coord(xSize, ySize));
                 Bitmap bitmap = tileset.getTiles(aCase);
                 Coord bitPos = calcPosition(new Coord(xSize, ySize));
+                if (background!=null) {
+                    canvas.drawBitmap(
+                            background,
+                            bitPos.getX(),
+                            bitPos.getY(),
+                            paint
+                    );
+                }
                 canvas.drawBitmap(
                         bitmap,
                         bitPos.getX(),
@@ -199,5 +210,6 @@ public class GameViewer extends AbstractDrawable {
                 animationFrame = 1;
             }
         }
+        frame = (frame+1)%100;
     }
 }

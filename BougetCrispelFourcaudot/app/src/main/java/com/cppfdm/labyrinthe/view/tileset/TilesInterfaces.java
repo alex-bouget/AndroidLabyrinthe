@@ -1,6 +1,8 @@
 package com.cppfdm.labyrinthe.view.tileset;
 
 import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Paint;
 
 import com.cppfdm.labyrinthe.game.Case;
 
@@ -57,4 +59,26 @@ public interface TilesInterfaces {
      * @return Hashmap<String, Bitmap>
      */
     HashMap<String, Bitmap> getAllTiles();
+
+
+    /**
+     * Set the frame at the start of a new draw
+     *
+     * @param frame number of frame
+     */
+    void setFrame(int frame);
+
+    /**
+     * Get the background tile
+     *
+     * @return Bitmap
+     */
+    Bitmap getBackgroundTiles();
+
+    /**
+     * Get name of background tiles
+     *
+     * @return name of the tiles
+     */
+    String getBackgroundTilesName();
 }
