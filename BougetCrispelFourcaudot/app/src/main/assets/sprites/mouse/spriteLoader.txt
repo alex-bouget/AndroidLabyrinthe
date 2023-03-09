@@ -1,0 +1,4 @@
+MUp1.png>MUp2.png>MUp3.png>MUp4.png
+MLeft1.png>MLeft2.png>MLeft3.png>MLeft4.png
+MDown1.png>MDown2.png>MDown3.png>MDown4.png
+MRight1.png>MRight2.png>MRight3.png>MRight4.png
