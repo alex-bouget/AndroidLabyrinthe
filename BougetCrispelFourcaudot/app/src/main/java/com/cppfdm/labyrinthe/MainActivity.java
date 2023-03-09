@@ -49,8 +49,8 @@ public class MainActivity extends AppCompatActivity {
      * Callback of activity
      *
      * @param requestCode the id of the activity
-     * @param resultCode the result code of the activity
-     * @param data the intent returned by the activity
+     * @param resultCode  the result code of the activity
+     * @param data        the intent returned by the activity
      */
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
@@ -71,7 +71,10 @@ public class MainActivity extends AppCompatActivity {
      *
      * @param view view where the action come from
      */
-    public void moveLeft(View view){
+    public void moveLeft(View view) {
+        if (hero.isDead() || hero.isWin()) {
+            return;
+        }
         hero.moveLeft();
         System.out.println(hero.getCurrentCase().getCoord());
     }
@@ -81,7 +84,10 @@ public class MainActivity extends AppCompatActivity {
      *
      * @param view view where the action come from
      */
-    public void moveRight(View view){
+    public void moveRight(View view) {
+        if (hero.isDead() || hero.isWin()) {
+            return;
+        }
         hero.moveRight();
         System.out.println(hero.getCurrentCase().getCoord());
     }
@@ -91,7 +97,10 @@ public class MainActivity extends AppCompatActivity {
      *
      * @param view view where the action come from
      */
-    public void moveUp(View view){
+    public void moveUp(View view) {
+        if (hero.isDead() || hero.isWin()) {
+            return;
+        }
         System.out.println(hero.moveUp());
         System.out.println(hero.getCurrentCase().getCoord());
     }
@@ -101,7 +110,10 @@ public class MainActivity extends AppCompatActivity {
      *
      * @param view view where the action come from
      */
-    public void moveDown(View view){
+    public void moveDown(View view) {
+        if (hero.isDead() || hero.isWin()) {
+            return;
+        }
         hero.moveDown();
         System.out.println(hero.getCurrentCase().getCoord());
     }
@@ -112,10 +124,10 @@ public class MainActivity extends AppCompatActivity {
      *
      * @param view view where the action come from
      */
-    public void showMap(View view){
+    public void showMap(View view) {
         Intent intent = new Intent();
         intent.setClass(this, MapActivity.class);
-        intent.putExtra("hero",Serializer.addToSerializer(hero));
+        intent.putExtra("hero", Serializer.addToSerializer(hero));
         startActivityForResult(intent, MAP_CODE);
     }
 }

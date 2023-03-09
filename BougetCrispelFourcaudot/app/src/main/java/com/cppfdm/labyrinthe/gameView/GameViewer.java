@@ -10,6 +10,8 @@ import com.cppfdm.labyrinthe.game.Enemy;
 import com.cppfdm.labyrinthe.game.Labyrinth;
 import com.cppfdm.labyrinthe.game.Player;
 import com.cppfdm.labyrinthe.gameView.tileset.DefaultTileset;
+import com.cppfdm.labyrinthe.utils.AssetsCommand;
+import com.cppfdm.labyrinthe.utils.ViewerCommand;
 import com.cppfdm.labyrinthe.view.Viewer;
 import com.cppfdm.labyrinthe.view.core.AbstractDrawable;
 import com.cppfdm.labyrinthe.view.core.Drawable;
@@ -31,7 +33,10 @@ public class GameViewer extends AbstractDrawable {
     private int xOffset = 0;
     private int yOffset = 0;
     private int animationFrame = 1;
+    private int animationWinDead = 0;
     int enemyCalc = 0;
+    Bitmap win;
+    Bitmap died;
 
 
     /**
@@ -87,6 +92,8 @@ public class GameViewer extends AbstractDrawable {
             enemyViewers[i] = new EnemyViewer(enemies[i]);
             enemyViewers[i].setDrawableParent(this);
         }
+        win = ViewerCommand.resizeBitmap(ViewerCommand.getBitmap(root, "img/win.png"), root.getWidth(), root.getHeight());
+        died = ViewerCommand.resizeBitmap(ViewerCommand.getBitmap(root, "img/died.png"), root.getWidth(), root.getHeight());
         int newScale = Math.max(root.getHeight(), root.getWidth())/((2*NUMBER_VIEW)-2);
         resize(newScale);
     }
@@ -114,6 +121,24 @@ public class GameViewer extends AbstractDrawable {
      */
     @Override
     public void paint(Canvas canvas, Paint paint) {
+        Bitmap winOrDead = null;
+        if (player.isWin()) {
+            winOrDead = win;
+        }
+        if (player.isDead()) {
+            winOrDead = died;
+        }
+        if (winOrDead != null) {
+            if (animationWinDead < 10) {
+                canvas.drawBitmap(winOrDead, 0,0,paint);
+                animationWinDead++;
+                return;
+            }
+            player.reset();
+            lastCoordinates = player.getCurrentCase().getCoord();
+            animationWinDead = 0;
+            return;
+        }
         if (enemyCalc >= ENEMY_DELAY) {
             player.getLaby().moveEnemies();
             enemyCalc = 0;

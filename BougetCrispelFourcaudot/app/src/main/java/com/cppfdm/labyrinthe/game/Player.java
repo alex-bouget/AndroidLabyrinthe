@@ -108,4 +108,12 @@ public class Player {
         }
         return false;
     }
+
+    /**
+     * Reset the player and enemies position
+     */
+    public void reset() {
+        pos = laby.getStartCoord();
+        laby.generateRandomEnemyCoord();
+    }
 }
