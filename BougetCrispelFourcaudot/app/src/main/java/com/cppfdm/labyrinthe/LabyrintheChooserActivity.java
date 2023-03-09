@@ -18,6 +18,9 @@ import com.cppfdm.labyrinthe.utils.AssetsCommand;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
 public class LabyrintheChooserActivity extends AppCompatActivity {
     /**
@@ -49,7 +52,9 @@ public class LabyrintheChooserActivity extends AppCompatActivity {
         LinearLayout layout = findViewById(R.id.labyrintheList);
         try {
             int index = 0;
-            for (String filename : assetManager.list("laby/")) {
+            String[] files = assetManager.list("laby/");
+            Arrays.sort(files);
+            for (String filename : sortList(files)) {
                 Button b = createButton(filename.substring(0, filename.indexOf('.')), "laby/" + filename);
                 layout.addView(b, index);
                 index++;
@@ -57,6 +62,23 @@ public class LabyrintheChooserActivity extends AppCompatActivity {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    /**
+     * Sort list to good alphabetical order
+     *
+     * @param files list of string
+     * @return new list of string
+     */
+    private String[] sortList(String [] files) {
+        List<String> f = Arrays.asList(files);
+        Collections.sort(f, (s, t1) -> {
+            if (s.length() != t1.length()) {
+                return s.length() - t1.length();
+            }
+            return s.compareTo(t1);
+        });
+        return (String[]) f.toArray();
     }
 
 

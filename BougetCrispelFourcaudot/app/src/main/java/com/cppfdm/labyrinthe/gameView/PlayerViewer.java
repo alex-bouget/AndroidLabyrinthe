@@ -4,6 +4,8 @@ import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 
+import com.cppfdm.labyrinthe.game.Coord;
+import com.cppfdm.labyrinthe.game.Player;
 import com.cppfdm.labyrinthe.view.Viewer;
 import com.cppfdm.labyrinthe.view.core.AbstractDrawable;
 import com.cppfdm.labyrinthe.view.core.Drawable;
@@ -11,11 +13,15 @@ import com.cppfdm.labyrinthe.view.core.Drawable;
 import java.io.IOException;
 
 public class PlayerViewer extends SpritesViewer {
+    Player player;
+    Coord lastCoordinates;
     /**
      * Constructor
      */
-    public PlayerViewer() {
+    public PlayerViewer(Player player) {
         super("sprites/link/", "sprites/link/spriteLoader.txt");
+        this.player = player;
+        lastCoordinates = player.getCurrentCase().getCoord();
     }
 
     /**
@@ -26,6 +32,15 @@ public class PlayerViewer extends SpritesViewer {
      */
     @Override
     public void paint(Canvas canvas, Paint paint) {
+        if (!lastCoordinates.equals(player.getCurrentCase().getCoord())) {
+            Coord newCoordinates = player.getCurrentCase().getCoord();
+            int x = (lastCoordinates.getX() - newCoordinates.getX());
+            int y = (lastCoordinates.getY() - newCoordinates.getY());
+            int calc = Math.abs((x-2)*x) + Math.abs((y-1)*y);
+            sprites.changeMovement(calc);
+            sprites.setAnimationOn(GameViewer.ANIMATION_DELAY);
+            lastCoordinates = newCoordinates;
+        }
         Bitmap sprite = sprites.handleSprite();
         canvas.drawBitmap(sprite, canvas.getWidth()/2, (canvas.getHeight()/2)-(sprite.getHeight()-scale), paint);
     }
