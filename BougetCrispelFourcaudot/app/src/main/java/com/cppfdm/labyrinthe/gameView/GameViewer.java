@@ -87,7 +87,7 @@ public class GameViewer extends AbstractDrawable {
             enemyViewers[i] = new EnemyViewer(enemies[i]);
             enemyViewers[i].setDrawableParent(this);
         }
-        int newScale = Math.min(root.getHeight(), root.getWidth())/((2*NUMBER_VIEW)-4);
+        int newScale = Math.max(root.getHeight(), root.getWidth())/((2*NUMBER_VIEW)-2);
         resize(newScale);
     }
 
@@ -129,14 +129,13 @@ public class GameViewer extends AbstractDrawable {
 
         Labyrinth labyrinth = player.getLaby();
         Coord playerCoordinates = tmp;
-        boolean isWidthBetter = root.getHeight() > root.getWidth();
         Coord startView = new Coord(
-                playerCoordinates.getX() - NUMBER_VIEW + (isWidthBetter ? 1: 0),
-                playerCoordinates.getY() - NUMBER_VIEW + (isWidthBetter ? 0: 1)
+                playerCoordinates.getX() - NUMBER_VIEW,
+                playerCoordinates.getY() - NUMBER_VIEW
         );
         Coord endView = new Coord(
-                playerCoordinates.getX() + NUMBER_VIEW - (isWidthBetter ? 1: 0),
-                playerCoordinates.getY() + NUMBER_VIEW - (isWidthBetter ? 0: 1)
+                playerCoordinates.getX() + NUMBER_VIEW,
+                playerCoordinates.getY() + NUMBER_VIEW
         );
         for (int xSize = startView.getX(); xSize < endView.getX(); xSize++) {
             for (int ySize = startView.getY(); ySize < endView.getY(); ySize++) {
