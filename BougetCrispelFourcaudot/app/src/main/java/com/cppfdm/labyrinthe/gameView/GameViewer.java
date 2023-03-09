@@ -11,6 +11,7 @@ import com.cppfdm.labyrinthe.game.Labyrinth;
 import com.cppfdm.labyrinthe.game.Player;
 import com.cppfdm.labyrinthe.gameView.tileset.DefaultTileset;
 import com.cppfdm.labyrinthe.gameView.tileset.GrassTileSet;
+import com.cppfdm.labyrinthe.gameView.tileset.HarborTileSet;
 import com.cppfdm.labyrinthe.utils.AssetsCommand;
 import com.cppfdm.labyrinthe.utils.ViewerCommand;
 import com.cppfdm.labyrinthe.view.Viewer;
@@ -168,6 +169,7 @@ public class GameViewer extends AbstractDrawable {
             for (int ySize = startView.getY(); ySize < endView.getY(); ySize++) {
                 Case aCase = labyrinth.getCase(new Coord(xSize, ySize));
                 Bitmap bitmap = tileset.getTiles(aCase);
+                System.out.println(tileset.getTilesName(aCase));
                 Coord bitPos = calcPosition(new Coord(xSize, ySize));
                 if (background!=null) {
                     canvas.drawBitmap(
