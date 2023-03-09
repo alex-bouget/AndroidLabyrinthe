@@ -54,4 +54,9 @@ public class DefaultTileset extends AbstractTileset {
     public String getStartTilesName() {
         return "start";
     }
+
+    @Override
+    public String getBackgroundTilesName() {
+        return null;
+    }
 }

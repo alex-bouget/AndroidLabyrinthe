@@ -11,6 +11,7 @@ import java.util.HashMap;
 public abstract class AbstractTileset implements TilesInterfaces {
     private final HashMap<String, Bitmap> tileset = new HashMap<>();
     private final View v;
+    protected int frame;
 
     /**
      * Constructor
@@ -19,6 +20,7 @@ public abstract class AbstractTileset implements TilesInterfaces {
      */
     public AbstractTileset(View v) {
         this.v = v;
+        this.frame=0;
     }
 
     /**
@@ -100,4 +102,20 @@ public abstract class AbstractTileset implements TilesInterfaces {
     public HashMap<String, Bitmap> getAllTiles() {
         return new HashMap<>(tileset);
     }
+
+    @Override
+    public void setFrame(int frame) {
+        this.frame = frame;
+    }
+
+    @Override
+    public Bitmap getBackgroundTiles() {
+        String backName = getBackgroundTilesName();
+        if (backName == null) {
+            return null;
+        }
+        return tileset.get(getBackgroundTilesName());
+    }
+
+
 }

@@ -107,4 +107,19 @@ public class TilesetResizer implements TilesInterfaces {
     public HashMap<String, Bitmap> getAllTiles() {
         return tilesetResized;
     }
+
+    @Override
+    public void setFrame(int frame) {
+        tileset.setFrame(frame);
+    }
+
+    @Override
+    public Bitmap getBackgroundTiles() {
+        return tilesetResized.get(getBackgroundTilesName());
+    }
+
+    @Override
+    public String getBackgroundTilesName() {
+        return tileset.getBackgroundTilesName();
+    }
 }
