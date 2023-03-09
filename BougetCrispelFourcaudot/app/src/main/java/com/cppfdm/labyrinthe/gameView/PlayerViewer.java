@@ -19,7 +19,7 @@ public class PlayerViewer extends SpritesViewer {
      * Constructor
      */
     public PlayerViewer(Player player) {
-        super("sprites/link/", "sprites/link/spriteLoader.txt");
+        super("sprites/link/");
         this.player = player;
         lastCoordinates = player.getCurrentCase().getCoord();
     }

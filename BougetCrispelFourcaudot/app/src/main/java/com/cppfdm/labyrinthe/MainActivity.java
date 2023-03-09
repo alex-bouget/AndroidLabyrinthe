@@ -76,7 +76,6 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
         hero.moveLeft();
-        System.out.println(hero.getCurrentCase().getCoord());
     }
 
     /***
@@ -89,7 +88,6 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
         hero.moveRight();
-        System.out.println(hero.getCurrentCase().getCoord());
     }
 
     /***
@@ -101,8 +99,7 @@ public class MainActivity extends AppCompatActivity {
         if (hero.isDead() || hero.isWin()) {
             return;
         }
-        System.out.println(hero.moveUp());
-        System.out.println(hero.getCurrentCase().getCoord());
+        hero.moveUp();
     }
 
     /***
@@ -115,7 +112,6 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
         hero.moveDown();
-        System.out.println(hero.getCurrentCase().getCoord());
     }
 
 

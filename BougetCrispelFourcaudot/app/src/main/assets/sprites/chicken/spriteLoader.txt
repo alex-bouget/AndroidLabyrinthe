@@ -1,0 +1,9 @@
+!
+sprites/chicken/folder0/!sprites/chicken/folder0/spriteLoader.txt
+sprites/chicken/folder1/!sprites/chicken/folder1/spriteLoader.txt
+sprites/chicken/folder2/!sprites/chicken/folder2/spriteLoader.txt
+sprites/chicken/folder3/!sprites/chicken/folder3/spriteLoader.txt
+sprites/chicken/folder4/!sprites/chicken/folder4/spriteLoader.txt
+sprites/chicken/folder5/!sprites/chicken/folder5/spriteLoader.txt
+sprites/chicken/folder6/!sprites/chicken/folder6/spriteLoader.txt
+sprites/chicken/folder7/!sprites/chicken/folder7/spriteLoader.txt

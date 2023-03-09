@@ -1,0 +1,6 @@
+!
+sprites/chicken/!sprites/chicken/spriteLoader.txt
+sprites/mouse/!sprites/mouse/spriteLoader.txt
+sprites/cow/!sprites/cow/spriteLoader.txt
+sprites/monster/!sprites/monster/spriteLoader.txt
+sprites/duck/!sprites/duck/spriteLoader.txt

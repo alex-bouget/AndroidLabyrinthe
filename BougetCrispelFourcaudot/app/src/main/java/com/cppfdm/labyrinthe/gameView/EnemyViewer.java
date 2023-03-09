@@ -24,7 +24,7 @@ public class EnemyViewer extends SpritesViewer {
      * @param enemy the enemy to view
      */
     public EnemyViewer(Enemy enemy) {
-        super("sprites/monster/", "sprites/monster/spriteLoader.txt");
+        super("sprites/part/");
         this.enemy = enemy;
         lastCoordinates = enemy.getPos();
     }
