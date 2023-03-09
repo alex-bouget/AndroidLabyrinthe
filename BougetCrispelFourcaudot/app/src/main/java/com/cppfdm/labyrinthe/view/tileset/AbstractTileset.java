@@ -103,11 +103,21 @@ public abstract class AbstractTileset implements TilesInterfaces {
         return new HashMap<>(tileset);
     }
 
+    /**
+     * Set the frame at the start of a new draw
+     *
+     * @param frame number of frame
+     */
     @Override
     public void setFrame(int frame) {
         this.frame = frame;
     }
 
+    /**
+     * Get the background tile
+     *
+     * @return Bitmap
+     */
     @Override
     public Bitmap getBackgroundTiles() {
         String backName = getBackgroundTilesName();

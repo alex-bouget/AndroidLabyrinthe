@@ -55,6 +55,11 @@ public class DefaultTileset extends AbstractTileset {
         return "start";
     }
 
+    /**
+     * Get name of background tiles
+     *
+     * @return name of the tiles
+     */
     @Override
     public String getBackgroundTilesName() {
         return null;
