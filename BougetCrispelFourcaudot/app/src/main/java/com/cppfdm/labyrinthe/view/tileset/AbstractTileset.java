@@ -70,7 +70,7 @@ public abstract class AbstractTileset implements TilesInterfaces {
      */
     @Override
     public Bitmap getTiles(Case aCase) {
-        return tileset.get(getTilesName(aCase));
+        return (getTilesName(aCase) == null )? null :  tileset.get(getTilesName(aCase));
     }
 
     /**
