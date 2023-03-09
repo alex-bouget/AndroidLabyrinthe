@@ -2,10 +2,12 @@ package com.cppfdm.labyrinthe;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 
 import com.cppfdm.labyrinthe.game.Labyrinth;
@@ -163,25 +165,8 @@ public class MainActivity extends AppCompatActivity {
         LinearLayout map = findViewById(R.id.map);
         map.setPadding(width-width/10,(int)(height/1.8),0,0);
 
+        //all buttons
         LinearLayout buttons = findViewById(R.id.buttons);
         buttons.setPadding(0,game.getLayoutParams().height + (height - game.getLayoutParams().height)/35,0,0);
-
-        int nightModeFlags =
-                getResources().getConfiguration().uiMode &
-                        Configuration.UI_MODE_NIGHT_MASK;
-        switch (nightModeFlags) {
-            case Configuration.UI_MODE_NIGHT_YES:
-                //left.setLinkTextColor(getResources().getColor(R.color.naplesYellow));
-                break;
-
-            case Configuration.UI_MODE_NIGHT_NO:
-               // doStuff();
-                break;
-
-            case Configuration.UI_MODE_NIGHT_UNDEFINED:
-               // doStuff();
-                break;
-        }
-
     }
 }
