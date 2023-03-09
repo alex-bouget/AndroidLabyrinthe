@@ -93,7 +93,7 @@ public class GrassTileSet extends AbstractTileset {
     @Override
     public String getTilesName(Case aCase) {
         if (aCase == null) {
-            return "water";
+            return null;
         }
         Coord c = aCase.getCoord();
         return this.casesTiles[c.getX()][c.getY()];
@@ -107,5 +107,10 @@ public class GrassTileSet extends AbstractTileset {
     @Override
     public String getStartTilesName() {
         return "000010000";
+    }
+
+    @Override
+    public String getBackgroundTilesName() {
+        return "water" + (int)((frame%8/2)+1);
     }
 }

@@ -177,12 +177,14 @@ public class GameViewer extends AbstractDrawable {
                             paint
                     );
                 }
-                canvas.drawBitmap(
-                        bitmap,
-                        bitPos.getX(),
-                        bitPos.getY(),
-                        paint
-                );
+                if (bitmap != null) {
+                    canvas.drawBitmap(
+                            bitmap,
+                            bitPos.getX(),
+                            bitPos.getY(),
+                            paint
+                    );
+                }
             }
         }
         Coord exitPos = calcPosition(labyrinth.getEndCoord());
