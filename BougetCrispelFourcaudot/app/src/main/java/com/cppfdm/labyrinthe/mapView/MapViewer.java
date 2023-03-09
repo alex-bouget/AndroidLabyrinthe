@@ -19,16 +19,32 @@ public class MapViewer extends AbstractDrawable {
     Player player;
     int scale;
 
+    /**
+     * Constructor
+     *
+     * @param player the player
+     */
     public MapViewer(Player player) {
         this.player = player;
     }
 
+    /**
+     * set the parent of the element
+     *
+     * @param drawable parent
+     */
     @Override
     public void setDrawableParent(Drawable drawable) {
         super.setDrawableParent(drawable);
         root = (Viewer) getDrawableRoot();
     }
 
+    /**
+     * Paint the element
+     *
+     * @param canvas element for paint inside
+     * @param paint  can be useful
+     */
     @Override
     public void paint(Canvas canvas, Paint paint) {
         if (scale == 0) {
@@ -50,27 +66,34 @@ public class MapViewer extends AbstractDrawable {
         }
         Coord playerCoordinates = player.getCurrentCase().getCoord();
         Paint playerPaint = new Paint();
-        playerPaint.setColor(Color.rgb(0,0,255));
+        playerPaint.setColor(Color.rgb(0, 0, 255));
         drawMap(playerCoordinates, canvas, playerPaint);
 
         Paint enemyPaint = new Paint();
-        enemyPaint.setColor(Color.rgb(255,0,0));
-        for (Enemy enemy: player.getLaby().getEnemies()) {
+        enemyPaint.setColor(Color.rgb(255, 0, 0));
+        for (Enemy enemy : player.getLaby().getEnemies()) {
             drawMap(enemy.getPos(), canvas, enemyPaint);
         }
 
         Paint exitPaint = new Paint();
-        exitPaint.setColor(Color.rgb(0,255,0));
+        exitPaint.setColor(Color.rgb(0, 255, 0));
         drawMap(player.getLaby().getEndCoord(), canvas, exitPaint);
     }
 
-    public void drawMap(Coord coord, Canvas canvas, Paint paint) {
+    /**
+     * Draw a rectangle
+     *
+     * @param coordinates coordinates of the rectangle
+     * @param canvas      canvas
+     * @param paint       paint
+     */
+    public void drawMap(Coord coordinates, Canvas canvas, Paint paint) {
         canvas.drawRect(
                 new Rect(
-                        scale * coord.getX(),
-                        scale * coord.getY(),
-                        scale * (coord.getX()+1),
-                        scale * (coord.getY()+1)
+                        scale * coordinates.getX(),
+                        scale * coordinates.getY(),
+                        scale * (coordinates.getX() + 1),
+                        scale * (coordinates.getY() + 1)
                 ),
                 paint
         );
