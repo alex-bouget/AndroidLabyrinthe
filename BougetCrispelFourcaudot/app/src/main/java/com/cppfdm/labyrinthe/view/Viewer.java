@@ -70,7 +70,7 @@ public class Viewer extends AbstractViewer {
      */
     @Override
     public void paint(Canvas canvas, Paint paint) {
-        canvas.drawColor(Color.WHITE);
+        canvas.drawColor(Color.BLACK);
         for (Drawable d : drawables) {
             d.paint(canvas, paint);
         }
