@@ -107,4 +107,34 @@ public class TilesetResizer implements TilesInterfaces {
     public HashMap<String, Bitmap> getAllTiles() {
         return tilesetResized;
     }
+
+    /**
+     * Set the frame at the start of a new draw
+     *
+     * @param frame number of frame
+     */
+    @Override
+    public void setFrame(int frame) {
+        tileset.setFrame(frame);
+    }
+
+    /**
+     * Get the background tile
+     *
+     * @return Bitmap
+     */
+    @Override
+    public Bitmap getBackgroundTiles() {
+        return tilesetResized.get(getBackgroundTilesName());
+    }
+
+    /**
+     * Get name of background tiles
+     *
+     * @return name of the tiles
+     */
+    @Override
+    public String getBackgroundTilesName() {
+        return tileset.getBackgroundTilesName();
+    }
 }
