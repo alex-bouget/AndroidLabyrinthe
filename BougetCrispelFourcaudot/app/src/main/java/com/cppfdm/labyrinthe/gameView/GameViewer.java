@@ -185,6 +185,6 @@ public class GameViewer extends AbstractDrawable {
                 animationFrame = 1;
             }
         }
-        frame++;
+        frame = (frame+1)%100;
     }
 }
