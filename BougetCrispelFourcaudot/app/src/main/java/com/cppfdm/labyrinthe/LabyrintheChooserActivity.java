@@ -14,6 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.cppfdm.labyrinthe.game.Coord;
 import com.cppfdm.labyrinthe.game.Labyrinth;
+import com.cppfdm.labyrinthe.game.Player;
 import com.cppfdm.labyrinthe.utils.AssetsCommand;
 
 import java.io.IOException;
@@ -50,6 +51,18 @@ public class LabyrintheChooserActivity extends AppCompatActivity {
         // Load button from the file in the assetManager
         AssetManager assetManager = getAssets();
         LinearLayout layout = findViewById(R.id.labyrintheList);
+
+        Button back = (Button) findViewById(R.id.back);
+
+       try{
+            Intent intent = getIntent();
+            Player hero = (Player) Serializer.get(intent.getExtras().getString("hero"));
+            back.setVisibility(View.VISIBLE);
+        }
+        catch (Exception e){
+            back.setVisibility(View.INVISIBLE);
+        }
+
         try {
             int index = 0;
             String[] files = assetManager.list("laby/");
@@ -160,6 +173,11 @@ public class LabyrintheChooserActivity extends AppCompatActivity {
 
         setResult(RESULT_OK, intent);
 
+        finish();
+    }
+
+    public void back(View view){
+        setResult(RESULT_CANCELED);
         finish();
     }
 }
