@@ -23,13 +23,8 @@ public class EnemyViewer extends SpritesViewer {
      * @param enemy the enemy to view
      * @param sprite sprite of the enemy
      */
-<<<<<<< HEAD
-    public EnemyViewer(Enemy enemy) {
-        super("sprites/part/");
-=======
     public EnemyViewer(Enemy enemy, SpriteEnum sprite) {
         super(sprite.getPath(), sprite.getLoaderPath());
->>>>>>> main
         this.enemy = enemy;
         lastCoordinates = enemy.getPos();
     }

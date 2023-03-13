@@ -16,13 +16,8 @@ public class PlayerViewer extends SpritesViewer {
      * @param player player
      * @param sprite sprite of the player
      */
-<<<<<<< HEAD
-    public PlayerViewer(Player player) {
-        super("sprites/link/");
-=======
     public PlayerViewer(Player player, SpriteEnum sprite) {
         super(sprite.getPath(), sprite.getLoaderPath());
->>>>>>> main
         this.player = player;
         lastCoordinates = player.getCurrentCase().getCoord();
     }
