@@ -4,9 +4,11 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="../../../../../../../../layout/custom_preview.xml" value="0.17625899280575538" />
+        <entry key="app/src/main/res/layout/activity_home.xml" value="0.18177083333333333" />
         <entry key="app/src/main/res/layout/activity_labyrinthe_chooser.xml" value="0.21637426900584794" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.35625" />
         <entry key="app/src/main/res/layout/activity_map.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/activity_sprite_choice.xml" value="0.35625" />
         <entry key="app/src/main/res/layout/activity_test.xml" value="0.16" />
       </map>
     </option>

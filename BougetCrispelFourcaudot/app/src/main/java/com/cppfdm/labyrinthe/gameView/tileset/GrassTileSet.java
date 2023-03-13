@@ -2,17 +2,13 @@ package com.cppfdm.labyrinthe.gameView.tileset;
 
 import android.content.res.AssetManager;
 import android.view.View;
-import android.widget.Button;
-import android.widget.LinearLayout;
 
-import com.cppfdm.labyrinthe.R;
 import com.cppfdm.labyrinthe.game.Case;
 import com.cppfdm.labyrinthe.game.Coord;
 import com.cppfdm.labyrinthe.game.Labyrinth;
 import com.cppfdm.labyrinthe.view.tileset.AbstractTileset;
 
 import java.io.IOException;
-import java.util.HashSet;
 import java.util.Random;
 import java.util.Set;
 
@@ -110,7 +106,7 @@ public class GrassTileSet extends AbstractTileset {
      */
     @Override
     public String getExitTilesName() {
-        return "000010000";
+        return "end" + (int)(frame%5);
     }
 
     /**
