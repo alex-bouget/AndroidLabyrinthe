@@ -82,6 +82,7 @@ public class MainActivity extends AppCompatActivity {
                 hero = new Player(labyrinth);
                 viewer = new GameViewer(hero, heroSprite, monsterSprite);
                 game.addDrawable(viewer);
+                game.stop();
                 game.start();
             }
         }
@@ -205,8 +206,23 @@ public class MainActivity extends AppCompatActivity {
         LinearLayout map = findViewById(R.id.map);
         map.setPadding(width-width/10,(int)(height/1.8),0,0);
 
+        //MENU button
+        LinearLayout menu = findViewById(R.id.menu);
+        menu.setPadding(width/70,(int)(height/1.8),0,0);
+
         //all buttons
         LinearLayout buttons = findViewById(R.id.buttons);
         buttons.setPadding(0,game.getLayoutParams().height + (height - game.getLayoutParams().height)/35,0,0);
+    }
+    /***
+     * Show the menu to choose labyrinth
+     *
+     * @param view view where the action come from
+     */
+    public void showMenu(View view){
+        Intent intent = new Intent();
+        intent.putExtra("hero", Serializer.addToSerializer(hero));
+        intent.setClass(this, LabyrintheChooserActivity.class);
+        startActivityForResult(intent, LabyrintheChooserActivity.INTENT_ID);
     }
 }
