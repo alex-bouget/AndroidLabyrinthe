@@ -25,6 +25,11 @@ public class HomeActivity extends AppCompatActivity {
     String labyrinthName = null;
 
 
+    /***
+     * Called when the appliction is created
+     *
+     * @param savedInstanceState the instance that the application have to create
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,6 +37,9 @@ public class HomeActivity extends AppCompatActivity {
         updateIcons();
     }
 
+    /**
+     * Update the icons at the top
+     */
     public void updateIcons() {
         DisplayMetrics displayMetrics = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
@@ -60,6 +68,7 @@ public class HomeActivity extends AppCompatActivity {
 
     /**
      * Run choose Labyrinthe
+     * @param v view where the action come from
      */
     public void runLabyrintheChoose(View v) {
         Intent intent = new Intent();
@@ -67,11 +76,20 @@ public class HomeActivity extends AppCompatActivity {
         startActivityForResult(intent, LabyrintheChooserActivity.INTENT_ID);
     }
 
-
+    /**
+     * Run player choice
+     *
+     * @param v view where the action come from
+     */
     public void runPlayerChoice(View v) {
         runSpriteChoiceActivity(false);
     }
 
+    /**
+     * Run enemy choice
+     *
+     * @param v view where the action come from
+     */
     public void runEnemyChoice(View v) {
         runSpriteChoiceActivity(true);
     }
@@ -88,6 +106,11 @@ public class HomeActivity extends AppCompatActivity {
         startActivityForResult(intent, SpriteChoiceActivity.INTENT_ID+add);
     }
 
+    /**
+     * Run the game
+     *
+     * @param v view where the action come from
+     */
     public void runGame(View v) {
         Intent intent = new Intent();
         intent.setClass(this, MainActivity.class);
