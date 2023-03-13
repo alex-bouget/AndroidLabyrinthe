@@ -171,9 +171,6 @@ public class MainActivity extends AppCompatActivity {
      * @param view view where the action come from
      */
     public void showMenu(View view){
-        Intent intent = new Intent();
-        intent.putExtra("hero", Serializer.addToSerializer(hero));
-        intent.setClass(this, LabyrintheChooserActivity.class);
-        startActivityForResult(intent, LabyrintheChooserActivity.INTENT_ID);
+        finish();
     }
 }
