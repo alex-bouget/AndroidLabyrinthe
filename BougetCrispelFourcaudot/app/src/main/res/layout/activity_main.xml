@@ -40,8 +40,6 @@
                 android:gravity="center"
                 android:rotation="90"
                 android:background="@drawable/arrow"
-                android:text=""
-                android:layout_weight="0.2"
                 android:onClick="moveUp"
                 />
         </LinearLayout>
@@ -61,8 +59,6 @@
                 android:gravity="center"
                 android:id="@+id/left"
                 android:background="@drawable/arrow"
-                android:text=""
-                android:layout_weight="0.2"
                 android:onClick="moveLeft"
                 />
 
@@ -74,8 +70,6 @@
                 android:rotation="180"
                 android:background="@drawable/arrow"
                 android:id="@+id/right"
-                android:text=""
-                android:layout_weight="0.2"
                 android:onClick="moveRight"
                 android:layout_marginLeft="30dp"
                 />
@@ -96,8 +90,6 @@
             android:rotation="270"
             android:background="@drawable/arrow"
             android:gravity="center"
-            android:text=""
-            android:layout_weight="0.2"
             android:onClick="moveDown"
             />
         </LinearLayout>
@@ -117,9 +109,25 @@
             android:layout_height="30dp"
             android:gravity="center"
             android:background="@drawable/round_button"
-            android:text=""
-            android:layout_weight="0.2"
             android:onClick="showMap"
+            />
+    </LinearLayout>
+
+    <!--Layout with MENU button-->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/menu"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal">
+
+        <!--MENU button -->
+        <Button
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:gravity="center"
+            android:background="@drawable/round_button"
+            android:onClick="showMenu"
             />
     </LinearLayout>
 

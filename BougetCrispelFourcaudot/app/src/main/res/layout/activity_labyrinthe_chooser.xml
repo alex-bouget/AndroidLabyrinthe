@@ -26,6 +26,14 @@
             android:text="@string/LabyChooser_choice"
             android:onClick="labyrintheChooserChoose"/>
 
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/back"
+            android:gravity="center"
+            android:text="@string/back"
+            android:onClick="back"/>
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
