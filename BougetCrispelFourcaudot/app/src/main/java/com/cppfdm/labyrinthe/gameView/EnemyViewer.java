@@ -4,10 +4,9 @@ import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 
-import com.cppfdm.labyrinthe.game.Case;
+import com.cppfdm.labyrinthe.utils.SpriteEnum;
 import com.cppfdm.labyrinthe.game.Coord;
 import com.cppfdm.labyrinthe.game.Enemy;
-import com.cppfdm.labyrinthe.game.Player;
 import com.cppfdm.labyrinthe.view.core.Drawable;
 
 public class EnemyViewer extends SpritesViewer {
@@ -22,9 +21,10 @@ public class EnemyViewer extends SpritesViewer {
      * Constructor
      *
      * @param enemy the enemy to view
+     * @param sprite sprite of the enemy
      */
-    public EnemyViewer(Enemy enemy) {
-        super("sprites/monster/", "sprites/monster/spriteLoader.txt");
+    public EnemyViewer(Enemy enemy, SpriteEnum sprite) {
+        super(sprite.getPath(), sprite.getLoaderPath());
         this.enemy = enemy;
         lastCoordinates = enemy.getPos();
     }
