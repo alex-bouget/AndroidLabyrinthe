@@ -4,12 +4,12 @@ import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 
+import com.cppfdm.labyrinthe.utils.SpriteEnum;
 import com.cppfdm.labyrinthe.game.Case;
 import com.cppfdm.labyrinthe.game.Coord;
 import com.cppfdm.labyrinthe.game.Enemy;
 import com.cppfdm.labyrinthe.game.Labyrinth;
 import com.cppfdm.labyrinthe.game.Player;
-import com.cppfdm.labyrinthe.gameView.tileset.DefaultTileset;
 import com.cppfdm.labyrinthe.gameView.tileset.GrassTileSet;
 import com.cppfdm.labyrinthe.gameView.tileset.HarborTileSet;
 import com.cppfdm.labyrinthe.utils.AssetsCommand;
@@ -41,15 +41,22 @@ public class GameViewer extends AbstractDrawable {
     Bitmap win;
     Bitmap died;
 
+    SpriteEnum playerSprite;
+    SpriteEnum monsterSprite;
+
 
     /**
      * Constructor
      *
-     * @param player the player
+     * @param player        the player
+     * @param playerSprite  sprite of the player
+     * @param monsterSprite sprite of the monster
      */
-    public GameViewer(Player player) {
+    public GameViewer(Player player, SpriteEnum playerSprite, SpriteEnum monsterSprite) {
         this.player = player;
         lastCoordinates = player.getCurrentCase().getCoord();
+        this.playerSprite = playerSprite;
+        this.monsterSprite = monsterSprite;
     }
 
     /**
@@ -87,17 +94,17 @@ public class GameViewer extends AbstractDrawable {
 
         root = (Viewer) getDrawableRoot();
         tileset = new TilesetResizer(new GrassTileSet(root, player.getLaby()));
-        playerViewer = new PlayerViewer(player);
+        playerViewer = new PlayerViewer(player, playerSprite);
         playerViewer.setDrawableParent(this);
         Enemy[] enemies = player.getLaby().getEnemies();
         enemyViewers = new EnemyViewer[enemies.length];
         for (int i = 0; i < enemies.length; i++) {
-            enemyViewers[i] = new EnemyViewer(enemies[i]);
+            enemyViewers[i] = new EnemyViewer(enemies[i], monsterSprite);
             enemyViewers[i].setDrawableParent(this);
         }
         win = ViewerCommand.resizeBitmap(ViewerCommand.getBitmap(root, "img/win.png"), root.getWidth(), root.getHeight());
         died = ViewerCommand.resizeBitmap(ViewerCommand.getBitmap(root, "img/died.png"), root.getWidth(), root.getHeight());
-        int newScale = Math.max(root.getHeight(), root.getWidth())/((2*NUMBER_VIEW)-2);
+        int newScale = Math.max(root.getHeight(), root.getWidth()) / ((2 * NUMBER_VIEW) - 2);
         resize(newScale);
     }
 
@@ -133,7 +140,7 @@ public class GameViewer extends AbstractDrawable {
         }
         if (winOrDead != null) {
             if (animationWinDead < 10) {
-                canvas.drawBitmap(winOrDead, 0,0,paint);
+                canvas.drawBitmap(winOrDead, 0, 0, paint);
                 animationWinDead++;
                 return;
             }
@@ -171,7 +178,7 @@ public class GameViewer extends AbstractDrawable {
                 Bitmap bitmap = tileset.getTiles(aCase);
                 System.out.println(tileset.getTilesName(aCase));
                 Coord bitPos = calcPosition(new Coord(xSize, ySize));
-                if (background!=null) {
+                if (background != null) {
                     canvas.drawBitmap(
                             background,
                             bitPos.getX(),
@@ -215,6 +222,6 @@ public class GameViewer extends AbstractDrawable {
                 animationFrame = 1;
             }
         }
-        frame = (frame+1)%100;
+        frame = (frame + 1) % 100;
     }
 }

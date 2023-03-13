@@ -13,6 +13,7 @@ import android.os.Bundle;
 import com.cppfdm.labyrinthe.game.Labyrinth;
 import com.cppfdm.labyrinthe.game.Player;
 import com.cppfdm.labyrinthe.gameView.GameViewer;
+import com.cppfdm.labyrinthe.utils.SpriteEnum;
 import com.cppfdm.labyrinthe.view.Viewer;
 import android.util.DisplayMetrics;
 import android.view.View;
@@ -26,6 +27,9 @@ public class MainActivity extends AppCompatActivity {
     private final int MAP_CODE = 14;
     private GameViewer viewer;
 
+    SpriteEnum heroSprite;
+    SpriteEnum monsterSprite;
+
     /***
      * Called when the appliction is created
      *
@@ -38,8 +42,7 @@ public class MainActivity extends AppCompatActivity {
         initComponent();
         game = (Viewer) findViewById(R.id.game);
         game.setMinimumHeight(game.getWidth());
-
-        runLabyrintheChoose();
+        runSpriteChoiceActivity(false);
     }
 
     /**
@@ -49,6 +52,19 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent();
         intent.setClass(this, LabyrintheChooserActivity.class);
         startActivityForResult(intent, LabyrintheChooserActivity.INTENT_ID);
+    }
+
+
+    /**
+     * Run the sprite choice
+     *
+     * @param monster choice the monster
+     */
+    public void runSpriteChoiceActivity(boolean monster) {
+        Intent intent = new Intent();
+        intent.setClass(this, SpriteChoiceActivity.class);
+        int add = (monster) ? 1 : 0;
+        startActivityForResult(intent, SpriteChoiceActivity.INTENT_ID+add);
     }
 
     /**
@@ -64,9 +80,21 @@ public class MainActivity extends AppCompatActivity {
             if (resultCode == RESULT_OK) {
                 Labyrinth labyrinth = (Labyrinth) Serializer.get(data.getStringExtra("labyrinth"));
                 hero = new Player(labyrinth);
-                viewer = new GameViewer(hero);
+                viewer = new GameViewer(hero, heroSprite, monsterSprite);
                 game.addDrawable(viewer);
                 game.start();
+            }
+        }
+        if (requestCode == SpriteChoiceActivity.INTENT_ID) {
+            if (resultCode == RESULT_OK) {
+                heroSprite = (SpriteEnum) Serializer.get(data.getStringExtra("sprite"));
+                runSpriteChoiceActivity(true);
+            }
+        }
+        if (requestCode == SpriteChoiceActivity.INTENT_ID+1) {
+            if (resultCode == RESULT_OK) {
+                monsterSprite = (SpriteEnum) Serializer.get(data.getStringExtra("sprite"));
+                runLabyrintheChoose();
             }
         }
         super.onActivityResult(requestCode, resultCode, data);
