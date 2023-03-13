@@ -17,6 +17,9 @@
             android:name=".HomeActivity"
             android:exported="false" />
         <activity
+            android:name=".SpriteChoiceActivity"
+            android:exported="false" />
+        <activity
             android:name=".MapActivity"
             android:exported="false" />
         <activity

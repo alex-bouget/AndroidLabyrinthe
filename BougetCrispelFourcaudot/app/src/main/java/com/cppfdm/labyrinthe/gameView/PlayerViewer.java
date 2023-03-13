@@ -4,22 +4,20 @@ import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 
+import com.cppfdm.labyrinthe.utils.SpriteEnum;
 import com.cppfdm.labyrinthe.game.Coord;
 import com.cppfdm.labyrinthe.game.Player;
-import com.cppfdm.labyrinthe.view.Viewer;
-import com.cppfdm.labyrinthe.view.core.AbstractDrawable;
-import com.cppfdm.labyrinthe.view.core.Drawable;
-
-import java.io.IOException;
 
 public class PlayerViewer extends SpritesViewer {
     Player player;
     Coord lastCoordinates;
     /**
      * Constructor
+     * @param player player
+     * @param sprite sprite of the player
      */
-    public PlayerViewer(Player player) {
-        super("sprites/link/", "sprites/link/spriteLoader.txt");
+    public PlayerViewer(Player player, SpriteEnum sprite) {
+        super(sprite.getPath(), sprite.getLoaderPath());
         this.player = player;
         lastCoordinates = player.getCurrentCase().getCoord();
     }
