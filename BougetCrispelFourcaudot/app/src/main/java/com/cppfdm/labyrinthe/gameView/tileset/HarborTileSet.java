@@ -39,7 +39,13 @@ public class HarborTileSet extends AbstractTileset{
         }
     }
 
-    public void generateTileType(int i, int j, Labyrinth laby) {
+    /**
+     * Generate and store the tile type in casesTiles
+     * @param i x Coordinate of the case
+     * @param j y Coordinate of the case
+     * @param laby  the labyrinth
+     */
+    private void generateTileType(int i, int j, Labyrinth laby) {
         // handle null case
         if (laby.getCase(new Coord(i, j)) == null) {return;}
         // generate good case
@@ -52,22 +58,39 @@ public class HarborTileSet extends AbstractTileset{
         casesTiles[i][j] = imgPath;
     }
 
+    /**
+     * Get the tile name of the Case
+     * @param aCase the case for the tiles
+     * @return the tile name
+     */
     @Override
     public String getTilesName(Case aCase) {
         if (aCase == null) {return null;}
         return casesTiles[aCase.getCoord().getX()][aCase.getCoord().getY()];
     }
 
+    /**
+     * Get the exit tile name
+     * @return the exit tile name
+     */
     @Override
     public String getExitTilesName() {
         return "end";
     }
 
+    /**
+     * Get the start tile name
+     * @return the start tile name
+     */
     @Override
     public String getStartTilesName() {
         return "start";
     }
 
+    /**
+     * Get the background tile name
+     * @return the background tile name
+     */
     @Override
     public String getBackgroundTilesName() {
         return "water" + (int)(frame%8/4);
