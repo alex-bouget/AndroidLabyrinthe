@@ -169,6 +169,7 @@ public class LabyrintheChooserActivity extends AppCompatActivity {
 
         Intent intent = new Intent();
         intent.putExtra("labyrinth", Serializer.addToSerializer(map));
+        intent.putExtra("name", setter.getText().toString());
 
         setResult(RESULT_OK, intent);
 

@@ -2,5 +2,9 @@
     <string name="app_name">BougetCrispelFourcaudotLaby</string>
     <string name="LabyChooser_choice">Choisir</string>
     <string name="LabyChooser_msg_not">Aucun labyrinthe choisie</string>
+    <string name="Home_playerChoice">Choisir le sprite du joueur</string>
+    <string name="Home_enemyChoice">Choisir le sprite de l\'ennemie</string>
+    <string name="Home_LabyChoice">Choisir le labyrinthe</string>
+    <string name="Home_Launch">Lancer</string>
     <string name="back">Back</string>
 </resources>
