@@ -4,6 +4,7 @@ import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 
+import com.cppfdm.labyrinthe.gameView.tileset.RoadTileSet;
 import com.cppfdm.labyrinthe.utils.SpriteEnum;
 import com.cppfdm.labyrinthe.game.Case;
 import com.cppfdm.labyrinthe.game.Coord;
@@ -93,7 +94,7 @@ public class GameViewer extends AbstractDrawable {
         super.setDrawableParent(drawable);
 
         root = (Viewer) getDrawableRoot();
-        tileset = new TilesetResizer(new GrassTileSet(root, player.getLaby()));
+        tileset = new TilesetResizer(new RoadTileSet(root, player.getLaby()));
         playerViewer = new PlayerViewer(player, playerSprite);
         playerViewer.setDrawableParent(this);
         Enemy[] enemies = player.getLaby().getEnemies();
