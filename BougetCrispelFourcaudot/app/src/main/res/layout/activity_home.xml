@@ -19,13 +19,44 @@
 
             <ImageView
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-
-            <Button
-                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/Home_playerChoice" />
+                android:id="@+id/playerSpriteImageView"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/monsterSpriteImageView"/>
+            
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/labyrinthTextView"
+                android:textSize="50dp"/>
+
         </LinearLayout>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/Home_playerChoice"
+            android:onClick="runPlayerChoice"/>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/Home_enemyChoice"
+            android:onClick="runEnemyChoice"/>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/Home_LabyChoice"
+            android:onClick="runLabyrintheChoose"/>
+        <Button
+            android:id="@+id/runButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/Home_Launch"
+            android:onClick="runGame"/>
+
 
     </LinearLayout>
 

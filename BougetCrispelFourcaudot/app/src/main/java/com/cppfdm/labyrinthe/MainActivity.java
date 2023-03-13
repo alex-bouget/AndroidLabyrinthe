@@ -1,13 +1,8 @@
 package com.cppfdm.labyrinthe;
 
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.ContextCompat;
 
 import android.content.Intent;
-import android.content.res.Configuration;
-import android.graphics.Color;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 
 import com.cppfdm.labyrinthe.game.Labyrinth;
@@ -15,20 +10,20 @@ import com.cppfdm.labyrinthe.game.Player;
 import com.cppfdm.labyrinthe.gameView.GameViewer;
 import com.cppfdm.labyrinthe.utils.SpriteEnum;
 import com.cppfdm.labyrinthe.view.Viewer;
+
+import android.os.Handler;
 import android.util.DisplayMetrics;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
 
 public class MainActivity extends AppCompatActivity {
+    public static final int INTENT_ID = 203;
     private Viewer game;
     private Player hero;
     private final int MAP_CODE = 14;
     private GameViewer viewer;
 
-    SpriteEnum heroSprite;
-    SpriteEnum monsterSprite;
 
     /***
      * Called when the appliction is created
@@ -41,63 +36,19 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         initComponent();
         game = (Viewer) findViewById(R.id.game);
-        game.setMinimumHeight(game.getWidth());
-        runSpriteChoiceActivity(false);
-    }
-
-    /**
-     * Run choose Labyrinthe
-     */
-    public void runLabyrintheChoose() {
-        Intent intent = new Intent();
-        intent.setClass(this, LabyrintheChooserActivity.class);
-        startActivityForResult(intent, LabyrintheChooserActivity.INTENT_ID);
-    }
-
-
-    /**
-     * Run the sprite choice
-     *
-     * @param monster choice the monster
-     */
-    public void runSpriteChoiceActivity(boolean monster) {
-        Intent intent = new Intent();
-        intent.setClass(this, SpriteChoiceActivity.class);
-        int add = (monster) ? 1 : 0;
-        startActivityForResult(intent, SpriteChoiceActivity.INTENT_ID+add);
-    }
-
-    /**
-     * Callback of activity
-     *
-     * @param requestCode the id of the activity
-     * @param resultCode  the result code of the activity
-     * @param data        the intent returned by the activity
-     */
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        if (requestCode == LabyrintheChooserActivity.INTENT_ID) {
-            if (resultCode == RESULT_OK) {
-                Labyrinth labyrinth = (Labyrinth) Serializer.get(data.getStringExtra("labyrinth"));
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            public void run() {
+                game.setMinimumHeight(game.getWidth());
+                Labyrinth labyrinth = (Labyrinth) Serializer.get(getIntent().getStringExtra("labyrinth"));
+                SpriteEnum heroSprite = (SpriteEnum) Serializer.get(getIntent().getStringExtra("player"));
+                SpriteEnum monsterSprite =  (SpriteEnum) Serializer.get(getIntent().getStringExtra("monster"));
                 hero = new Player(labyrinth);
                 viewer = new GameViewer(hero, heroSprite, monsterSprite);
                 game.addDrawable(viewer);
                 game.start();
             }
-        }
-        if (requestCode == SpriteChoiceActivity.INTENT_ID) {
-            if (resultCode == RESULT_OK) {
-                heroSprite = (SpriteEnum) Serializer.get(data.getStringExtra("sprite"));
-                runSpriteChoiceActivity(true);
-            }
-        }
-        if (requestCode == SpriteChoiceActivity.INTENT_ID+1) {
-            if (resultCode == RESULT_OK) {
-                monsterSprite = (SpriteEnum) Serializer.get(data.getStringExtra("sprite"));
-                runLabyrintheChoose();
-            }
-        }
-        super.onActivityResult(requestCode, resultCode, data);
+        }, 2000);   //2 seconds
     }
 
     /***
