@@ -1,9 +1,9 @@
 !
-sprites/chicken/folder0/!sprites/chicken/folder0/spriteLoader.txt
-sprites/chicken/folder1/!sprites/chicken/folder1/spriteLoader.txt
-sprites/chicken/folder2/!sprites/chicken/folder2/spriteLoader.txt
-sprites/chicken/folder3/!sprites/chicken/folder3/spriteLoader.txt
-sprites/chicken/folder4/!sprites/chicken/folder4/spriteLoader.txt
-sprites/chicken/folder5/!sprites/chicken/folder5/spriteLoader.txt
-sprites/chicken/folder6/!sprites/chicken/folder6/spriteLoader.txt
-sprites/chicken/folder7/!sprites/chicken/folder7/spriteLoader.txt
+sprites/chicken/white/!sprites/chicken/white/spriteLoader.txt
+sprites/chicken/brown/!sprites/chicken/brown/spriteLoader.txt
+sprites/chicken/green/!sprites/chicken/green/spriteLoader.txt
+sprites/chicken/maroon/!sprites/chicken/maroon/spriteLoader.txt
+sprites/chicken/black/!sprites/chicken/black/spriteLoader.txt
+sprites/chicken/gray/!sprites/chicken/gray/spriteLoader.txt
+sprites/chicken/dust/!sprites/chicken/dust/spriteLoader.txt
+sprites/chicken/red/!sprites/chicken/red/spriteLoader.txt

@@ -5,7 +5,12 @@ import android.view.View;
 
 public enum SpriteEnum {
     LINK("LINK", "sprites/link/"),
-    MONSTER("MONSTER", "sprites/monster/");
+    MONSTER("MONSTER", "sprites/monster/"),
+    CHICKEN("CHICKEN", "sprites/chicken/"),
+    COW("COW", "sprites/cow/"),
+    DUCK("DUCK", "sprites/duck/"),
+    MOUSE("MOUSE", "sprites/mouse/"),
+    CRAB("CRAB", "sprites/crab/");
 
     /**
      * Get all Sprite
