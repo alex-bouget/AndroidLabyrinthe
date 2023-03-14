@@ -65,10 +65,14 @@ public class EnemyViewer extends SpritesViewer {
                 coordinatesBefore.getY() + yOffset - (yOffset / GameViewer.ANIMATION_DELAY) * animationFrame
         );
         Bitmap sprite = sprites.handleSprite();
+        int height= coordinates.getY() - (sprite.getHeight() - scale);
+        if (sprite.getHeight() == scale) {
+            height -= scale/4;
+        }
         canvas.drawBitmap(
                 sprite,
                 coordinates.getX(),
-                coordinates.getY() - (sprite.getHeight() - scale),
+                height,
                 paint
         );
         if (xOffset != 0 || yOffset != 0) {

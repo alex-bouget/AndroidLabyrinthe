@@ -40,6 +40,10 @@ public class PlayerViewer extends SpritesViewer {
             lastCoordinates = newCoordinates;
         }
         Bitmap sprite = sprites.handleSprite();
-        canvas.drawBitmap(sprite, canvas.getWidth()/2, (canvas.getHeight()/2)-(sprite.getHeight()-scale), paint);
+        int height = (canvas.getHeight()/2) - (sprite.getHeight() - scale);
+        if (sprite.getHeight() == scale) {
+            height -= scale/4;
+        }
+        canvas.drawBitmap(sprite, canvas.getWidth()/2, height, paint);
     }
 }
