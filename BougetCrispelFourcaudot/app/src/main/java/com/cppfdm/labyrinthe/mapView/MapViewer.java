@@ -50,9 +50,6 @@ public class MapViewer extends AbstractDrawable {
         if (scale == 0) {
             Labyrinth laby = player.getLaby();
             scale = Math.min(root.getHeight(), root.getWidth()) / Math.max(laby.getCOL(), laby.getROW());
-            System.out.println("ROOT: " + Math.min(root.getHeight(), root.getWidth()));
-            System.out.println("LABY: " + Math.max(laby.getCOL(), laby.getROW()));
-            System.out.println("MAP SCALE: " + scale);
         }
         Paint atCase = new Paint();
         atCase.setColor(Color.rgb(255, 255, 255));
