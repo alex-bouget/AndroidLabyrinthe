@@ -1,0 +1,9 @@
+!
+sprites/cat/black/!sprites/cat/black/spriteLoader.txt
+sprites/cat/black_grey/!sprites/cat/black_grey/spriteLoader.txt
+sprites/cat/brown/!sprites/cat/brown/spriteLoader.txt
+sprites/cat/gold/!sprites/cat/gold/spriteLoader.txt
+sprites/cat/grey/!sprites/cat/grey/spriteLoader.txt
+sprites/cat/light_white/!sprites/cat/light_white/spriteLoader.txt
+sprites/cat/red/!sprites/cat/red/spriteLoader.txt
+sprites/cat/white/!sprites/cat/white/spriteLoader.txt

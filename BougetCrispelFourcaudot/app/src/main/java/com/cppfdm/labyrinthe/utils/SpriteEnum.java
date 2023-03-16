@@ -10,7 +10,8 @@ public enum SpriteEnum {
     COW("COW", "sprites/cow/"),
     DUCK("DUCK", "sprites/duck/"),
     MOUSE("MOUSE", "sprites/mouse/"),
-    CRAB("CRAB", "sprites/crab/");
+    CRAB("CRAB", "sprites/crab/"),
+    CAT("CAT", "sprites/cat/");
 
     /**
      * Get all Sprite
