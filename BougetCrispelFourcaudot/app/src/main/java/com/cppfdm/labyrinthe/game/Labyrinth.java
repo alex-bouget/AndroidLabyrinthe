@@ -129,4 +129,13 @@ public class Labyrinth {
      * @return number of cols
      */
     public int getCOL() { return this.COL; }
+
+    /**
+     * Reset the enemies coordinate
+     */
+    public void resetEnemyCoordinates() {
+        for (int i = 0; i < this.NB_ENEMIES; i++) {
+            enemies[i].setPos(generateRandomEnemyCoord());
+        }
+    }
 }

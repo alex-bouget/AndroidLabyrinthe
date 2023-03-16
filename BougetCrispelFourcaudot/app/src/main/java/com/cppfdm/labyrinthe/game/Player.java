@@ -114,6 +114,6 @@ public class Player {
      */
     public void reset() {
         pos = laby.getStartCoord();
-        laby.generateRandomEnemyCoord();
+        laby.resetEnemyCoordinates();
     }
 }

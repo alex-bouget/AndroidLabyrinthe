@@ -1,9 +1,13 @@
 package com.cppfdm.labyrinthe.gameView;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.cppfdm.labyrinthe.EndGameActivity;
 import com.cppfdm.labyrinthe.gameView.tileset.RoadTileSet;
 import com.cppfdm.labyrinthe.utils.SpriteEnum;
 import com.cppfdm.labyrinthe.game.Case;
@@ -145,9 +149,13 @@ public class GameViewer extends AbstractDrawable {
                 animationWinDead++;
                 return;
             }
-            player.reset();
-            lastCoordinates = player.getCurrentCase().getCoord();
+            Intent intent = new Intent();
+            AppCompatActivity app = (AppCompatActivity)root.getContext();
+            intent.setClass(app, EndGameActivity.class);
+            intent.putExtra("result", (win.equals(winOrDead)) ? "win" : "died");
+            app.startActivityForResult(intent, EndGameActivity.INTENT_ID);
             animationWinDead = 0;
+            root.pause();
             return;
         }
         tileset.setFrame(frame);
