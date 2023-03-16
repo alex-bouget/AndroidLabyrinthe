@@ -7,4 +7,9 @@
     <string name="Home_LabyChoice">Choisir le labyrinthe</string>
     <string name="Home_Launch">Lancer</string>
     <string name="back">Back</string>
+    <string name="EndGame_Win">Vous avez gagné !!</string>
+    <string name="EndGame_Died">Vous avez perdu...</string>
+    <string name="EndGame_Not">T\'as tout fait buguer...</string>
+    <string name="EndGame_Retry">Recommencer</string>
+    <string name="EndGame_Stop">Retourner au menu</string>
 </resources>

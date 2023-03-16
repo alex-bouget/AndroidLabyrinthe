@@ -1,5 +1,6 @@
 package com.cppfdm.labyrinthe;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -172,5 +173,29 @@ public class MainActivity extends AppCompatActivity {
      */
     public void showMenu(View view){
         finish();
+    }
+
+    /**
+     * Callback of activity
+     *
+     * @param requestCode the id of the activity
+     * @param resultCode  the result code of the activity
+     * @param data        the intent returned by the activity
+     */
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        if (requestCode == EndGameActivity.INTENT_ID) {
+            if (resultCode == RESULT_OK) {
+                String result = data.getStringExtra("result");
+                if (result.equals("return")) {
+                    finish();
+                }
+                if (result.equals("continue")) {
+                    game.resume();
+                    hero.reset();
+                }
+            }
+        }
+        super.onActivityResult(requestCode, resultCode, data);
     }
 }
