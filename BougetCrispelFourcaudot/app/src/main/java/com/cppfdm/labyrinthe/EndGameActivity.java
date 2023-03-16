@@ -10,6 +10,11 @@ import android.widget.TextView;
 public class EndGameActivity extends AppCompatActivity {
     public static final int INTENT_ID = 507;
 
+    /**
+     * Called when the application is created
+     *
+     * @param savedInstanceState the instance that the application have to create
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,6 +29,11 @@ public class EndGameActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Return to the main menu
+     *
+     * @param v view that called the function
+     */
     public void onMainMenu(View v) {
         Intent intent = new Intent();
         intent.putExtra("result", "return");
@@ -31,6 +41,11 @@ public class EndGameActivity extends AppCompatActivity {
         finish();
     }
 
+    /**
+     * Return to the game
+     *
+     * @param v view that called the function
+     */
     public void onContinue(View v) {
         Intent intent = new Intent();
         intent.putExtra("result", "continue");

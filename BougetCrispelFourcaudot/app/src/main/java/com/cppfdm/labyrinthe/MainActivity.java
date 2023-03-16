@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
                 game.stop();
                 game.start();
             }
-        }, 2000);   //2 seconds
+        }, 500);   //2 seconds
     }
 
     /***
