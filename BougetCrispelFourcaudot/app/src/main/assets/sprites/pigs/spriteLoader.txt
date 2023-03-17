@@ -14,5 +14,4 @@ sprites/pigs/1/!sprites/pigs/1/spriteLoader.txt
 sprites/pigs/11/!sprites/pigs/11/spriteLoader.txt
 sprites/pigs/4/!sprites/pigs/4/spriteLoader.txt
 sprites/pigs/3/!sprites/pigs/3/spriteLoader.txt
-sprites/pigs/spriteLoader.txt/!sprites/pigs/spriteLoader.txt/spriteLoader.txt
 sprites/pigs/9/!sprites/pigs/9/spriteLoader.txt

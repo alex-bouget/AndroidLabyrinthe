@@ -6,5 +6,4 @@ sprites/foxes/black_grey/!sprites/foxes/black_grey/spriteLoader.txt
 sprites/foxes/black_brown/!sprites/foxes/black_brown/spriteLoader.txt
 sprites/foxes/white/!sprites/foxes/white/spriteLoader.txt
 sprites/foxes/brown/!sprites/foxes/brown/spriteLoader.txt
-sprites/foxes/spriteLoader.txt/!sprites/foxes/spriteLoader.txt/spriteLoader.txt
 sprites/foxes/red/!sprites/foxes/red/spriteLoader.txt
