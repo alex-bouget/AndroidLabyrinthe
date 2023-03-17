@@ -11,6 +11,7 @@ import com.cppfdm.labyrinthe.game.Player;
 import com.cppfdm.labyrinthe.gameView.GameViewer;
 import com.cppfdm.labyrinthe.utils.SpriteEnum;
 import com.cppfdm.labyrinthe.view.Viewer;
+import com.cppfdm.labyrinthe.view.tileset.TilesInterfaces;
 
 import android.os.Handler;
 import android.util.DisplayMetrics;
@@ -44,8 +45,9 @@ public class MainActivity extends AppCompatActivity {
                 Labyrinth labyrinth = (Labyrinth) Serializer.get(getIntent().getStringExtra("labyrinth"));
                 SpriteEnum heroSprite = (SpriteEnum) Serializer.get(getIntent().getStringExtra("player"));
                 SpriteEnum monsterSprite =  (SpriteEnum) Serializer.get(getIntent().getStringExtra("monster"));
+                TilesInterfaces tilesInterfaces = (TilesInterfaces) Serializer.get(getIntent().getStringExtra("tileset"));
                 hero = new Player(labyrinth);
-                viewer = new GameViewer(hero, heroSprite, monsterSprite);
+                viewer = new GameViewer(hero, heroSprite, monsterSprite, tilesInterfaces);
                 game.addDrawable(viewer);
                 game.stop();
                 game.start();
@@ -59,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
      * @param view view where the action come from
      */
     public void moveLeft(View view) {
-        if (hero.isDead() || hero.isWin()) {
+        if (hero == null || hero.isDead() || hero.isWin()) {
             return;
         }
         hero.moveLeft();
@@ -71,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
      * @param view view where the action come from
      */
     public void moveRight(View view) {
-        if (hero.isDead() || hero.isWin()) {
+        if (hero == null || hero.isDead() || hero.isWin()) {
             return;
         }
         hero.moveRight();
@@ -83,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
      * @param view view where the action come from
      */
     public void moveUp(View view) {
-        if (hero.isDead() || hero.isWin()) {
+        if (hero == null || hero.isDead() || hero.isWin()) {
             return;
         }
         hero.moveUp();
@@ -95,7 +97,7 @@ public class MainActivity extends AppCompatActivity {
      * @param view view where the action come from
      */
     public void moveDown(View view) {
-        if (hero.isDead() || hero.isWin()) {
+        if (hero == null || hero.isDead() || hero.isWin()) {
             return;
         }
         hero.moveDown();
@@ -108,6 +110,9 @@ public class MainActivity extends AppCompatActivity {
      * @param view view where the action come from
      */
     public void showMap(View view) {
+        if (hero == null) {
+            return;
+        }
         Intent intent = new Intent();
         intent.setClass(this, MapActivity.class);
         intent.putExtra("hero", Serializer.addToSerializer(hero));

@@ -82,7 +82,6 @@ public class GrassTileSet extends AbstractTileset {
         if (img.charAt(5) == '0' || img.charAt(7) == '0') {
             res.setCharAt(8, '0');
         }
-        System.out.println("String simplify : " + img + "->" + res.toString());
         return res.toString();
     }
 

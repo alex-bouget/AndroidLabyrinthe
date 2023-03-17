@@ -16,11 +16,13 @@ import com.cppfdm.labyrinthe.game.Player;
 import com.cppfdm.labyrinthe.gameView.GameViewer;
 import com.cppfdm.labyrinthe.utils.AssetsCommand;
 import com.cppfdm.labyrinthe.utils.SpriteEnum;
+import com.cppfdm.labyrinthe.utils.TilesetEnum;
 import com.cppfdm.labyrinthe.utils.ViewerCommand;
 
 public class HomeActivity extends AppCompatActivity {
     SpriteEnum heroSprite = SpriteEnum.LINK;
     SpriteEnum monsterSprite = SpriteEnum.MONSTER;
+    TilesetEnum tileset = TilesetEnum.DEFAULT;
     Labyrinth labyrinth;
     String labyrinthName = null;
 
@@ -44,36 +46,55 @@ public class HomeActivity extends AppCompatActivity {
         DisplayMetrics displayMetrics = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
         ImageView playerImageView = (ImageView) findViewById(R.id.playerSpriteImageView);
-        playerImageView.setImageBitmap(ViewerCommand.resizeBitmapWidth(heroSprite.getIcon(playerImageView), displayMetrics.widthPixels/10));
+        playerImageView.setImageBitmap(ViewerCommand.resizeBitmapWidth(heroSprite.getIcon(playerImageView), displayMetrics.widthPixels / 10));
 
 
         ImageView monsterImageView = (ImageView) findViewById(R.id.monsterSpriteImageView);
-        monsterImageView.setImageBitmap(ViewerCommand.resizeBitmapWidth(monsterSprite.getIcon(monsterImageView), displayMetrics.widthPixels/10));
+        monsterImageView.setImageBitmap(ViewerCommand.resizeBitmapWidth(monsterSprite.getIcon(monsterImageView), displayMetrics.widthPixels / 10));
 
         Button runButton = (Button) findViewById(R.id.runButton);
 
-        if (labyrinthName == null || heroSprite == null || monsterSprite == null) {
+        if (labyrinthName == null || heroSprite == null || monsterSprite == null || tileset == null) {
             runButton.setEnabled(false);
         } else {
             runButton.setEnabled(true);
         }
 
+        TextView tilesetTextView = (TextView) findViewById(R.id.tilesetTextView);
+        if (tileset == null) {
+            tilesetTextView.setText("Tileset: None");
+        } else {
+            tilesetTextView.setText("Tileset: " + tileset.getName());
+        }
+
         TextView textView = (TextView) findViewById(R.id.labyrinthTextView);
         if (labyrinthName == null) {
             textView.setText("None");
-            return;
+        } else {
+            textView.setText(labyrinthName);
         }
-        textView.setText(labyrinthName);
     }
 
     /**
      * Run choose Labyrinthe
+     *
      * @param v view where the action come from
      */
     public void runLabyrintheChoose(View v) {
         Intent intent = new Intent();
         intent.setClass(this, LabyrintheChooserActivity.class);
         startActivityForResult(intent, LabyrintheChooserActivity.INTENT_ID);
+    }
+
+    /**
+     * Run choose tileset
+     *
+     * @param v view where the action come from
+     */
+    public void runTilesetChoose(View v) {
+        Intent intent = new Intent();
+        intent.setClass(this, TilesetChoiceActivity.class);
+        startActivityForResult(intent, TilesetChoiceActivity.INTENT_ID);
     }
 
     /**
@@ -103,7 +124,7 @@ public class HomeActivity extends AppCompatActivity {
         Intent intent = new Intent();
         intent.setClass(this, SpriteChoiceActivity.class);
         int add = (monster) ? 1 : 0;
-        startActivityForResult(intent, SpriteChoiceActivity.INTENT_ID+add);
+        startActivityForResult(intent, SpriteChoiceActivity.INTENT_ID + add);
     }
 
     /**
@@ -117,6 +138,7 @@ public class HomeActivity extends AppCompatActivity {
         intent.putExtra("labyrinth", Serializer.addToSerializer(labyrinth));
         intent.putExtra("player", Serializer.addToSerializer(heroSprite));
         intent.putExtra("monster", Serializer.addToSerializer(monsterSprite));
+        intent.putExtra("tileset", Serializer.addToSerializer(tileset.getTileset(v, labyrinth)));
         startActivityForResult(intent, MainActivity.INTENT_ID);
     }
 
@@ -129,20 +151,19 @@ public class HomeActivity extends AppCompatActivity {
      */
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        if (requestCode == LabyrintheChooserActivity.INTENT_ID) {
-            if (resultCode == RESULT_OK) {
+        if (resultCode == RESULT_OK) {
+            if (requestCode == LabyrintheChooserActivity.INTENT_ID) {
                 labyrinth = (Labyrinth) Serializer.get(data.getStringExtra("labyrinth"));
                 labyrinthName = data.getStringExtra("name");
             }
-        }
-        if (requestCode == SpriteChoiceActivity.INTENT_ID) {
-            if (resultCode == RESULT_OK) {
+            if (requestCode == SpriteChoiceActivity.INTENT_ID) {
                 heroSprite = (SpriteEnum) Serializer.get(data.getStringExtra("sprite"));
             }
-        }
-        if (requestCode == SpriteChoiceActivity.INTENT_ID+1) {
-            if (resultCode == RESULT_OK) {
+            if (requestCode == SpriteChoiceActivity.INTENT_ID + 1) {
                 monsterSprite = (SpriteEnum) Serializer.get(data.getStringExtra("sprite"));
+            }
+            if (requestCode == TilesetChoiceActivity.INTENT_ID) {
+                tileset = (TilesetEnum) Serializer.get(data.getStringExtra("tileset"));
             }
         }
         updateIcons();
