@@ -11,6 +11,7 @@
         android:gravity="center"
         android:orientation="vertical">
 
+        <!-- Layout of the tileset text -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -23,6 +24,7 @@
                 android:textSize="20sp" />
         </LinearLayout>
 
+        <!-- Layout of the sprites and the level -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -49,6 +51,7 @@
 
         </LinearLayout>
 
+        <!-- Button for choice -->
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

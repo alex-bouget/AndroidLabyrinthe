@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".SpriteChoiceActivity">
 
+    <!-- ScrollView for the sprite -->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -15,6 +16,7 @@
         app:layout_constraintStart_toStartOf="parent"
         android:layout_margin="40dp">
 
+        <!-- Linear layout in the the scrollView -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -26,7 +28,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
-
+                <!-- Where the list was added by the code -->
             </LinearLayout>
 
         </LinearLayout>

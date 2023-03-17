@@ -24,13 +24,20 @@ public class Sprites {
      * @param v          the view
      * @param path       path to the sprites folder
      * @param loaderPath sprite loader
-     * @throws IOException
+     * @throws IOException sprite loader can't be read
      */
     public Sprites(View v, String path, String loaderPath) throws IOException {
         this.v = v;
         readLoader(path, loaderPath);
     }
 
+    /**
+     * Read a spriteLoader.txt
+     *
+     * @param path path to the sprites folder
+     * @param loaderPath sprite loader
+     * @throws IOException sprite loader can't be read
+     */
     public void readLoader(String path, String loaderPath) throws IOException {
         String loader = AssetsCommand.readFile(v, loaderPath);
         if (loader == null) {
