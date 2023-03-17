@@ -91,7 +91,9 @@ public class TilesetChoiceActivity extends AppCompatActivity {
         params.rightMargin = 50;
         imageButton.setLayoutParams(params);
 
-        if (tilesetEnum != null) {
+        if (tilesetEnum == null) {
+            imageButton.setText(getResources().getText(R.string.Choice_random));
+        } else {
             imageButton.setText(tilesetEnum.getName());
         }
 
