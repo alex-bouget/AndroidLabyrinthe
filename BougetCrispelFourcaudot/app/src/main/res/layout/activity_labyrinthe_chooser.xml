@@ -17,8 +17,10 @@
             android:layout_height="wrap_content"
             android:id="@+id/labyrintheList"
             android:orientation="vertical">
-
+            <!-- Where the list was added by the code -->
         </LinearLayout>
+
+        <!-- Button for choice -->
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
