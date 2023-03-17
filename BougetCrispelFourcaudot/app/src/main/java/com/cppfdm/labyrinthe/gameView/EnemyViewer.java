@@ -20,7 +20,7 @@ public class EnemyViewer extends SpritesViewer {
     /**
      * Constructor
      *
-     * @param enemy the enemy to view
+     * @param enemy  the enemy to view
      * @param sprite sprite of the enemy
      */
     public EnemyViewer(Enemy enemy, SpriteEnum sprite) {
@@ -54,7 +54,7 @@ public class EnemyViewer extends SpritesViewer {
             int y = (lastCoordinates.getY() - newCoordinates.getY());
             xOffset = x * scale;
             yOffset = y * scale;
-            int calc = Math.abs((x-2)*x) + Math.abs((y-1)*y);
+            int calc = Math.abs((x - 2) * x) + Math.abs((y - 1) * y);
             sprites.changeMovement(calc);
             sprites.setAnimationOn(GameViewer.ANIMATION_DELAY);
             lastCoordinates = newCoordinates;
@@ -65,9 +65,9 @@ public class EnemyViewer extends SpritesViewer {
                 coordinatesBefore.getY() + yOffset - (yOffset / GameViewer.ANIMATION_DELAY) * animationFrame
         );
         Bitmap sprite = sprites.handleSprite();
-        int height= coordinates.getY() - (sprite.getHeight() - scale);
+        int height = coordinates.getY() - (sprite.getHeight() - scale);
         if (sprite.getHeight() == scale) {
-            height -= scale/4;
+            height -= scale / 4;
         }
         canvas.drawBitmap(
                 sprite,

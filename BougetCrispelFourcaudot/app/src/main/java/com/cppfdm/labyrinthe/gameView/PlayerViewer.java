@@ -11,8 +11,10 @@ import com.cppfdm.labyrinthe.game.Player;
 public class PlayerViewer extends SpritesViewer {
     Player player;
     Coordinate lastCoordinates;
+
     /**
      * Constructor
+     *
      * @param player player
      * @param sprite sprite of the player
      */
@@ -34,16 +36,16 @@ public class PlayerViewer extends SpritesViewer {
             Coordinate newCoordinates = player.getCurrentCase().getCoordinate();
             int x = (lastCoordinates.getX() - newCoordinates.getX());
             int y = (lastCoordinates.getY() - newCoordinates.getY());
-            int calc = Math.abs((x-2)*x) + Math.abs((y-1)*y);
+            int calc = Math.abs((x - 2) * x) + Math.abs((y - 1) * y);
             sprites.changeMovement(calc);
             sprites.setAnimationOn(GameViewer.ANIMATION_DELAY);
             lastCoordinates = newCoordinates;
         }
         Bitmap sprite = sprites.handleSprite();
-        int height = (canvas.getHeight()/2) - (sprite.getHeight() - scale);
+        int height = (canvas.getHeight() / 2) - (sprite.getHeight() - scale);
         if (sprite.getHeight() == scale) {
-            height -= scale/4;
+            height -= scale / 4;
         }
-        canvas.drawBitmap(sprite, canvas.getWidth()/2, height, paint);
+        canvas.drawBitmap(sprite, canvas.getWidth() / 2, height, paint);
     }
 }

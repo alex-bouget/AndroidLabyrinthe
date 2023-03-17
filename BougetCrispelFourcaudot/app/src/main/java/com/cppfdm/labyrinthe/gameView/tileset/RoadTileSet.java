@@ -10,7 +10,7 @@ import com.cppfdm.labyrinthe.view.tileset.AbstractTileset;
 
 import java.io.IOException;
 
-public class RoadTileSet extends AbstractTileset{
+public class RoadTileSet extends AbstractTileset {
 
     private final static String ASSETS_PATH = "tiles/road/";
     // Store each tile type to not make calculations for each render
@@ -37,36 +37,43 @@ public class RoadTileSet extends AbstractTileset{
 
     /**
      * Generate and store the tile type in casesTiles
-     * @param i x Coordinate of the case
-     * @param j y Coordinate of the case
-     * @param laby  the labyrinth
+     *
+     * @param i    x Coordinate of the case
+     * @param j    y Coordinate of the case
+     * @param laby the labyrinth
      */
     private void generateTileType(int i, int j, Labyrinth laby) {
         // handle null case
-        if (laby.getCase(new Coordinate(i, j)) == null) {return;}
+        if (laby.getCase(new Coordinate(i, j)) == null) {
+            return;
+        }
         // generate good case
         String imgPath = "";
-        imgPath += laby.getCase(new Coordinate(i , j -1)) == null ? "0" : "1";
-        imgPath += laby.getCase(new Coordinate(i -1 , j)) == null ? "0" : "1";
-        imgPath += laby.getCase(new Coordinate(i +1, j)) == null ? "0" : "1";
-        imgPath += laby.getCase(new Coordinate(i , j + 1)) == null ? "0" : "1";
+        imgPath += laby.getCase(new Coordinate(i, j - 1)) == null ? "0" : "1";
+        imgPath += laby.getCase(new Coordinate(i - 1, j)) == null ? "0" : "1";
+        imgPath += laby.getCase(new Coordinate(i + 1, j)) == null ? "0" : "1";
+        imgPath += laby.getCase(new Coordinate(i, j + 1)) == null ? "0" : "1";
 
         casesTiles[i][j] = imgPath;
     }
 
     /**
      * Get the tile name of the Case
+     *
      * @param aCase the case for the tiles
      * @return the tile name
      */
     @Override
     public String getTilesName(Case aCase) {
-        if (aCase == null) {return null;}
+        if (aCase == null) {
+            return null;
+        }
         return casesTiles[aCase.getCoordinate().getX()][aCase.getCoordinate().getY()];
     }
 
     /**
      * Get the exit tile name
+     *
      * @return the exit tile name
      */
     @Override
@@ -76,15 +83,17 @@ public class RoadTileSet extends AbstractTileset{
 
     /**
      * Get the start tile name
+     *
      * @return the start tile name
      */
     @Override
     public String getStartTilesName() {
-        return "start" + (int)(frame%5);
+        return "start" + (int) (frame % 5);
     }
 
     /**
      * Get the background tile name
+     *
      * @return the background tile name
      */
     @Override

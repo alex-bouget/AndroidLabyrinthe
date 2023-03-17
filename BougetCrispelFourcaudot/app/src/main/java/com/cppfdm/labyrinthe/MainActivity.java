@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
             Labyrinth labyrinth = (Labyrinth) Serializer.get(getIntent().getStringExtra("labyrinth"));
             assert labyrinth != null;
             SpriteEnum heroSprite = (SpriteEnum) Serializer.get(getIntent().getStringExtra("player"));
-            SpriteEnum monsterSprite =  (SpriteEnum) Serializer.get(getIntent().getStringExtra("monster"));
+            SpriteEnum monsterSprite = (SpriteEnum) Serializer.get(getIntent().getStringExtra("monster"));
             TilesInterfaces tilesInterfaces = (TilesInterfaces) Serializer.get(getIntent().getStringExtra("tileset"));
             hero = new Player(labyrinth);
             viewer = new GameViewer(hero, heroSprite, monsterSprite, tilesInterfaces);
@@ -121,7 +121,7 @@ public class MainActivity extends AppCompatActivity {
     /**
      * initialize all component
      */
-    private void initComponent(){
+    private void initComponent() {
         DisplayMetrics displayMetrics = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
         int height = displayMetrics.heightPixels;
@@ -133,13 +133,13 @@ public class MainActivity extends AppCompatActivity {
 
         //UP button layout
         LinearLayout up = findViewById(R.id.up);
-        up.getLayoutParams().height = (int)((height-game.getLayoutParams().height)/3);
+        up.getLayoutParams().height = (int) ((height - game.getLayoutParams().height) / 3);
         up.getLayoutParams().width = up.getLayoutParams().height;
 
         //LEFT and RIGHT layout
         LinearLayout lR = findViewById(R.id.leftAndRight);
-        lR.getLayoutParams().height = (int)((height-game.getLayoutParams().height)/3);
-        lR.getLayoutParams().width = (int)(2.5*lR.getLayoutParams().height);
+        lR.getLayoutParams().height = (int) ((height - game.getLayoutParams().height) / 3);
+        lR.getLayoutParams().width = (int) (2.5 * lR.getLayoutParams().height);
 
         //LEFT button
         Button left = findViewById(R.id.left);
@@ -151,27 +151,28 @@ public class MainActivity extends AppCompatActivity {
 
         //DOWN button layout
         LinearLayout down = findViewById(R.id.down);
-        down.getLayoutParams().height = (int)((height-game.getLayoutParams().height)/3);
+        down.getLayoutParams().height = (int) ((height - game.getLayoutParams().height) / 3);
         down.getLayoutParams().width = up.getLayoutParams().height;
 
         //MAP button
         LinearLayout map = findViewById(R.id.map);
-        map.setPadding(width-width/10,(int)(height/1.8),0,0);
+        map.setPadding(width - width / 10, (int) (height / 1.8), 0, 0);
 
         //MENU button
         LinearLayout menu = findViewById(R.id.menu);
-        menu.setPadding(width/70,(int)(height/1.8),0,0);
+        menu.setPadding(width / 70, (int) (height / 1.8), 0, 0);
 
         //all buttons
         LinearLayout buttons = findViewById(R.id.buttons);
-        buttons.setPadding(0,game.getLayoutParams().height + (height - game.getLayoutParams().height)/35,0,0);
+        buttons.setPadding(0, game.getLayoutParams().height + (height - game.getLayoutParams().height) / 35, 0, 0);
     }
+
     /***
      * Show the menu to choose labyrinth
      *
      * @param view view where the action come from
      */
-    public void showMenu(View view){
+    public void showMenu(View view) {
         finish();
     }
 

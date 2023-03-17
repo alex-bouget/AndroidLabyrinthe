@@ -7,6 +7,7 @@ public class Enemy {
 
     /**
      * Constructor of an enemy
+     *
      * @param coordinate position of the Enemy
      */
     public Enemy(Coordinate coordinate) {
@@ -15,6 +16,7 @@ public class Enemy {
 
     /**
      * Getter of pos attribute
+     *
      * @return Coordinate object pos
      */
     public Coordinate getPos() {
@@ -23,6 +25,7 @@ public class Enemy {
 
     /**
      * Setter of pos parameter
+     *
      * @param c the new position
      */
     public void setPos(Coordinate c) {

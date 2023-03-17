@@ -18,8 +18,8 @@ public class ViewerCommand {
      * Resize a bitmap
      *
      * @param toResize the Bitmap
-     * @param sizeX the sizeX of the resized bitmap
-     * @param sizeY the sizeY of the resized bitmap
+     * @param sizeX    the sizeX of the resized bitmap
+     * @param sizeY    the sizeY of the resized bitmap
      * @return Bitmap
      */
     public static Bitmap resizeBitmap(Bitmap toResize, int sizeX, int sizeY) {
@@ -50,7 +50,7 @@ public class ViewerCommand {
      * Resize a bitmap
      *
      * @param toResize the Bitmap
-     * @param width the width of the resized bitmap
+     * @param width    the width of the resized bitmap
      * @return bitmap
      */
     public static Bitmap resizeBitmapWidth(Bitmap toResize, int width) {
@@ -58,13 +58,13 @@ public class ViewerCommand {
         float bitHeight = toResize.getHeight();
         //  bitHeight  bitWidth
         //   X         width
-        return resizeBitmap(toResize, width, (int)((bitHeight*width)/bitWidth));
+        return resizeBitmap(toResize, width, (int) ((bitHeight * width) / bitWidth));
     }
 
     /**
      * Get a bitmap from drawable
      *
-     * @param v the view
+     * @param v  the view
      * @param id id of the drawable
      * @return bitmap
      */
@@ -75,7 +75,7 @@ public class ViewerCommand {
     /**
      * Get a bitmap from assets
      *
-     * @param v the view
+     * @param v    the view
      * @param path path to the asset
      * @return bitmap
      */

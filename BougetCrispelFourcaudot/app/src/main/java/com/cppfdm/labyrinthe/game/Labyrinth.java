@@ -19,10 +19,11 @@ public class Labyrinth {
 
     /**
      * Constructor of the Labyrinth
-     * @param row_ number of rows
-     * @param col_ number of columns
+     *
+     * @param row_   number of rows
+     * @param col_   number of columns
      * @param start_ Coordinate of the start
-     * @param end_ Coordinate of the end
+     * @param end_   Coordinate of the end
      * @param cases_ the Coordinate of each cases
      */
     public Labyrinth(int row_, int col_, Coordinate start_, Coordinate end_, Collection<Coordinate> cases_) {
@@ -57,6 +58,7 @@ public class Labyrinth {
 
     /**
      * Generate a Coordinate object in a random non wall case and not on start case
+     *
      * @return the correct Coordinate object
      */
     public Coordinate generateRandomEnemyCoordinate() {
@@ -81,6 +83,7 @@ public class Labyrinth {
 
     /**
      * Getter of Enemies
+     *
      * @return enemies attribute
      */
     public Enemy[] getEnemies() {
@@ -89,6 +92,7 @@ public class Labyrinth {
 
     /**
      * get a Case from his Coordinates
+     *
      * @param c Coordinates of the case
      * @return the Case object
      */
@@ -104,6 +108,7 @@ public class Labyrinth {
 
     /**
      * Get the start Coordinate
+     *
      * @return the Coordinate object
      */
     public Coordinate getStartCoordinate() {
@@ -112,6 +117,7 @@ public class Labyrinth {
 
     /**
      * Get the end Coordinate
+     *
      * @return the Coordinate object
      */
     public Coordinate getEndCoordinate() {
@@ -120,15 +126,21 @@ public class Labyrinth {
 
     /**
      * Getter of ROW parameter
+     *
      * @return number of rows
      */
-    public int getROW() { return this.ROW; }
+    public int getROW() {
+        return this.ROW;
+    }
 
     /**
      * Getter of COL parameters
+     *
      * @return number of cols
      */
-    public int getCOL() { return this.COL; }
+    public int getCOL() {
+        return this.COL;
+    }
 
     /**
      * Reset the enemies coordinate

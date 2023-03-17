@@ -40,6 +40,7 @@ public class LabyrintheChooserActivity extends AppCompatActivity {
 
     /**
      * Create the Activity
+     *
      * @param savedInstanceState the last instance
      */
     @Override
@@ -71,7 +72,7 @@ public class LabyrintheChooserActivity extends AppCompatActivity {
      * @param files list of string
      * @return new list of string
      */
-    private String[] sortList(String [] files) {
+    private String[] sortList(String[] files) {
         List<String> f = Arrays.asList(files);
         Collections.sort(f, (s, t1) -> {
             if (s.length() != t1.length()) {
@@ -92,7 +93,8 @@ public class LabyrintheChooserActivity extends AppCompatActivity {
 
     /**
      * Create the button for one choice
-     * @param name Name in the button
+     *
+     * @param name     Name in the button
      * @param filepath File of the choice
      * @return the button
      */
@@ -133,6 +135,7 @@ public class LabyrintheChooserActivity extends AppCompatActivity {
 
     /**
      * Button of choice. Return the activity
+     *
      * @param view the button
      */
     public void choiceButton(View view) {
@@ -146,7 +149,7 @@ public class LabyrintheChooserActivity extends AppCompatActivity {
         assert data != null;
         String[] eachLine = data.split("\n");
         ArrayList<Coordinate> coordinate = new ArrayList<>();
-        for (String l: eachLine) {
+        for (String l : eachLine) {
             if (l.trim().equals("")) {
                 continue;
             }
@@ -172,7 +175,7 @@ public class LabyrintheChooserActivity extends AppCompatActivity {
         finish();
     }
 
-    public void back(View view){
+    public void back(View view) {
         setResult(RESULT_CANCELED);
         finish();
     }

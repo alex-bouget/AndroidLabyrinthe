@@ -13,6 +13,7 @@ public class Coordinate {
 
     /**
      * Constructor of Coordinate object
+     *
      * @param x : the x element of a coordinate
      * @param y : the y element of a coordinate
      */
@@ -23,6 +24,7 @@ public class Coordinate {
 
     /**
      * Getter of x
+     *
      * @return the x element
      */
     public int getX() {
@@ -31,6 +33,7 @@ public class Coordinate {
 
     /**
      * Getter of  y
+     *
      * @return the y element
      */
     public int getY() {
@@ -39,6 +42,7 @@ public class Coordinate {
 
     /**
      * Is the object equals
+     *
      * @param o the object to test
      * @return true if equals
      */
@@ -52,6 +56,7 @@ public class Coordinate {
 
     /**
      * Hashcode function
+     *
      * @return the hashcode of the object
      */
     @Override

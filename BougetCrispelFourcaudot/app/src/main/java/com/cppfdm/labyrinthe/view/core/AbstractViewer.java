@@ -12,6 +12,7 @@ public abstract class AbstractViewer extends SurfaceView implements CoreRunnerCa
 
     /**
      * Constructor
+     *
      * @param context the context
      */
     public AbstractViewer(Context context) {
@@ -20,8 +21,9 @@ public abstract class AbstractViewer extends SurfaceView implements CoreRunnerCa
 
     /**
      * Constructor
+     *
      * @param context the context
-     * @param attrs attributes
+     * @param attrs   attributes
      */
     public AbstractViewer(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -29,8 +31,9 @@ public abstract class AbstractViewer extends SurfaceView implements CoreRunnerCa
 
     /**
      * Constructor
-     * @param context the context
-     * @param attrs attributes
+     *
+     * @param context      the context
+     * @param attrs        attributes
      * @param defStyleAttr styles attributes
      */
     public AbstractViewer(Context context, AttributeSet attrs, int defStyleAttr) {
@@ -39,10 +42,11 @@ public abstract class AbstractViewer extends SurfaceView implements CoreRunnerCa
 
     /**
      * Constructor
-     * @param context the context
-     * @param attrs attributes
+     *
+     * @param context      the context
+     * @param attrs        attributes
      * @param defStyleAttr styles attributes
-     * @param defStyleRes styles resources
+     * @param defStyleRes  styles resources
      */
     public AbstractViewer(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
         super(context, attrs, defStyleAttr, defStyleRes);

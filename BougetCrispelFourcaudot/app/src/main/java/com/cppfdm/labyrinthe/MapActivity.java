@@ -37,7 +37,7 @@ public class MapActivity extends AppCompatActivity {
      *
      * @param view view where the action come from
      */
-    public void closeMap(View view){
+    public void closeMap(View view) {
         setResult(RESULT_CANCELED);
         viewer.stop();
         finish();

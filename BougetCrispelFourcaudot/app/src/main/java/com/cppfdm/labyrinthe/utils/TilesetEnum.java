@@ -17,6 +17,7 @@ public enum TilesetEnum {
 
     /**
      * Get all tileset
+     *
      * @return list of tilesetEnum
      */
     public static TilesetEnum[] getAllTileset() {
@@ -30,7 +31,7 @@ public enum TilesetEnum {
      * Constructor
      *
      * @param name name of the tileset
-     * @param id id of the tileset
+     * @param id   id of the tileset
      */
     TilesetEnum(String name, int id) {
         this.name = name;
@@ -39,6 +40,7 @@ public enum TilesetEnum {
 
     /**
      * Get the name of the tileset
+     *
      * @return name
      */
     public String getName() {
@@ -48,7 +50,7 @@ public enum TilesetEnum {
     /**
      * get the tileset
      *
-     * @param v a view
+     * @param v         a view
      * @param labyrinth the labyrinth
      * @return tilesInterfaces
      */

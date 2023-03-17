@@ -16,7 +16,7 @@ public abstract class SpritesViewer extends AbstractDrawable {
     /**
      * Constructor
      *
-     * @param path path where the sprites are
+     * @param path       path where the sprites are
      * @param loaderPath path to the loader
      */
     public SpritesViewer(String path, String loaderPath) {

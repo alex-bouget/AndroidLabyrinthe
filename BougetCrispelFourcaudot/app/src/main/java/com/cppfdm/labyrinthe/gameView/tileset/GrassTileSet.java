@@ -41,8 +41,9 @@ public class GrassTileSet extends AbstractTileset {
 
     /**
      * Generate the tile type for a tile in the laby
-     * @param i X coordinate in the labyrinth
-     * @param j Y coordinate in the labyrinth
+     *
+     * @param i    X coordinate in the labyrinth
+     * @param j    Y coordinate in the labyrinth
      * @param laby the labyrinth
      */
     private void generateTileType(int i, int j, Labyrinth laby) {
@@ -66,6 +67,7 @@ public class GrassTileSet extends AbstractTileset {
 
     /**
      * Change a non existing img path to an existing img path
+     *
      * @param img the imgPath
      * @return the new imgPath
      */
@@ -88,6 +90,7 @@ public class GrassTileSet extends AbstractTileset {
 
     /**
      * return the appropriate tile name
+     *
      * @param aCase the case for the tiles
      * @return the tile name or null if background
      */
@@ -102,15 +105,17 @@ public class GrassTileSet extends AbstractTileset {
 
     /**
      * Get the name of the exit tile
+     *
      * @return the exit tile name
      */
     @Override
     public String getExitTilesName() {
-        return "end" + (int)(frame%5);
+        return "end" + (int) (frame % 5);
     }
 
     /**
      * Get the name of the entrance tile
+     *
      * @return the entrance tile name
      */
     @Override
@@ -120,10 +125,11 @@ public class GrassTileSet extends AbstractTileset {
 
     /**
      * Get the background tile name
+     *
      * @return the background tile name
      */
     @Override
     public String getBackgroundTilesName() {
-        return "water" + (int)((frame%8/2)+1);
+        return "water" + (int) ((frame % 8 / 2) + 1);
     }
 }

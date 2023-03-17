@@ -5,6 +5,7 @@ public abstract class AbstractDrawable implements Drawable {
 
     /**
      * Get the parent of the element
+     *
      * @return Drawable parent
      */
     @Override
@@ -14,6 +15,7 @@ public abstract class AbstractDrawable implements Drawable {
 
     /**
      * Get the viewer
+     *
      * @return Drawable viewer
      */
     @Override
@@ -23,6 +25,7 @@ public abstract class AbstractDrawable implements Drawable {
 
     /**
      * set the parent of the element
+     *
      * @param drawable parent
      */
     @Override

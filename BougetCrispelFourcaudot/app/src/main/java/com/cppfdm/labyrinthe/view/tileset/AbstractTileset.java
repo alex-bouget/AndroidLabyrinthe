@@ -20,7 +20,7 @@ public abstract class AbstractTileset implements TilesInterfaces {
      */
     public AbstractTileset(View v) {
         this.v = v;
-        this.frame=0;
+        this.frame = 0;
     }
 
     /**
@@ -70,7 +70,7 @@ public abstract class AbstractTileset implements TilesInterfaces {
      */
     @Override
     public Bitmap getTiles(Case aCase) {
-        return (getTilesName(aCase) == null )? null :  tileset.get(getTilesName(aCase));
+        return (getTilesName(aCase) == null) ? null : tileset.get(getTilesName(aCase));
     }
 
     /**
