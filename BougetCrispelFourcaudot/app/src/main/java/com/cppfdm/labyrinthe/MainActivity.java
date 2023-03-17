@@ -11,6 +11,7 @@ import com.cppfdm.labyrinthe.game.Player;
 import com.cppfdm.labyrinthe.gameView.GameViewer;
 import com.cppfdm.labyrinthe.utils.SpriteEnum;
 import com.cppfdm.labyrinthe.view.Viewer;
+import com.cppfdm.labyrinthe.view.tileset.TilesInterfaces;
 
 import android.os.Handler;
 import android.util.DisplayMetrics;
@@ -44,8 +45,9 @@ public class MainActivity extends AppCompatActivity {
                 Labyrinth labyrinth = (Labyrinth) Serializer.get(getIntent().getStringExtra("labyrinth"));
                 SpriteEnum heroSprite = (SpriteEnum) Serializer.get(getIntent().getStringExtra("player"));
                 SpriteEnum monsterSprite =  (SpriteEnum) Serializer.get(getIntent().getStringExtra("monster"));
+                TilesInterfaces tilesInterfaces = (TilesInterfaces) Serializer.get(getIntent().getStringExtra("tileset"));
                 hero = new Player(labyrinth);
-                viewer = new GameViewer(hero, heroSprite, monsterSprite);
+                viewer = new GameViewer(hero, heroSprite, monsterSprite, tilesInterfaces);
                 game.addDrawable(viewer);
                 game.stop();
                 game.start();
