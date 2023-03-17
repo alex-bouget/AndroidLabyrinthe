@@ -34,7 +34,7 @@ public class Sprites {
     /**
      * Read a spriteLoader.txt
      *
-     * @param path path to the sprites folder
+     * @param path       path to the sprites folder
      * @param loaderPath sprite loader
      * @throws IOException sprite loader can't be read
      */

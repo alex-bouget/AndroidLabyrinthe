@@ -8,28 +8,28 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:gravity="center">
+        android:gravity="center"
+        android:orientation="vertical">
 
         <!-- TextView where the information appear-->
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/EndGame_Not"
             android:id="@+id/textEndGame"
-            android:gravity="center"/>
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/EndGame_Not" />
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/EndGame_Retry"
-            android:onClick="onContinue"/>
+            android:onClick="onContinue"
+            android:text="@string/EndGame_Retry" />
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/EndGame_Stop"
-            android:onClick="onMainMenu"/>
+            android:onClick="onMainMenu"
+            android:text="@string/EndGame_Stop" />
 
     </LinearLayout>
 
