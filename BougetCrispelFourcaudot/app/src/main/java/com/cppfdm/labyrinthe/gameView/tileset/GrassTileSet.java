@@ -50,19 +50,18 @@ public class GrassTileSet extends AbstractTileset {
         if (laby.getCase(new Coordinate(i, j)) == null) {
             return;
         }
-        StringBuilder imgPath = new StringBuilder();
+        String imgPath = "";
         for (int offX = -1; offX < 2; offX++) {
             for (int offY = -1; offY < 2; offY++) {
-                imgPath.append(laby.getCase(new Coordinate(i + offY, j + offX)) == null ? "0" : "1");
+                imgPath += laby.getCase(new Coordinate(i + offY, j + offX)) == null ? "0" : "1";
             }
         }
-        String imagePath = null;
-        if (imgPath.toString().equals("111111111")) {
-            imagePath = "C_" + (int) (new Random().nextInt(12) + 1);
-        } else if (!allTiles.contains(imgPath.toString())) {
-            imagePath = this.resolveImgPath(imgPath.toString());
+        if (imgPath.equals("111111111")) {
+            imgPath = "C_" + (int) (new Random().nextInt(12) + 1);
+        } else if (!allTiles.contains(imgPath)) {
+            imgPath = this.resolveImgPath(imgPath);
         }
-        casesTiles[i][j] = imagePath;
+        casesTiles[i][j] = imgPath;
     }
 
     /**

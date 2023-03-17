@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">BougetCrispelFourcaudotLaby</string>
+    <string name="LabyChooser_choice">Chagua</string>
+    <string name="LabyChooser_msg_not">hakuna mazingira yaliyochaguliwa</string>
+    <string name="Home_playerChoice">Chagua mchezaji</string>
+    <string name="Home_enemyChoice">Chagua adui</string>
+    <string name="Home_tilesChoice">Chagua tile</string>
+    <string name="Home_LabyChoice">Chagua mazingira</string>
+    <string name="Home_tileset">Tile</string>
+    <string name="Home_none">Hakuna</string>
+    <string name="Home_Launch">Pitch</string>
+    <string name="Choice_random">Random</string>
+    <string name="back">Back</string>
+    <string name="EndGame_Win">You won!!</string>
+    <string name="EndGame_Died">You lost...</string>
+    <string name="EndGame_Not">You made everything buguer...</string>
+    <string name="EndGame_Retry">Reload</string>
+    <string name="EndGame_Stop">Rudi kwenye menyu</string>
+    <string name="EndGame_Score">Muda uliobaki</string>
+</resources>

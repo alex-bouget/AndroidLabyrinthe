@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">BougetCrispelFourcaudotLaby</string>
+    <string name="LabyChooser_choice">निवडा</string>
+    <string name="LabyChooser_msg_not">कोणताही भूलभुलैया निवडला नाही</string>
+    <string name="Home_playerChoice">खेळाडू निवडा</string>
+    <string name="Home_enemyChoice">शत्रू निवडा</string>
+    <string name="Home_tilesChoice">तळटीप निवडा</string>
+    <string name="Home_LabyChoice">भूलभुलैया निवडा</string>
+    <string name="Home_tileset">तळटीप</string>
+    <string name="Home_none">काहीही नाही</string>
+    <string name="Home_Launch">फेकणे</string>
+    <string name="Choice_random">यादृच्छिक</string>
+    <string name="back">परत</string>
+    <string name="EndGame_Win">आपण जिंकलात!</string>
+    <string name="EndGame_Died">आपण गमावले आहे...</string>
+    <string name="EndGame_Not">आपण सर्व काही गमावले आहे...</string>
+    <string name="EndGame_Retry">पुन्हा सुरू करा</string>
+    <string name="EndGame_Stop">मेनूवर परत जा</string>
+    <string name="EndGame_Score">उर्वरित वेळ</string>
+</resources>

@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">BougetCrispelFourcaudotLaby</string>
+    <string name="LabyChooser_choice">Ընտրել</string>
+    <string name="LabyChooser_msg_not">Ոչ մի լաբիրինթոս չի ընտրվել</string>
+    <string name="Home_playerChoice">Ընտրել խաղացողը</string>
+    <string name="Home_enemyChoice">Ընտրել թշնամուն</string>
+    <string name="Home_tilesChoice">Ընտրել տախտակը</string>
+    <string name="Home_LabyChoice">Ընտրել լաբիրինթոսը</string>
+    <string name="Home_tileset">Տախտակը</string>
+    <string name="Home_none">Ոչ ոք</string>
+    <string name="Home_Launch">Թռնել</string>
+    <string name="Choice_random">Անկանխատեսելի</string>
+    <string name="back">Վերադարձ</string>
+    <string name="EndGame_Win">Դուք հաղթել եք!!</string>
+    <string name="EndGame_Died">Դուք պարտվել եք...</string>
+    <string name="EndGame_Not">Դուք ամեն ինչ խառնվել եք...</string>
+    <string name="EndGame_Retry">Վերսկսել</string>
+    <string name="EndGame_Stop">Վերադառնալ ընտրացանկին</string>
+    <string name="EndGame_Score">Մնացած ժամանակ</string>
+</resources>

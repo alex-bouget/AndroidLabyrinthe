@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">BougetCrispelFourcaudotLaby</string>
+    <string name="LabyChooser_choice">Roghnaigh</string>
+    <string name="LabyChooser_msg_not">Níl aon labyrinth roghnaithe</string>
+    <string name="Home_playerChoice">Roghnaigh an t-imreoir</string>
+    <string name="Home_enemyChoice">Roghnaigh an namhaid</string>
+    <string name="Home_tilesChoice">Roghnaigh an tileset</string>
+    <string name="Home_LabyChoice">Roghnaigh an labyrinth</string>
+    <string name="Home_tileset">Tileset</string>
+    <string name="Home_none">Níl aon duine</string>
+    <string name="Home_Launch">Tosaíonn tú ag imirt</string>
+    <string name="Choice_random">Random</string>
+    <string name="back">Ar ais</string>
+    <string name="EndGame_Win">Bhuel, bhuaigh tú!!</string>
+    <string name="EndGame_Died">Caill tú...</string>
+    <string name="EndGame_Not">Rinne tú gach rud buigear...</string>
+    <string name="EndGame_Retry">Tosaíonn tú arís</string>
+    <string name="EndGame_Stop">Téigh ar ais chuig an roghchlár</string>
+    <string name="EndGame_Score">Am fágtha</string>
+</resources>

@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">BougetCrispelFourcaudotLaby</string>
+    <string name="LabyChooser_choice">Chọn</string>
+    <string name="LabyChooser_msg_not">Không có mê cung được chọn</string>
+    <string name="Home_playerChoice">Chọn người chơi</string>
+    <string name="Home_enemyChoice">Chọn kẻ thù</string>
+    <string name="Home_tilesChoice">Chọn tileset</string>
+    <string name="Home_LabyChoice">Chọn mê cung</string>
+    <string name="Home_tileset">Tileset</string>
+    <string name="Home_none">Không có</string>
+    <string name="Home_Launch">Throw</string>
+    <string name="Choice_random">Variable</string>
+    <string name="back">Trở lại</string>
+    <string name="EndGame_Win">Bạn đã thắng!!</string>
+    <string name="EndGame_Died">Bạn đã thua...</string>
+    <string name="EndGame_Not">Bạn đã làm cho tất cả buguer...</string>
+    <string name="EndGame_Retry">Khởi đầu lại</string>
+    <string name="EndGame_Stop">Trở lại menu</string>
+    <string name="EndGame_Score">Thời gian còn lại</string>
+</resources>

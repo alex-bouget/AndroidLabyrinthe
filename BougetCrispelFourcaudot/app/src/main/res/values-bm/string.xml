@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">BougetCrispelFourcaudotLaby</string>
+    <string name="LabyChooser_choice">Ka sugandi</string>
+    <string name="LabyChooser_msg_not">Labyrinth ma sugandi</string>
+    <string name="Home_playerChoice">Ɲininikɛla sugandi</string>
+    <string name="Home_enemyChoice">Jalakɛla sugandi</string>
+    <string name="Home_tilesChoice">Tileset sugandi</string>
+    <string name="Home_LabyChoice">Labyrinth sugandi</string>
+    <string name="Home_tileset">Tileset sugandi</string>
+    <string name="Home_none">Mɔgɔ si tɛ a la</string>
+    <string name="Home_Launch">Lancer</string>
+    <string name="Choice_random">Aleratoire</string>
+    <string name="back">Back</string>
+    <string name="EndGame_Win">Aw ye se sɔrɔ!!</string>
+    <string name="EndGame_Died">Aw filila...</string>
+    <string name="EndGame_Not">Aw ye fɛn bɛɛ kɛ buguer...</string>
+    <string name="EndGame_Retry">Ka segin a kan</string>
+    <string name="EndGame_Stop">Segin menu kan</string>
+    <string name="EndGame_Score">Waati to</string>
+</resources>

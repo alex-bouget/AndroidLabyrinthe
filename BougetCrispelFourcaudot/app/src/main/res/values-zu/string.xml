@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">BougetCrispelFourcaudotLaby</string>
+    <string name="LabyChooser_choice">Khetha</string>
+    <string name="LabyChooser_msg_not">Ayikho i-labyrinth ekhethiwe</string>
+    <string name="Home_playerChoice">Khetha umdlali</string>
+    <string name="Home_enemyChoice">Khetha isitha</string>
+    <string name="Home_tilesChoice">Khetha i-tileset</string>
+    <string name="Home_LabyChoice">Khetha i-labyrinth</string>
+    <string name="Home_tileset">I-tileset</string>
+    <string name="Home_none">Akekho</string>
+    <string name="Home_Launch">Thumela</string>
+    <string name="Choice_random">Okuzenzakalelayo</string>
+    <string name="back">Emuva</string>
+    <string name="EndGame_Win">Unqobile!!</string>
+    <string name="EndGame_Died">Ulahlekile...</string>
+    <string name="EndGame_Not">Wenze konke kwahamba kabi...</string>
+    <string name="EndGame_Retry">Qala kabusha</string>
+    <string name="EndGame_Stop">Buyela kwimenyu</string>
+    <string name="EndGame_Score">Isikhathi esisele</string>
+</resources>

@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">BougetCrispelFourcaudotLaby</string>
+    <string name="LabyChooser_choice">Hlawula</string>
+    <string name="LabyChooser_msg_not">Ku hava mazambhana lama hlawuriweke</string>
+    <string name="Home_playerChoice">Hlawula mutlangi</string>
+    <string name="Home_enemyChoice">Hlawula nala</string>
+    <string name="Home_tilesChoice">Hlawula tilayisi</string>
+    <string name="Home_LabyChoice">Hlawula mazambhana</string>
+    <string name="Home_tileset">Tilayisi</string>
+    <string name="Home_none">Ku hava</string>
+    <string name="Home_Launch">Ku hoxa</string>
+    <string name="Choice_random">Swi nga rindzeriwanga</string>
+    <string name="back">Ku tlhelela endzhaku</string>
+    <string name="EndGame_Win">U hlurile!!</string>
+    <string name="EndGame_Died">U lahlekeriwile...</string>
+    <string name="EndGame_Not">U onhile hinkwaswo...</string>
+    <string name="EndGame_Retry">Sungula nakambe</string>
+    <string name="EndGame_Stop">Tlhelela eka menyu</string>
+    <string name="EndGame_Score">Nkarhi lowu saleke</string>
+</resources>

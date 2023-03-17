@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">BougetCrispelFourcaudotLaby</string>
+    <string name="LabyChooser_choice">Válassz</string>
+    <string name="LabyChooser_msg_not">nem választott labirintus</string>
+    <string name="Home_playerChoice">Válassz a játékos</string>
+    <string name="Home_enemyChoice">Válassz az ellenséget</string>
+    <string name="Home_tilesChoice">Válassz a téglát</string>
+    <string name="Home_LabyChoice">Válassz a labirintusot</string>
+    <string name="Home_tileset">Téglát</string>
+    <string name="Home_none">Egyik sem</string>
+    <string name="Home_Launch">Dobás</string>
+    <string name="Choice_random">Véletlenszerű</string>
+    <string name="back">Vissza</string>
+    <string name="EndGame_Win">Nyertél!!</string>
+    <string name="EndGame_Died">Vesztettél...</string>
+    <string name="EndGame_Not">Mindent elrontottál...</string>
+    <string name="EndGame_Retry">Újraindítás</string>
+    <string name="EndGame_Stop">Vissza az étlapra</string>
+    <string name="EndGame_Score">Maradt idő</string>
+</resources>

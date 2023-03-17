@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">BougetCrispelFourcaudotLaby</string>
+    <string name="LabyChooser_choice">Filifili</string>
+    <string name="LabyChooser_msg_not">Leai se faʻataʻitaʻiga filifilia</string>
+    <string name="Home_playerChoice">Filifili le tagata taʻalo</string>
+    <string name="Home_enemyChoice">Filifili le fili</string>
+    <string name="Home_tilesChoice">Filifili le tile</string>
+    <string name="Home_LabyChoice">Filifili le faʻataʻitaʻiga</string>
+    <string name="Home_tileset">Faʻataʻitaʻiga</string>
+    <string name="Home_none">Leai se tasi</string>
+    <string name="Home_Launch">Lafo</string>
+    <string name="Choice_random">Faʻafuaseʻi</string>
+    <string name="back">Toe foʻi</string>
+    <string name="EndGame_Win">Ua e manumalo!!</string>
+    <string name="EndGame_Died">Ua e leiloa...</string>
+    <string name="EndGame_Not">Ua e faʻaumatia mea uma...</string>
+    <string name="EndGame_Retry">Toe amata</string>
+    <string name="EndGame_Stop">Toe foʻi i le lisi</string>
+    <string name="EndGame_Score">Taimi totoe</string>
+</resources>

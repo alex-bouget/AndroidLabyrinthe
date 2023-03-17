@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">BougetCrispelFourcaudotLaby</string>
+    <string name="LabyChooser_choice">Интихоб кунед</string>
+    <string name="LabyChooser_msg_not">ягон лабиринт интихоб нашудааст</string>
+    <string name="Home_playerChoice">Бозингарро интихоб кунед</string>
+    <string name="Home_enemyChoice">Душманро интихоб кунед</string>
+    <string name="Home_tilesChoice">Тиллесро интихоб кунед</string>
+    <string name="Home_LabyChoice">Лабиринтро интихоб кунед</string>
+    <string name="Home_tileset">Тиллесро интихоб кунед</string>
+    <string name="Home_none">Ҳеҷ кас</string>
+    <string name="Home_Launch">Фурӯш кунед</string>
+    <string name="Choice_random">Ҳавоӣ</string>
+    <string name="back">Бозгаштан</string>
+    <string name="EndGame_Win">Шумо ғолиб шудед!!</string>
+    <string name="EndGame_Died">Шумо гум кардед...</string>
+    <string name="EndGame_Not">Шумо ҳама чизро бугу кард...</string>
+    <string name="EndGame_Retry">Аз нав оғоз кунед</string>
+    <string name="EndGame_Stop">Ба меню баргардед</string>
+    <string name="EndGame_Score">Вақти боқимонда</string>
+</resources>

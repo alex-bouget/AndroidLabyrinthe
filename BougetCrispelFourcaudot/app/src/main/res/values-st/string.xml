@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">BougetCrispelFourcaudotLaby</string>
+    <string name="LabyChooser_choice">Khetha</string>
+    <string name="LabyChooser_msg_not">Ha ho na labyrinth e khethiloeng</string>
+    <string name="Home_playerChoice">Khetha sebapali</string>
+    <string name="Home_enemyChoice">Khetha sera</string>
+    <string name="Home_tilesChoice">Khetha tile</string>
+    <string name="Home_LabyChoice">Khetha labyrinth</string>
+    <string name="Home_tileset">Tile</string>
+    <string name="Home_none">Ha ho le e \'ngoe</string>
+    <string name="Home_Launch">Lahla</string>
+    <string name="Choice_random">E sa lebelloang</string>
+    <string name="back">Back</string>
+    <string name="EndGame_Win">U hapile!!</string>
+    <string name="EndGame_Died">U lahlile...</string>
+    <string name="EndGame_Not">U entse hore tsohle li bue...</string>
+    <string name="EndGame_Retry">Qala hape</string>
+    <string name="EndGame_Stop">Khutlela ho menu</string>
+    <string name="EndGame_Score">Nako e setseng</string>
+</resources>

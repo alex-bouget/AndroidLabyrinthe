@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">BougetCrispelFourcaudotLaby</string>
+    <string name="LabyChooser_choice">Tlhopha</string>
+    <string name="LabyChooser_msg_not">ga go na labyrinth e e tlhophilweng</string>
+    <string name="Home_playerChoice">Tlhopha motshameki</string>
+    <string name="Home_enemyChoice">Tlhopha mmaba</string>
+    <string name="Home_tilesChoice">Tlhopha tile set</string>
+    <string name="Home_LabyChoice">Tlhopha labyrinth</string>
+    <string name="Home_tileset">Tile set</string>
+    <string name="Home_none">Ga go na ope</string>
+    <string name="Home_Launch">Throw</string>
+    <string name="Choice_random">Random</string>
+    <string name="back">Back</string>
+    <string name="EndGame_Win">You won!!</string>
+    <string name="EndGame_Died">You lost...</string>
+    <string name="EndGame_Not">T\'as made everything buguer...</string>
+    <string name="EndGame_Retry">Reboot</string>
+    <string name="EndGame_Stop">Return to menu</string>
+    <string name="EndGame_Score">Time left</string>
+</resources>

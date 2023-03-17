@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">BougetCrispelFourcaudotLaby</string>
+    <string name="LabyChooser_choice">tànn</string>
+    <string name="LabyChooser_msg_not">benn labirint bu ñu tànnul</string>
+    <string name="Home_playerChoice">tànn ay xëy</string>
+    <string name="Home_enemyChoice">tànn ay noon</string>
+    <string name="Home_tilesChoice">tànn ay tileset</string>
+    <string name="Home_LabyChoice">tànn labirint bi</string>
+    <string name="Home_tileset">tileset</string>
+    <string name="Home_none">kenn</string>
+    <string name="Home_Launch">sànni</string>
+    <string name="Choice_random">rëy</string>
+    <string name="back">delluwaat</string>
+    <string name="EndGame_Win">nga am ndam!!</string>
+    <string name="EndGame_Died">nga ñàkk...</string>
+    <string name="EndGame_Not">nga def lépp bu baax...</string>
+    <string name="EndGame_Retry">tàmbaleewaat</string>
+    <string name="EndGame_Stop">delluwaat ci menu bi</string>
+    <string name="EndGame_Score">jamono ji des</string>
+</resources>

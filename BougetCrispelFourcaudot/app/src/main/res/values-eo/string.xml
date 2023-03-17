@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">BougetCrispelFourcaudotLaby</string>
+    <string name="LabyChooser_choice">Elekti</string>
+    <string name="LabyChooser_msg_not">neniu labirinto elektita</string>
+    <string name="Home_playerChoice">elekti la ludanton</string>
+    <string name="Home_enemyChoice">elekti la malamikon</string>
+    <string name="Home_tilesChoice">elekti la kahelon</string>
+    <string name="Home_LabyChoice">elekti la labirinton</string>
+    <string name="Home_tileset">kahelon</string>
+    <string name="Home_none">neniun</string>
+    <string name="Home_Launch">ĵeti</string>
+    <string name="Choice_random">hazarda</string>
+    <string name="back">dorsa</string>
+    <string name="EndGame_Win">Vi gajnis!!</string>
+    <string name="EndGame_Died">Vi perdis...</string>
+    <string name="EndGame_Not">Vi ĉion buĝerigis...</string>
+    <string name="EndGame_Retry">Rekomenci</string>
+    <string name="EndGame_Stop">Reiri al la menuo</string>
+    <string name="EndGame_Score">Tempo restanta</string>
+</resources>

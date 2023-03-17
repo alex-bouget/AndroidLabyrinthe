@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">BougetCrispelFourcaudotLaby</string>
+    <string name="LabyChooser_choice">Alegere</string>
+    <string name="LabyChooser_msg_not">Niciun labirint ales</string>
+    <string name="Home_playerChoice">Alegerea jucătorului</string>
+    <string name="Home_enemyChoice">Alegerea inamicului</string>
+    <string name="Home_tilesChoice">Alegerea tileset</string>
+    <string name="Home_LabyChoice">Alegerea labirintului</string>
+    <string name="Home_tileset">Tileset</string>
+    <string name="Home_none">Niciuna</string>
+    <string name="Home_Launch">Lansează</string>
+    <string name="Choice_random">Aleatoriu</string>
+    <string name="back">Înapoi</string>
+    <string name="EndGame_Win">Ai câștigat!!</string>
+    <string name="EndGame_Died">Ai pierdut...</string>
+    <string name="EndGame_Not">Ai făcut totul bugger...</string>
+    <string name="EndGame_Retry">Reluare</string>
+    <string name="EndGame_Stop">Reveni la meniu</string>
+    <string name="EndGame_Score">Timp rămas</string>
+</resources>

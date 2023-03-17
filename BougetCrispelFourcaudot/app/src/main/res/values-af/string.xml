@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">BougetCrispelFourcaudotLaby</string>
+    <string name="LabyChooser_choice">Kies</string>
+    <string name="LabyChooser_msg_not">Geen labirint gekies nie</string>
+    <string name="Home_playerChoice">Kies die speler</string>
+    <string name="Home_enemyChoice">Kies die vyand</string>
+    <string name="Home_tilesChoice">Kies die teël</string>
+    <string name="Home_LabyChoice">Kies die labirint</string>
+    <string name="Home_tileset">Teël</string>
+    <string name="Home_none">Geen</string>
+    <string name="Home_Launch">Gooi</string>
+    <string name="Choice_random">Onvoorspelbaar</string>
+    <string name="back">Terug</string>
+    <string name="EndGame_Win">Jy het gewen!!</string>
+    <string name="EndGame_Died">Jy het verloor...</string>
+    <string name="EndGame_Not">Jy het alles gebogger...</string>
+    <string name="EndGame_Retry">Herbegin</string>
+    <string name="EndGame_Stop">Gaan terug na die spyskaart</string>
+    <string name="EndGame_Score">Oorblywende tyd</string>
+</resources>

@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">BougetCrispelFourcaudotLaby</string>
+    <string name="LabyChooser_choice">Saýla</string>
+    <string name="LabyChooser_msg_not">Hiç bir labyrint saýlanmady</string>
+    <string name="Home_playerChoice">Oýunçy saýla</string>
+    <string name="Home_enemyChoice">Duşmany saýla</string>
+    <string name="Home_tilesChoice">Kassany saýla</string>
+    <string name="Home_LabyChoice">Labyrint saýla</string>
+    <string name="Home_tileset">Kassany saýla</string>
+    <string name="Home_none">Hiçbiri</string>
+    <string name="Home_Launch">Atma</string>
+    <string name="Choice_random">Saryş</string>
+    <string name="back">Dönüş</string>
+    <string name="EndGame_Win">Sen ýeňdiň!!</string>
+    <string name="EndGame_Died">Sen ýitdiň...</string>
+    <string name="EndGame_Not">Tämiz etdiň...</string>
+    <string name="EndGame_Retry">Ýene başla</string>
+    <string name="EndGame_Stop">Menüe dolan</string>
+    <string name="EndGame_Score">Galan wagt</string>
+</resources>

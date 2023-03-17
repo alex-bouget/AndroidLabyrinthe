@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">BougetCrispelFourcaudotLaby</string>
+    <string name="LabyChooser_choice">Paw</string>
+    <string name="LabyChooser_msg_not">Labyrinth biara nni hɔ a wapaw</string>
+    <string name="Home_playerChoice">Agyefo a wapaw</string>
+    <string name="Home_enemyChoice">Ɔtamfo a wapaw</string>
+    <string name="Home_tilesChoice">Tileset a wapaw</string>
+    <string name="Home_LabyChoice">Labyrinth a wapaw</string>
+    <string name="Home_tileset">Tileset a wapaw</string>
+    <string name="Home_none">Obiara nni hɔ a wapaw</string>
+    <string name="Home_Launch">Tow</string>
+    <string name="Choice_random">Anammɔn</string>
+    <string name="back">Back a wapaw</string>
+    <string name="EndGame_Win">Woadi nkonim!! a wapaw</string>
+    <string name="EndGame_Died">Woadi nkogu... a wapaw</string>
+    <string name="EndGame_Not">Woama biribiara ayɛ basaa a wapaw... a wapaw</string>
+    <string name="EndGame_Retry">San fi ase</string>
+    <string name="EndGame_Stop">San kɔ menu no so</string>
+    <string name="EndGame_Score">Bere a aka</string>
+</resources>

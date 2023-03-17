@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">BougetCrispelFourcaudotLaby</string>
+    <string name="LabyChooser_choice">בחר</string>
+    <string name="LabyChooser_msg_not">שום מבוך נבחר</string>
+    <string name="Home_playerChoice">לבחור את השחקן</string>
+    <string name="Home_enemyChoice">לבחור את האויב</string>
+    <string name="Home_tilesChoice">לבחור את הטילסאט</string>
+    <string name="Home_LabyChoice">לבחור את המבוך</string>
+    <string name="Home_tileset">טילסאט</string>
+    <string name="Home_none">אף אחד</string>
+    <string name="Home_Launch">לזרוק</string>
+    <string name="Choice_random">אקראי</string>
+    <string name="back">בחזרה</string>
+    <string name="EndGame_Win">ניצחת!!</string>
+    <string name="EndGame_Died">הפסדת...</string>
+    <string name="EndGame_Not">אתה גרמת לכל bugger...</string>
+    <string name="EndGame_Retry">להתחיל מחדש</string>
+    <string name="EndGame_Stop">לחזור לתפריט</string>
+    <string name="EndGame_Score">זמן שנותר</string>
+</resources>

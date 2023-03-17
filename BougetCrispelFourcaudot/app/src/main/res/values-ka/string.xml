@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">BougetCrispelFourcaudotLaby</string>
+    <string name="LabyChooser_choice">აირჩიე</string>
+    <string name="LabyChooser_msg_not">არ არის არჩეული ლაბირინთი</string>
+    <string name="Home_playerChoice">აირჩიე მოთამაშე</string>
+    <string name="Home_enemyChoice">აირჩიე მოწინააღმდეგე</string>
+    <string name="Home_tilesChoice">აირჩიე ტილესეტი</string>
+    <string name="Home_LabyChoice">აირჩიე ლაბირინთი</string>
+    <string name="Home_tileset">ტილესეტი</string>
+    <string name="Home_none">არცერთი</string>
+    <string name="Home_Launch">სროლა</string>
+    <string name="Choice_random">აერატორული</string>
+    <string name="back">უკან</string>
+    <string name="EndGame_Win">თქვენ მოიგეთ!!</string>
+    <string name="EndGame_Died">თქვენ დაკარგეთ...</string>
+    <string name="EndGame_Not">თქვენ გააკეთეთ ყველაფერი bugger...</string>
+    <string name="EndGame_Retry">თავიდან დაიწყოთ</string>
+    <string name="EndGame_Stop">დაბრუნება მენიუში</string>
+    <string name="EndGame_Score">დარჩენილი დრო</string>
+</resources>
