@@ -5,6 +5,5 @@ sprites/boar/brown2/!sprites/boar/brown2/spriteLoader.txt
 sprites/boar/white/!sprites/boar/white/spriteLoader.txt
 sprites/boar/brown3/!sprites/boar/brown3/spriteLoader.txt
 sprites/boar/brown/!sprites/boar/brown/spriteLoader.txt
-sprites/boar/spriteLoader.txt/!sprites/boar/spriteLoader.txt/spriteLoader.txt
 sprites/boar/red/!sprites/boar/red/spriteLoader.txt
 sprites/boar/brown4/!sprites/boar/brown4/spriteLoader.txt
