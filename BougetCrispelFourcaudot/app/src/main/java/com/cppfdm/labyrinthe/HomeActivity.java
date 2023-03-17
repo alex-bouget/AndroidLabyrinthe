@@ -61,15 +61,18 @@ public class HomeActivity extends AppCompatActivity {
         }
 
         TextView tilesetTextView = (TextView) findViewById(R.id.tilesetTextView);
+        String tileString = getResources().getText(R.string.Home_tileset).toString();
         if (tileset == null) {
-            tilesetTextView.setText("Tileset: None");
+            String txt = tileString + getResources().getText(R.string.Home_none).toString();
+            tilesetTextView.setText(txt);
         } else {
-            tilesetTextView.setText("Tileset: " + tileset.getName());
+            String txt = tileString + tileset.getName();
+            tilesetTextView.setText(txt);
         }
 
         TextView textView = (TextView) findViewById(R.id.labyrinthTextView);
         if (labyrinthName == null) {
-            textView.setText("None");
+            textView.setText(getResources().getText(R.string.Home_none));
         } else {
             textView.setText(labyrinthName);
         }
