@@ -3,6 +3,7 @@ package com.cppfdm.labyrinthe;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -75,7 +76,16 @@ public class SpriteChoiceActivity extends AppCompatActivity {
         } else {
             textView.setText(spriteEnum.getName());
         }
-        textView.setTextColor(getResources().getColor(R.color.lemonMeringue));
+
+        // Change text color aaccording to the theme
+        switch (getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK) {
+            case Configuration.UI_MODE_NIGHT_YES:
+                textView.setTextColor(getResources().getColor(R.color.naplesYellow));
+                break;
+            case Configuration.UI_MODE_NIGHT_NO:
+                textView.setTextColor(getResources().getColor(R.color.Dark_slate_blue));
+                break;
+        }
         return textView;
     }
 
