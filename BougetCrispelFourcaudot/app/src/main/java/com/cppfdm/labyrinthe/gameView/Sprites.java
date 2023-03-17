@@ -28,7 +28,6 @@ public class Sprites {
     public Sprites(View v, String path, String loaderPath) throws IOException {
         this.v = v;
         String loader = AssetsCommand.readFile(v, loaderPath);
-        System.out.println(loader);
         if (loader == null) {
             throw new IOException();
         }
@@ -43,7 +42,6 @@ public class Sprites {
             for (String gif: gifs) {
                 sprites[i].add(ViewerCommand.getBitmap(v, path + gif));
             }
-            System.out.println(sprites[i]);
             i++;
         }
     }

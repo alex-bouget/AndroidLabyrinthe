@@ -185,7 +185,6 @@ public class GameViewer extends AbstractDrawable {
             for (int ySize = startView.getY(); ySize < endView.getY(); ySize++) {
                 Case aCase = labyrinth.getCase(new Coord(xSize, ySize));
                 Bitmap bitmap = tileset.getTiles(aCase);
-                System.out.println(tileset.getTilesName(aCase));
                 Coord bitPos = calcPosition(new Coord(xSize, ySize));
                 if (background != null) {
                     canvas.drawBitmap(

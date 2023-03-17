@@ -59,11 +59,10 @@ public class MainActivity extends AppCompatActivity {
      * @param view view where the action come from
      */
     public void moveLeft(View view) {
-        if (hero.isDead() || hero.isWin()) {
+        if (hero == null || hero.isDead() || hero.isWin()) {
             return;
         }
         hero.moveLeft();
-        System.out.println(hero.getCurrentCase().getCoord());
     }
 
     /***
@@ -72,11 +71,10 @@ public class MainActivity extends AppCompatActivity {
      * @param view view where the action come from
      */
     public void moveRight(View view) {
-        if (hero.isDead() || hero.isWin()) {
+        if (hero == null || hero.isDead() || hero.isWin()) {
             return;
         }
         hero.moveRight();
-        System.out.println(hero.getCurrentCase().getCoord());
     }
 
     /***
@@ -85,11 +83,10 @@ public class MainActivity extends AppCompatActivity {
      * @param view view where the action come from
      */
     public void moveUp(View view) {
-        if (hero.isDead() || hero.isWin()) {
+        if (hero == null || hero.isDead() || hero.isWin()) {
             return;
         }
-        System.out.println(hero.moveUp());
-        System.out.println(hero.getCurrentCase().getCoord());
+        hero.moveUp();
     }
 
     /***
@@ -98,11 +95,10 @@ public class MainActivity extends AppCompatActivity {
      * @param view view where the action come from
      */
     public void moveDown(View view) {
-        if (hero.isDead() || hero.isWin()) {
+        if (hero == null || hero.isDead() || hero.isWin()) {
             return;
         }
         hero.moveDown();
-        System.out.println(hero.getCurrentCase().getCoord());
     }
 
 
@@ -112,6 +108,9 @@ public class MainActivity extends AppCompatActivity {
      * @param view view where the action come from
      */
     public void showMap(View view) {
+        if (hero == null) {
+            return;
+        }
         Intent intent = new Intent();
         intent.setClass(this, MapActivity.class);
         intent.putExtra("hero", Serializer.addToSerializer(hero));
