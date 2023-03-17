@@ -1,0 +1,10 @@
+!
+sprites/pinguins/mustache_slide/!sprites/pinguins/mustache_slide/spriteLoader.txt
+sprites/pinguins/brow/!sprites/pinguins/brow/spriteLoader.txt
+sprites/pinguins/normal_slide/!sprites/pinguins/normal_slide/spriteLoader.txt
+sprites/pinguins/brow_slide/!sprites/pinguins/brow_slide/spriteLoader.txt
+sprites/pinguins/age_slide/!sprites/pinguins/age_slide/spriteLoader.txt
+sprites/pinguins/normal/!sprites/pinguins/normal/spriteLoader.txt
+sprites/pinguins/spriteLoader.txt/!sprites/pinguins/spriteLoader.txt/spriteLoader.txt
+sprites/pinguins/mustache/!sprites/pinguins/mustache/spriteLoader.txt
+sprites/pinguins/age/!sprites/pinguins/age/spriteLoader.txt

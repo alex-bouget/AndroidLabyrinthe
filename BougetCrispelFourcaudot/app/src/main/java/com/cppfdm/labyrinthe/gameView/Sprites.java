@@ -11,6 +11,7 @@ import java.util.ArrayList;
 
 public class Sprites {
     private View v;
+
     private ArrayList<Bitmap>[] sprites;
     private ArrayList<Bitmap>[] resizedSprites;
     int movement = 2;
@@ -27,11 +28,25 @@ public class Sprites {
      */
     public Sprites(View v, String path, String loaderPath) throws IOException {
         this.v = v;
+        readLoader(path, loaderPath);
+    }
+
+    public void readLoader(String path, String loaderPath) throws IOException {
         String loader = AssetsCommand.readFile(v, loaderPath);
         if (loader == null) {
             throw new IOException();
         }
         String[] each = loader.split("\n");
+        if (each[0].equals("!")) {
+            int size = each.length-1;
+            int choice = (int)(Math.random() * size)+1;
+            System.out.println(choice);
+            String[] newLoader = each[choice].split("!");
+            System.out.println(newLoader[0]);
+            readLoader(newLoader[0], newLoader[1]);
+            return;
+        }
+
         sprites = new ArrayList[each.length];
         resizedSprites = new ArrayList[each.length];
         int i = 0;

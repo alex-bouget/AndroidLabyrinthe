@@ -24,6 +24,11 @@ public abstract class SpritesViewer extends AbstractDrawable {
         this.loaderPath = loaderPath;
     }
 
+    public SpritesViewer(String path) {
+        this.path = path;
+        this.loaderPath = path + "spriteLoader.txt";
+    }
+
 
     /**
      * resize the player

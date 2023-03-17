@@ -1,0 +1,4 @@
+C1.png>C2.png>C3.png>C4.png>C5.png
+CLeft1.png>CLeft2.png>CLeft3.png>CLeft4.png>CLeft5.png
+C1.png>C2.png>C3.png>C4.png>C5.png
+C1.png>C2.png>C3.png>C4.png>C5.png

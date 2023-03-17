@@ -1,0 +1,9 @@
+!
+sprites/crab/red/!sprites/crab/red/spriteLoader.txt
+sprites/crab/black/!sprites/crab/black/spriteLoader.txt
+sprites/crab/brown/!sprites/crab/brown/spriteLoader.txt
+sprites/crab/yellow/!sprites/crab/yellow/spriteLoader.txt
+sprites/crab/cyan/!sprites/crab/cyan/spriteLoader.txt
+sprites/crab/gold/!sprites/crab/gold/spriteLoader.txt
+sprites/crab/blue/!sprites/crab/blue/spriteLoader.txt
+sprites/crab/dark_blue/!sprites/crab/dark_blue/spriteLoader.txt

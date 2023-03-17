@@ -1,0 +1,9 @@
+!
+sprites/tanuki/orange/!sprites/tanuki/orange/spriteLoader.txt
+sprites/tanuki/light_gray/!sprites/tanuki/light_gray/spriteLoader.txt
+sprites/tanuki/gray2/!sprites/tanuki/gray2/spriteLoader.txt
+sprites/tanuki/black_brown/!sprites/tanuki/black_brown/spriteLoader.txt
+sprites/tanuki/white/!sprites/tanuki/white/spriteLoader.txt
+sprites/tanuki/brown/!sprites/tanuki/brown/spriteLoader.txt
+sprites/tanuki/gray/!sprites/tanuki/gray/spriteLoader.txt
+sprites/tanuki/red/!sprites/tanuki/red/spriteLoader.txt

@@ -1,0 +1,9 @@
+!
+sprites/chicken/white/!sprites/chicken/white/spriteLoader.txt
+sprites/chicken/brown/!sprites/chicken/brown/spriteLoader.txt
+sprites/chicken/green/!sprites/chicken/green/spriteLoader.txt
+sprites/chicken/maroon/!sprites/chicken/maroon/spriteLoader.txt
+sprites/chicken/black/!sprites/chicken/black/spriteLoader.txt
+sprites/chicken/gray/!sprites/chicken/gray/spriteLoader.txt
+sprites/chicken/dust/!sprites/chicken/dust/spriteLoader.txt
+sprites/chicken/red/!sprites/chicken/red/spriteLoader.txt

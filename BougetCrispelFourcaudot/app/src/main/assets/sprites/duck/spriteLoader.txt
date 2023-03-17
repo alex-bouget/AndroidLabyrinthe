@@ -1,0 +1,3 @@
+!
+sprites/duck/duck1/!sprites/duck/duck1/spriteLoader.txt
+sprites/duck/duck2/!sprites/duck/duck2/spriteLoader.txt

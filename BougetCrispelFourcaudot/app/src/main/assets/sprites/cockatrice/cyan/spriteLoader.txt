@@ -1,0 +1,4 @@
+Up0.png>Up1.png>Up2.png
+Left0.png>Left1.png>Left2.png
+Down0.png>Down1.png>Down2.png
+Right0.png>Right1.png>Right2.png

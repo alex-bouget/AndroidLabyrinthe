@@ -1,0 +1,9 @@
+!
+sprites/owl/gold/!sprites/owl/gold/spriteLoader.txt
+sprites/owl/brown2/!sprites/owl/brown2/spriteLoader.txt
+sprites/owl/white_ultra2/!sprites/owl/white_ultra2/spriteLoader.txt
+sprites/owl/white/!sprites/owl/white/spriteLoader.txt
+sprites/owl/white_ultra3/!sprites/owl/white_ultra3/spriteLoader.txt
+sprites/owl/brown/!sprites/owl/brown/spriteLoader.txt
+sprites/owl/white_ultra/!sprites/owl/white_ultra/spriteLoader.txt
+sprites/owl/white2/!sprites/owl/white2/spriteLoader.txt
