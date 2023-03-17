@@ -22,6 +22,7 @@ import com.cppfdm.labyrinthe.utils.ViewerCommand;
 import com.cppfdm.labyrinthe.view.Viewer;
 import com.cppfdm.labyrinthe.view.core.AbstractDrawable;
 import com.cppfdm.labyrinthe.view.core.Drawable;
+import com.cppfdm.labyrinthe.view.tileset.TilesInterfaces;
 import com.cppfdm.labyrinthe.view.tileset.TilesetResizer;
 
 public class GameViewer extends AbstractDrawable {
@@ -42,6 +43,7 @@ public class GameViewer extends AbstractDrawable {
     private int yOffset = 0;
     private int animationFrame = 1;
     private int animationWinDead = 0;
+    private TilesInterfaces tilesInterfaces;
     int enemyCalc = 0;
     Bitmap win;
     Bitmap died;
@@ -53,15 +55,17 @@ public class GameViewer extends AbstractDrawable {
     /**
      * Constructor
      *
-     * @param player        the player
-     * @param playerSprite  sprite of the player
-     * @param monsterSprite sprite of the monster
+     * @param player          the player
+     * @param playerSprite    sprite of the player
+     * @param monsterSprite   sprite of the monster
+     * @param tilesInterfaces tileset
      */
-    public GameViewer(Player player, SpriteEnum playerSprite, SpriteEnum monsterSprite) {
+    public GameViewer(Player player, SpriteEnum playerSprite, SpriteEnum monsterSprite, TilesInterfaces tilesInterfaces) {
         this.player = player;
         lastCoordinates = player.getCurrentCase().getCoord();
         this.playerSprite = playerSprite;
         this.monsterSprite = monsterSprite;
+        this.tilesInterfaces = tilesInterfaces;
     }
 
     /**
@@ -98,7 +102,7 @@ public class GameViewer extends AbstractDrawable {
         super.setDrawableParent(drawable);
 
         root = (Viewer) getDrawableRoot();
-        tileset = new TilesetResizer(new RoadTileSet(root, player.getLaby()));
+        tileset = new TilesetResizer(tilesInterfaces);
         playerViewer = new PlayerViewer(player, playerSprite);
         playerViewer.setDrawableParent(this);
         Enemy[] enemies = player.getLaby().getEnemies();
@@ -150,7 +154,7 @@ public class GameViewer extends AbstractDrawable {
                 return;
             }
             Intent intent = new Intent();
-            AppCompatActivity app = (AppCompatActivity)root.getContext();
+            AppCompatActivity app = (AppCompatActivity) root.getContext();
             intent.setClass(app, EndGameActivity.class);
             intent.putExtra("result", (win.equals(winOrDead)) ? "win" : "died");
             app.startActivityForResult(intent, EndGameActivity.INTENT_ID);
