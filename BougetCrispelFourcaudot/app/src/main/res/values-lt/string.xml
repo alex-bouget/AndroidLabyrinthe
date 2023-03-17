@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">BougetCrispelFourcaudotLaby</string>
+    <string name="LabyChooser_choice">Pasirinkti</string>
+    <string name="LabyChooser_msg_not">Labirintas nepasirinktas</string>
+    <string name="Home_playerChoice">Žaidėjas pasirinktas</string>
+    <string name="Home_enemyChoice">Priešas pasirinktas</string>
+    <string name="Home_tilesChoice">Plokštė pasirinkta</string>
+    <string name="Home_LabyChoice">Labirintas pasirinktas</string>
+    <string name="Home_tileset">Plokštė</string>
+    <string name="Home_none">Nė vienas</string>
+    <string name="Home_Launch">Žaisti</string>
+    <string name="Choice_random">Laikinas</string>
+    <string name="back">Grįžimas</string>
+    <string name="EndGame_Win">Jūs laimėjote!!</string>
+    <string name="EndGame_Died">Jūs pralaimėjote...</string>
+    <string name="EndGame_Not">Jūs viską padarėte...</string>
+    <string name="EndGame_Retry">Pradėti iš naujo</string>
+    <string name="EndGame_Stop">Grįžti į meniu</string>
+    <string name="EndGame_Score">Laikas pasilikęs</string>
+</resources>

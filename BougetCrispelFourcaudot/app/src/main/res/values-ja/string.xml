@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">BougetCrispelFourcaudotLaby</string>
+    <string name="LabyChooser_choice">選択する</string>
+    <string name="LabyChooser_msg_not">迷路が選択されていない</string>
+    <string name="Home_playerChoice">プレイヤーを選択する</string>
+    <string name="Home_enemyChoice">敵を選択する</string>
+    <string name="Home_tilesChoice">ティレスセットを選択する</string>
+    <string name="Home_LabyChoice">迷路を選択する</string>
+    <string name="Home_tileset">ティレスセット</string>
+    <string name="Home_none">無</string>
+    <string name="Home_Launch">投げる</string>
+    <string name="Choice_random">ランダム</string>
+    <string name="back">バック</string>
+    <string name="EndGame_Win">あなたは勝った!!</string>
+    <string name="EndGame_Died">あなたは負けた...</string>
+    <string name="EndGame_Not">あなたはすべてをブーグルにした...</string>
+    <string name="EndGame_Retry">再開する</string>
+    <string name="EndGame_Stop">メニューに戻る</string>
+    <string name="EndGame_Score">残り時間</string>
+</resources>

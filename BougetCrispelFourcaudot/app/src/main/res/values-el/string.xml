@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">BougetCrispelFourcaudotLaby</string>
+    <string name="LabyChooser_choice">Επιλέξτε</string>
+    <string name="LabyChooser_msg_not">Κανένας λαβύρινθος δεν επιλέχθηκε</string>
+    <string name="Home_playerChoice">Επιλέξτε τον παίκτη</string>
+    <string name="Home_enemyChoice">Επιλέξτε τον εχθρό</string>
+    <string name="Home_tilesChoice">Επιλέξτε την πλακέτα</string>
+    <string name="Home_LabyChoice">Επιλέξτε το λαβύρινθος</string>
+    <string name="Home_tileset">Πλακέτα</string>
+    <string name="Home_none">Κανένας</string>
+    <string name="Home_Launch">Ρίξτε</string>
+    <string name="Choice_random">Αεροπορικός</string>
+    <string name="back">Πίσω</string>
+    <string name="EndGame_Win">Κέρδισες!!</string>
+    <string name="EndGame_Died">Έχασες...</string>
+    <string name="EndGame_Not">Έκανες τα πάντα να γίνουν...</string>
+    <string name="EndGame_Retry">Ξεκινήστε ξανά</string>
+    <string name="EndGame_Stop">Επιστρέψτε στο μενού</string>
+    <string name="EndGame_Score">Χρόνος που απομένει</string>
+</resources>

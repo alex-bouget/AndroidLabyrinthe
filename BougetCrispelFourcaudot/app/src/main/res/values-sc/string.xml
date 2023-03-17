@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">BougetCrispelFourcaudotLaby</string>
+    <string name="LabyChooser_choice">Iscàrriga</string>
+    <string name="LabyChooser_msg_not">Nen unu labirintu isseberadu</string>
+    <string name="Home_playerChoice">Iscàrriga su giogadore</string>
+    <string name="Home_enemyChoice">Iscàrriga s\'inimigu</string>
+    <string name="Home_tilesChoice">Iscàrriga sa tessera</string>
+    <string name="Home_LabyChoice">Iscàrriga su labirintu</string>
+    <string name="Home_tileset">Tessera</string>
+    <string name="Home_none">Nisciunu</string>
+    <string name="Home_Launch">Lanzare</string>
+    <string name="Choice_random">Aleatòriu</string>
+    <string name="back">Back</string>
+    <string name="EndGame_Win">As bintu!!</string>
+    <string name="EndGame_Died">As pèrdidu...</string>
+    <string name="EndGame_Not">As fatu totu buguer...</string>
+    <string name="EndGame_Retry">Comintzare de nou</string>
+    <string name="EndGame_Stop">Torra a su menu</string>
+    <string name="EndGame_Score">Tempus superadu</string>
+</resources>

@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">BougetCrispelFourcaudotLaby</string>
+    <string name="LabyChooser_choice">Yan</string>
+    <string name="LabyChooser_msg_not">ko si labyrinth ti a yan</string>
+    <string name="Home_playerChoice">yan ẹrọ orin</string>
+    <string name="Home_enemyChoice">yan ọta</string>
+    <string name="Home_tilesChoice">yan tile</string>
+    <string name="Home_LabyChoice">yan labyrinth</string>
+    <string name="Home_tileset">tile</string>
+    <string name="Home_none">ko si</string>
+    <string name="Home_Launch">jabọ</string>
+    <string name="Choice_random">aleatory</string>
+    <string name="back">pada</string>
+    <string name="EndGame_Win">o ti ṣẹgun!!</string>
+    <string name="EndGame_Died">o ti padanu...</string>
+    <string name="EndGame_Not">o ti ṣe ohun gbogbo bugger...</string>
+    <string name="EndGame_Retry">tun bẹrẹ</string>
+    <string name="EndGame_Stop">pada si akojọ aṣayan</string>
+    <string name="EndGame_Score">akoko ti o ku</string>
+</resources>

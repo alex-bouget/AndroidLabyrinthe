@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">BougetCrispelFourcaudotLaby</string>
+    <string name="LabyChooser_choice">Odaberite</string>
+    <string name="LabyChooser_msg_not">nema izabranog labirinta</string>
+    <string name="Home_playerChoice">odaberite igrača</string>
+    <string name="Home_enemyChoice">odaberite neprijatelja</string>
+    <string name="Home_tilesChoice">odaberite ploču</string>
+    <string name="Home_LabyChoice">odaberite labirint</string>
+    <string name="Home_tileset">ploču</string>
+    <string name="Home_none">nitko</string>
+    <string name="Home_Launch">Bacanje</string>
+    <string name="Choice_random">Nesigurno</string>
+    <string name="back">natrag</string>
+    <string name="EndGame_Win">Vi ste pobijedili!!</string>
+    <string name="EndGame_Died">Vi ste izgubili...</string>
+    <string name="EndGame_Not">Ti si sve bugger...</string>
+    <string name="EndGame_Retry">ponovno početi</string>
+    <string name="EndGame_Stop">vratiti se na meni</string>
+    <string name="EndGame_Score">Preostalo vrijeme</string>
+</resources>

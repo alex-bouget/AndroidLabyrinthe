@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">BougetCrispelFourcaudotLaby</string>
+    <string name="LabyChooser_choice">নিৰ্বাচন কৰক</string>
+    <string name="LabyChooser_msg_not">কোনো খেলপথাৰ নিৰ্বাচন কৰা হোৱা নাই</string>
+    <string name="Home_playerChoice">খেলুৱৈ নিৰ্বাচন কৰক</string>
+    <string name="Home_enemyChoice">শত্ৰু নিৰ্বাচন কৰক</string>
+    <string name="Home_tilesChoice">টাইলছেট নিৰ্বাচন কৰক</string>
+    <string name="Home_LabyChoice">খেলপথাৰ নিৰ্বাচন কৰক</string>
+    <string name="Home_tileset">টাইলছেট নিৰ্বাচন কৰক</string>
+    <string name="Home_none">কোনো নাই</string>
+    <string name="Home_Launch">শ্বাৰ্ট</string>
+    <string name="Choice_random">এলেটেৰেল</string>
+    <string name="back">বেক</string>
+    <string name="EndGame_Win">আপুনি জয়ী হ\'ল</string>
+    <string name="EndGame_Died">আপুনি পৰাজিত হ\'ল...</string>
+    <string name="EndGame_Not">আপুনি সকলো বুগাৰ কৰিলে...</string>
+    <string name="EndGame_Retry">পুনৰ আৰম্ভ কৰক</string>
+    <string name="EndGame_Stop">মেনুলৈ ঘূৰি যাওক</string>
+    <string name="EndGame_Score">বাকী থকা সময়</string>
+</resources>

@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">BougetCrispelFourcaudotLaby</string>
+    <string name="LabyChooser_choice">Digidigi</string>
+    <string name="LabyChooser_msg_not">Sega ni digidigi na labyrinth</string>
+    <string name="Home_playerChoice">Digidigi na dauqito</string>
+    <string name="Home_enemyChoice">Digidigi na meca</string>
+    <string name="Home_tilesChoice">Digidigi na tileset</string>
+    <string name="Home_LabyChoice">Digidigi na labyrinth</string>
+    <string name="Home_tileset">Tileset</string>
+    <string name="Home_none">Sega ni dua</string>
+    <string name="Home_Launch">Launch</string>
+    <string name="Choice_random">Random</string>
+    <string name="back">Lesu</string>
+    <string name="EndGame_Win">O sa qaqa!!</string>
+    <string name="EndGame_Died">O sa druka...</string>
+    <string name="EndGame_Not">O sa cakava kece na buguer...</string>
+    <string name="EndGame_Retry">Tekivu tale</string>
+    <string name="EndGame_Stop">Lesu ki na menu</string>
+    <string name="EndGame_Score">Gauna vo</string>
+</resources>

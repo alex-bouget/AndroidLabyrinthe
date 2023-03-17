@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">BougetCrispelFourcaudotLaby</string>
+    <string name="LabyChooser_choice">Seleccionar</string>
+    <string name="LabyChooser_msg_not">pas cap de labirint causit</string>
+    <string name="Home_playerChoice">Seleccionar lo jogaire</string>
+    <string name="Home_enemyChoice">Seleccionar l\'enemic</string>
+    <string name="Home_tilesChoice">Seleccionar lo tileset</string>
+    <string name="Home_LabyChoice">Seleccionar lo labirint</string>
+    <string name="Home_tileset">Tileset</string>
+    <string name="Home_none">Pas cap</string>
+    <string name="Home_Launch">Lançar</string>
+    <string name="Choice_random">Aleatòri</string>
+    <string name="back">Retorn</string>
+    <string name="EndGame_Win">Ganhatz!!</string>
+    <string name="EndGame_Died">Perdatz...</string>
+    <string name="EndGame_Not">Tot faguèt bufar...</string>
+    <string name="EndGame_Retry">Començar de nòu</string>
+    <string name="EndGame_Stop">Tornar al menú</string>
+    <string name="EndGame_Score">Temps subreviut</string>
+</resources>

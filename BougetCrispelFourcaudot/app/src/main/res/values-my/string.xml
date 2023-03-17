@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">BougetCrispelFourcaudotLaby</string>
+    <string name="LabyChooser_choice">သင်ရွေးချယ်နိုင်သည်</string>
+    <string name="LabyChooser_msg_not">မဲဆွယ်ဝိုင်းရွေးချယ်ခြင်းမရှိပါ</string>
+    <string name="Home_playerChoice">ကစားသမားကိုရွေးချယ်နိုင်သည်</string>
+    <string name="Home_enemyChoice">ရန်သူကိုရွေးချယ်နိုင်သည်</string>
+    <string name="Home_tilesChoice">tile ကိုရွေးချယ်နိုင်သည်</string>
+    <string name="Home_LabyChoice">မဲဆွယ်ဝိုင်းရွေးချယ်နိုင်သည်</string>
+    <string name="Home_tileset">tile ကိုရွေးချယ်နိုင်သည်</string>
+    <string name="Home_none">မရှိနိုင်သည်</string>
+    <string name="Home_Launch">ပစ်နိုင်သည်</string>
+    <string name="Choice_random">ကျပန်း</string>
+    <string name="back">နောက်ပြန်</string>
+    <string name="EndGame_Win">သင်နိုင်ပြီ!!</string>
+    <string name="EndGame_Died">သင်ရှုံးပြီ...</string>
+    <string name="EndGame_Not">သင်အကုန်လုံးလုပ်ပြီးပြီ...</string>
+    <string name="EndGame_Retry">ပြန်စနိုင်သည်</string>
+    <string name="EndGame_Stop">စားပွဲတင်ဇယားကိုပြန်သွား</string>
+    <string name="EndGame_Score">အချိန်ကျန်</string>
+</resources>

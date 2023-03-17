@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">BougetCrispelFourcaudotLaby</string>
+    <string name="LabyChooser_choice">Seç</string>
+    <string name="LabyChooser_msg_not">Hiç labirent seçilmedi</string>
+    <string name="Home_playerChoice">Oyuncunu seç</string>
+    <string name="Home_enemyChoice">Düşmanı seç</string>
+    <string name="Home_tilesChoice">Kağıt seti seç</string>
+    <string name="Home_LabyChoice">Labirent seç</string>
+    <string name="Home_tileset">Kağıt seti</string>
+    <string name="Home_none">Hiçbiri</string>
+    <string name="Home_Launch">Atma</string>
+    <string name="Choice_random">Sıcak</string>
+    <string name="back">Geri</string>
+    <string name="EndGame_Win">Kazandın!!</string>
+    <string name="EndGame_Died">Kaybetti...</string>
+    <string name="EndGame_Not">Her şeyi bozdun...</string>
+    <string name="EndGame_Retry">Yeniden başla</string>
+    <string name="EndGame_Stop">Menüye dön</string>
+    <string name="EndGame_Score">Kalan zaman</string>
+</resources>

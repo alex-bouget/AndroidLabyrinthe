@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">BougetCrispelFourcaudotLaby</string>
+    <string name="LabyChooser_choice">መምረጥ</string>
+    <string name="LabyChooser_msg_not">ምንም የተመረጠ እንቆቅልሽ የለም</string>
+    <string name="Home_playerChoice">ተጫዋቹን ይምረጡ</string>
+    <string name="Home_enemyChoice">ጠላትን ይምረጡ</string>
+    <string name="Home_tilesChoice">ሰሌዳውን ይምረጡ</string>
+    <string name="Home_LabyChoice">እንቆቅልሹን ይምረጡ</string>
+    <string name="Home_tileset">ሰሌዳውን ይምረጡ</string>
+    <string name="Home_none">ምንም የለም</string>
+    <string name="Home_Launch">መወርወር</string>
+    <string name="Choice_random">ድንገተኛ</string>
+    <string name="back">ጀርባ</string>
+    <string name="EndGame_Win">አሸንፈዋል!!</string>
+    <string name="EndGame_Died">ተሸንፈዋል...</string>
+    <string name="EndGame_Not">ሁሉንም ነገር አበላሽተዋል...</string>
+    <string name="EndGame_Retry">እንደገና ይጀምሩ</string>
+    <string name="EndGame_Stop">ወደ ምናሌው ይመለሱ</string>
+    <string name="EndGame_Score">የቀረው ጊዜ</string>
+</resources>

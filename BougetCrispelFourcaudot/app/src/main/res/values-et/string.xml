@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">BougetCrispelFourcaudotLaby</string>
+    <string name="LabyChooser_choice">Vali</string>
+    <string name="LabyChooser_msg_not">ei valitud labürint</string>
+    <string name="Home_playerChoice">valige mängija</string>
+    <string name="Home_enemyChoice">valige vaenlane</string>
+    <string name="Home_tilesChoice">valige tileset</string>
+    <string name="Home_LabyChoice">valige labürint</string>
+    <string name="Home_tileset">tileset</string>
+    <string name="Home_none">mitte ükski</string>
+    <string name="Home_Launch">visake</string>
+    <string name="Choice_random">juhuslik</string>
+    <string name="back">tagurpidi</string>
+    <string name="EndGame_Win">Sa võitsid!!</string>
+    <string name="EndGame_Died">Sa kaotasid...</string>
+    <string name="EndGame_Not">Sa oled teinud kõik bugger...</string>
+    <string name="EndGame_Retry">alustada uuesti</string>
+    <string name="EndGame_Stop">Menüü tagasi</string>
+    <string name="EndGame_Score">Jääb aega</string>
+</resources>

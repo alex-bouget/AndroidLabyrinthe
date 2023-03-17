@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">BougetCrispelFourcaudotLaby</string>
+    <string name="LabyChooser_choice">Whiriwhiria</string>
+    <string name="LabyChooser_msg_not">Kaore he pororaru i tohua</string>
+    <string name="Home_playerChoice">Whiriwhiria te kaitakaro</string>
+    <string name="Home_enemyChoice">Whiriwhiria te hoariri</string>
+    <string name="Home_tilesChoice">Whiriwhiria te papa</string>
+    <string name="Home_LabyChoice">Whiriwhiria te pororaru</string>
+    <string name="Home_tileset">Papa</string>
+    <string name="Home_none">Kaore</string>
+    <string name="Home_Launch">Maka</string>
+    <string name="Choice_random">Hurihuri</string>
+    <string name="back">Hoki</string>
+    <string name="EndGame_Win">Kua wikitoria koe!!</string>
+    <string name="EndGame_Died">Kua ngaro koe...</string>
+    <string name="EndGame_Not">Kua pau katoa koe...</string>
+    <string name="EndGame_Retry">Tīmata anō</string>
+    <string name="EndGame_Stop">Hoki ki te tahua</string>
+    <string name="EndGame_Score">Wā toenga</string>
+</resources>

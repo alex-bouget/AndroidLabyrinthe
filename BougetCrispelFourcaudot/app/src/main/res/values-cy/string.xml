@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">BougetCrispelFourcaudotLaby</string>
+    <string name="LabyChooser_choice">Dewiswch</string>
+    <string name="LabyChooser_msg_not">Dim labyrint wedi\'i ddewis</string>
+    <string name="Home_playerChoice">Dewiswch y chwaraewr</string>
+    <string name="Home_enemyChoice">Dewiswch y gelyn</string>
+    <string name="Home_tilesChoice">Dewiswch y tileset</string>
+    <string name="Home_LabyChoice">Dewiswch y labyrint</string>
+    <string name="Home_tileset">Tileset</string>
+    <string name="Home_none">Dim</string>
+    <string name="Home_Launch">Lansio</string>
+    <string name="Choice_random">Anfanteisiol</string>
+    <string name="back">Tro</string>
+    <string name="EndGame_Win">Rydych chi wedi ennill!!</string>
+    <string name="EndGame_Died">Rydych chi wedi colli...</string>
+    <string name="EndGame_Not">Rydych chi wedi gwneud popeth yn ffug...</string>
+    <string name="EndGame_Retry">Dechreuwch eto</string>
+    <string name="EndGame_Stop">Dychwelyd at y ddewislen</string>
+    <string name="EndGame_Score">Amser sydd ar ôl</string>
+</resources>

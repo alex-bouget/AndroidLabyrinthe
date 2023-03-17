@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">BougetCrispelFourcaudotLaby</string>
+    <string name="LabyChooser_choice">Gũthuura</string>
+    <string name="LabyChooser_msg_not">Gũtirĩ labirinti ĩthuurĩtwo</string>
+    <string name="Home_playerChoice">Gũthuura mũcanjamũki</string>
+    <string name="Home_enemyChoice">Gũthuura thũ</string>
+    <string name="Home_tilesChoice">Gũthuura tile</string>
+    <string name="Home_LabyChoice">Gũthuura labirinti</string>
+    <string name="Home_tileset">Tileset</string>
+    <string name="Home_none">Gũtirĩ</string>
+    <string name="Home_Launch">Throw</string>
+    <string name="Choice_random">Random</string>
+    <string name="back">Back</string>
+    <string name="EndGame_Win">You won!!</string>
+    <string name="EndGame_Died">You lost...</string>
+    <string name="EndGame_Not">T\'ve made everything buguer...</string>
+    <string name="EndGame_Retry">Start again</string>
+    <string name="EndGame_Stop">Return to menu</string>
+    <string name="EndGame_Score">Time left</string>
+</resources>
