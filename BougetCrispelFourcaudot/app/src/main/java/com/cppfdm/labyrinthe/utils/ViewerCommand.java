@@ -51,7 +51,7 @@ public class ViewerCommand {
      *
      * @param toResize the Bitmap
      * @param width the width of the resized bitmap
-     * @return
+     * @return bitmap
      */
     public static Bitmap resizeBitmapWidth(Bitmap toResize, int width) {
         float bitWidth = toResize.getWidth();

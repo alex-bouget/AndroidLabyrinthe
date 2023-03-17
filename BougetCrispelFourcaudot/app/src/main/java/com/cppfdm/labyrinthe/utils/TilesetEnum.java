@@ -32,7 +32,7 @@ public enum TilesetEnum {
      * @param name name of the tileset
      * @param id id of the tileset
      */
-    private TilesetEnum(String name, int id) {
+    TilesetEnum(String name, int id) {
         this.name = name;
         this.id = id;
     }

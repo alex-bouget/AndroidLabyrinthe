@@ -7,14 +7,14 @@ import java.util.Random;
  */
 public class Case {
 
-    private Coord pos;
+    private final Coordinate pos;
     Case[] neighbours;
 
     /**
-     * Constructor of a Case with a Coord object
-     * @param pos : A Coord object for the Case
+     * Constructor of a Case with a Coordinate object
+     * @param pos : A Coordinate object for the Case
      */
-    public Case(Coord pos) {
+    public Case(Coordinate pos) {
         this.pos = pos;
         this.neighbours = new Case[4];
     }
@@ -25,7 +25,7 @@ public class Case {
      * @param y : y position of the Case
      */
     public Case(int x, int y) {
-        this.pos = new Coord(x, y);
+        this.pos = new Coordinate(x, y);
         this.neighbours = new Case[4];
     }
 
@@ -33,8 +33,8 @@ public class Case {
      * Get a copy of the Coordinate of a Case
      * @return the Coordinate object
      */
-    public Coord getCoord() {
-        return new Coord(this.pos.getX(), this.pos.getY());
+    public Coordinate getCoordinate() {
+        return new Coordinate(this.pos.getX(), this.pos.getY());
     }
 
     /**
@@ -52,17 +52,17 @@ public class Case {
         int col = laby.getCOL();
 
         // Generate the coordinate of each case's neighbours
-        Coord[] nextTo = new Coord[4];
+        Coordinate[] nextTo = new Coordinate[4];
         // java modulo can return negative number,
         // so we add row or col to wrap the modulo to its positive side
-        nextTo[0] = new Coord((this.pos.getX()+1+col) % col, this.pos.getY()); // right
-        nextTo[1] = new Coord((this.pos.getX()-1+col) % col, this.pos.getY()); // left
-        nextTo[2] = new Coord(this.pos.getX(), (this.pos.getY()-1+row) % row); // up
-        nextTo[3] = new Coord(this.pos.getX(), (this.pos.getY()+1+row) % row); // down
+        nextTo[0] = new Coordinate((this.pos.getX()+1+col) % col, this.pos.getY()); // right
+        nextTo[1] = new Coordinate((this.pos.getX()-1+col) % col, this.pos.getY()); // left
+        nextTo[2] = new Coordinate(this.pos.getX(), (this.pos.getY()-1+row) % row); // up
+        nextTo[3] = new Coordinate(this.pos.getX(), (this.pos.getY()+1+row) % row); // down
 
         // Add results in this.neighbours
         int index = 0;
-        for (Coord c : nextTo) {
+        for (Coordinate c : nextTo) {
             // Is the case nextTo this ?
             if (Math.abs(c.getX()-this.pos.getX()) + Math.abs(c.getY()-this.pos.getY()) == 1) {
                 Case current = laby.getCase(c);

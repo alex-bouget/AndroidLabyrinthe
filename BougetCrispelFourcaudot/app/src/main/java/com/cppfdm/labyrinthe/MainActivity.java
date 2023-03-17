@@ -23,12 +23,11 @@ public class MainActivity extends AppCompatActivity {
     public static final int INTENT_ID = 203;
     private Viewer game;
     private Player hero;
-    private final int MAP_CODE = 14;
     private GameViewer viewer;
 
 
     /***
-     * Called when the appliction is created
+     * Called when the application is created
      *
      * @param savedInstanceState the instance that the application have to create
      */
@@ -39,19 +38,18 @@ public class MainActivity extends AppCompatActivity {
         initComponent();
         game = (Viewer) findViewById(R.id.game);
         Handler handler = new Handler();
-        handler.postDelayed(new Runnable() {
-            public void run() {
-                game.setMinimumHeight(game.getWidth());
-                Labyrinth labyrinth = (Labyrinth) Serializer.get(getIntent().getStringExtra("labyrinth"));
-                SpriteEnum heroSprite = (SpriteEnum) Serializer.get(getIntent().getStringExtra("player"));
-                SpriteEnum monsterSprite =  (SpriteEnum) Serializer.get(getIntent().getStringExtra("monster"));
-                TilesInterfaces tilesInterfaces = (TilesInterfaces) Serializer.get(getIntent().getStringExtra("tileset"));
-                hero = new Player(labyrinth);
-                viewer = new GameViewer(hero, heroSprite, monsterSprite, tilesInterfaces);
-                game.addDrawable(viewer);
-                game.stop();
-                game.start();
-            }
+        handler.postDelayed(() -> {
+            game.setMinimumHeight(game.getWidth());
+            Labyrinth labyrinth = (Labyrinth) Serializer.get(getIntent().getStringExtra("labyrinth"));
+            assert labyrinth != null;
+            SpriteEnum heroSprite = (SpriteEnum) Serializer.get(getIntent().getStringExtra("player"));
+            SpriteEnum monsterSprite =  (SpriteEnum) Serializer.get(getIntent().getStringExtra("monster"));
+            TilesInterfaces tilesInterfaces = (TilesInterfaces) Serializer.get(getIntent().getStringExtra("tileset"));
+            hero = new Player(labyrinth);
+            viewer = new GameViewer(hero, heroSprite, monsterSprite, tilesInterfaces);
+            game.addDrawable(viewer);
+            game.stop();
+            game.start();
         }, 500);   //2 seconds
     }
 
@@ -116,6 +114,7 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent();
         intent.setClass(this, MapActivity.class);
         intent.putExtra("hero", Serializer.addToSerializer(hero));
+        int MAP_CODE = 14;
         startActivityForResult(intent, MAP_CODE);
     }
 
@@ -187,6 +186,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         if (requestCode == EndGameActivity.INTENT_ID) {
             if (resultCode == RESULT_OK) {
+                assert data != null;
                 String result = data.getStringExtra("result");
                 if (result.equals("return")) {
                     finish();

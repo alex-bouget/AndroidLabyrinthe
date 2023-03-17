@@ -1,8 +1,6 @@
 package com.cppfdm.labyrinthe.view.tileset;
 
 import android.graphics.Bitmap;
-import android.graphics.Canvas;
-import android.graphics.Paint;
 
 import com.cppfdm.labyrinthe.game.Case;
 

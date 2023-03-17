@@ -4,20 +4,17 @@ import android.content.res.AssetManager;
 import android.view.View;
 
 import com.cppfdm.labyrinthe.game.Case;
-import com.cppfdm.labyrinthe.game.Coord;
+import com.cppfdm.labyrinthe.game.Coordinate;
 import com.cppfdm.labyrinthe.game.Labyrinth;
 import com.cppfdm.labyrinthe.view.tileset.AbstractTileset;
 
 import java.io.IOException;
-import java.util.Random;
-import java.util.Set;
 
 public class RoadTileSet extends AbstractTileset{
 
     private final static String ASSETS_PATH = "tiles/road/";
     // Store each tile type to not make calculations for each render
-    private String[][] casesTiles;
-    private Set<String> allTiles;
+    private final String[][] casesTiles;
 
     public RoadTileSet(View v, Labyrinth laby) {
         super(v);
@@ -30,7 +27,6 @@ public class RoadTileSet extends AbstractTileset{
         } catch (IOException e) {
             e.printStackTrace();
         }
-        allTiles = getAllTiles().keySet();
         casesTiles = new String[laby.getCOL()][laby.getROW()];
         for (int i = 0; i < laby.getCOL(); i++) {
             for (int j = 0; j < laby.getROW(); j++) {
@@ -47,13 +43,13 @@ public class RoadTileSet extends AbstractTileset{
      */
     private void generateTileType(int i, int j, Labyrinth laby) {
         // handle null case
-        if (laby.getCase(new Coord(i, j)) == null) {return;}
+        if (laby.getCase(new Coordinate(i, j)) == null) {return;}
         // generate good case
         String imgPath = "";
-        imgPath += laby.getCase(new Coord(i , j -1)) == null ? "0" : "1";
-        imgPath += laby.getCase(new Coord(i -1 , j)) == null ? "0" : "1";
-        imgPath += laby.getCase(new Coord(i +1, j)) == null ? "0" : "1";
-        imgPath += laby.getCase(new Coord(i , j + 1)) == null ? "0" : "1";
+        imgPath += laby.getCase(new Coordinate(i , j -1)) == null ? "0" : "1";
+        imgPath += laby.getCase(new Coordinate(i -1 , j)) == null ? "0" : "1";
+        imgPath += laby.getCase(new Coordinate(i +1, j)) == null ? "0" : "1";
+        imgPath += laby.getCase(new Coordinate(i , j + 1)) == null ? "0" : "1";
 
         casesTiles[i][j] = imgPath;
     }
@@ -66,7 +62,7 @@ public class RoadTileSet extends AbstractTileset{
     @Override
     public String getTilesName(Case aCase) {
         if (aCase == null) {return null;}
-        return casesTiles[aCase.getCoord().getX()][aCase.getCoord().getY()];
+        return casesTiles[aCase.getCoordinate().getX()][aCase.getCoordinate().getY()];
     }
 
     /**

@@ -5,14 +5,14 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 
 import com.cppfdm.labyrinthe.utils.SpriteEnum;
-import com.cppfdm.labyrinthe.game.Coord;
+import com.cppfdm.labyrinthe.game.Coordinate;
 import com.cppfdm.labyrinthe.game.Enemy;
 import com.cppfdm.labyrinthe.view.core.Drawable;
 
 public class EnemyViewer extends SpritesViewer {
     Enemy enemy;
     GameViewer gameViewer;
-    private Coord lastCoordinates;
+    private Coordinate lastCoordinates;
     int animationFrame;
     private int xOffset = 0;
     private int yOffset = 0;
@@ -49,7 +49,7 @@ public class EnemyViewer extends SpritesViewer {
     @Override
     public void paint(Canvas canvas, Paint paint) {
         if (!lastCoordinates.equals(enemy.getPos())) {
-            Coord newCoordinates = enemy.getPos();
+            Coordinate newCoordinates = enemy.getPos();
             int x = (lastCoordinates.getX() - newCoordinates.getX());
             int y = (lastCoordinates.getY() - newCoordinates.getY());
             xOffset = x * scale;
@@ -59,8 +59,8 @@ public class EnemyViewer extends SpritesViewer {
             sprites.setAnimationOn(GameViewer.ANIMATION_DELAY);
             lastCoordinates = newCoordinates;
         }
-        Coord coordinatesBefore = gameViewer.calcPosition(enemy.getPos());
-        Coord coordinates = new Coord(
+        Coordinate coordinatesBefore = gameViewer.calcPosition(enemy.getPos());
+        Coordinate coordinates = new Coordinate(
                 coordinatesBefore.getX() + xOffset - (xOffset / GameViewer.ANIMATION_DELAY) * animationFrame,
                 coordinatesBefore.getY() + yOffset - (yOffset / GameViewer.ANIMATION_DELAY) * animationFrame
         );

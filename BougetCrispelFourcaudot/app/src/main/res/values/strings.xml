@@ -9,6 +9,7 @@
     <string name="Home_tileset">Tileset: </string>
     <string name="Home_none">Aucun</string>
     <string name="Home_Launch">Lancer</string>
+    <string name="Choice_random">Aléatoire</string>
     <string name="back">Back</string>
     <string name="EndGame_Win">Vous avez gagné !!</string>
     <string name="EndGame_Died">Vous avez perdu...</string>

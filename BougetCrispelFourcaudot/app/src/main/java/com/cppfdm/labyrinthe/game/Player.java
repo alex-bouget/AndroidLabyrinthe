@@ -3,7 +3,7 @@ package com.cppfdm.labyrinthe.game;
 public class Player {
 
     Labyrinth laby;
-    Coord pos;
+    Coordinate pos;
 
     /**
      * Constructor of player
@@ -11,7 +11,7 @@ public class Player {
      */
     public Player(Labyrinth laby_) {
         this.laby = laby_;
-        this.pos = laby_.getStartCoord();
+        this.pos = laby_.getStartCoordinate();
     }
 
     /**
@@ -33,10 +33,10 @@ public class Player {
      * @return if the movement has been done
      */
     public boolean moveLeft() {
-        Coord target = new Coord(this.pos.getX()-1, this.pos.getY());
+        Coordinate target = new Coordinate(this.pos.getX()-1, this.pos.getY());
         for (Case current : this.getCurrentCase().getNeighbours()) {
             if (current == null) { continue; }
-            if (current.getCoord().equals(target)) {
+            if (current.getCoordinate().equals(target)) {
                 this.pos = target;
             }
         }
@@ -48,10 +48,10 @@ public class Player {
      * @return if the movement has been done
      */
     public boolean moveRight() {
-        Coord target = new Coord(this.pos.getX()+1, this.pos.getY());
+        Coordinate target = new Coordinate(this.pos.getX()+1, this.pos.getY());
         for (Case current : this.getCurrentCase().getNeighbours()) {
             if (current == null) { continue; }
-            if (current.getCoord().equals(target)) {
+            if (current.getCoordinate().equals(target)) {
                 this.pos = target;
             }
         }
@@ -63,10 +63,10 @@ public class Player {
      * @return if the movement has been done
      */
     public boolean moveUp() {
-        Coord target = new Coord(this.pos.getX(), this.pos.getY()-1);
+        Coordinate target = new Coordinate(this.pos.getX(), this.pos.getY()-1);
         for (Case current : this.getCurrentCase().getNeighbours()) {
             if (current == null) { continue; }
-            if (current.getCoord().equals(target)) {
+            if (current.getCoordinate().equals(target)) {
                 this.pos = target;
             }
         }
@@ -78,10 +78,10 @@ public class Player {
      * @return if the movement has been done
      */
     public boolean moveDown() {
-        Coord target = new Coord(this.pos.getX(), this.pos.getY()+1);
+        Coordinate target = new Coordinate(this.pos.getX(), this.pos.getY()+1);
         for (Case current : this.getCurrentCase().getNeighbours()) {
             if (current == null) { continue; }
-            if (current.getCoord().equals(target)) {
+            if (current.getCoordinate().equals(target)) {
                 this.pos = target;
             }
         }
@@ -93,7 +93,7 @@ public class Player {
      * @return true if the labyrinth finished, false else
      */
     public boolean isWin() {
-        return this.pos.equals(laby.getEndCoord());
+        return this.pos.equals(laby.getEndCoordinate());
     }
 
     /**
@@ -113,7 +113,7 @@ public class Player {
      * Reset the player and enemies position
      */
     public void reset() {
-        pos = laby.getStartCoord();
+        pos = laby.getStartCoordinate();
         laby.resetEnemyCoordinates();
     }
 }
