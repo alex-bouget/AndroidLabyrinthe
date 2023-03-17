@@ -11,7 +11,18 @@ public enum SpriteEnum {
     DUCK("DUCK", "sprites/duck/"),
     MOUSE("MOUSE", "sprites/mouse/"),
     CRAB("CRAB", "sprites/crab/"),
-    CAT("CAT", "sprites/cat/");
+    CAT("CAT", "sprites/cat/"),
+    ARIMAN("ARIMAN", "sprites/ariman/"),
+    COCKATRICE("COCKATRICE", "sprites/cockatrice/"),
+    FOXES("FOXES", "sprites/foxes/"),
+    PIG("PIG", "sprites/pigs/"),
+    PINGUINS("PINGUINS", "sprites/pinguins/"),
+    BOAR("BOAR", "sprites/boar/"),
+    OWL("OWL", "sprites/owl/"),
+    RACCOON("RACCOON", "sprites/raccoon/"),
+    TANUKI("TANUKI", "sprites/tanuki/");
+
+
 
     /**
      * Get all Sprite

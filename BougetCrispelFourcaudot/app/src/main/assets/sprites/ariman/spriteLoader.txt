@@ -1,5 +1,5 @@
 !
-sprites/ariman/red/!sprites/ariman/light_red/spriteLoader.txt
+sprites/ariman/red/!sprites/ariman/red/spriteLoader.txt
 sprites/ariman/black/!sprites/ariman/black/spriteLoader.txt
 sprites/ariman/black_red/!sprites/ariman/black_red/spriteLoader.txt
 sprites/ariman/green/!sprites/ariman/green/spriteLoader.txt

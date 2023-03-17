@@ -1,0 +1,9 @@
+!
+sprites/raccoon/light_red/!sprites/raccoon/light_red/spriteLoader.txt
+sprites/raccoon/orange/!sprites/raccoon/orange/spriteLoader.txt
+sprites/raccoon/chocolate/!sprites/raccoon/chocolate/spriteLoader.txt
+sprites/raccoon/black_brown/!sprites/raccoon/black_brown/spriteLoader.txt
+sprites/raccoon/white/!sprites/raccoon/white/spriteLoader.txt
+sprites/raccoon/brown/!sprites/raccoon/brown/spriteLoader.txt
+sprites/raccoon/white_grey/!sprites/raccoon/white_grey/spriteLoader.txt
+sprites/raccoon/red/!sprites/raccoon/red/spriteLoader.txt
