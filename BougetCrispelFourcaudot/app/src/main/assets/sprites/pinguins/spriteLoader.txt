@@ -1,0 +1,9 @@
+!
+sprites/mustache_slide/!sprites/mustache_slide/spriteLoader.txt
+sprites/brow/!sprites/brow/spriteLoader.txt
+sprites/normal_slide/!sprites/normal_slide/spriteLoader.txt
+sprites/brow_slide/!sprites/brow_slide/spriteLoader.txt
+sprites/age_slide/!sprites/age_slide/spriteLoader.txt
+sprites/normal/!sprites/normal/spriteLoader.txt
+sprites/mustache/!sprites/mustache/spriteLoader.txt
+sprites/age/!sprites/age/spriteLoader.txt

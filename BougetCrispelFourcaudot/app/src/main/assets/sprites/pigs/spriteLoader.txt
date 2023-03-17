@@ -1,0 +1,17 @@
+!
+sprites/15/!sprites/15/spriteLoader.txt
+sprites/14/!sprites/14/spriteLoader.txt
+sprites/6/!sprites/6/spriteLoader.txt
+sprites/12/!sprites/12/spriteLoader.txt
+sprites/16/!sprites/16/spriteLoader.txt
+sprites/5/!sprites/5/spriteLoader.txt
+sprites/10/!sprites/10/spriteLoader.txt
+sprites/2/!sprites/2/spriteLoader.txt
+sprites/8/!sprites/8/spriteLoader.txt
+sprites/7/!sprites/7/spriteLoader.txt
+sprites/13/!sprites/13/spriteLoader.txt
+sprites/1/!sprites/1/spriteLoader.txt
+sprites/11/!sprites/11/spriteLoader.txt
+sprites/4/!sprites/4/spriteLoader.txt
+sprites/3/!sprites/3/spriteLoader.txt
+sprites/9/!sprites/9/spriteLoader.txt

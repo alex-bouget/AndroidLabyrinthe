@@ -1,0 +1,9 @@
+!
+sprites/ariman/red/!sprites/ariman/light_red/spriteLoader.txt
+sprites/ariman/black/!sprites/ariman/black/spriteLoader.txt
+sprites/ariman/black_red/!sprites/ariman/black_red/spriteLoader.txt
+sprites/ariman/green/!sprites/ariman/green/spriteLoader.txt
+sprites/ariman/grey/!sprites/ariman/grey/spriteLoader.txt
+sprites/ariman/light_green/!sprites/ariman/light_green/spriteLoader.txt
+sprites/ariman/light_grey/!sprites/ariman/light_grey/spriteLoader.txt
+sprites/ariman/violet/!sprites/ariman/violet/spriteLoader.txt

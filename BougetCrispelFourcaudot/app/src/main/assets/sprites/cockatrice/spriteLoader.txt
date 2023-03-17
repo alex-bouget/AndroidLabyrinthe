@@ -1,0 +1,9 @@
+!
+sprites/gold/!sprites/gold/spriteLoader.txt
+sprites/black/!sprites/black/spriteLoader.txt
+sprites/blue/!sprites/blue/spriteLoader.txt
+sprites/grey/!sprites/grey/spriteLoader.txt
+sprites/violet/!sprites/violet/spriteLoader.txt
+sprites/cyan/!sprites/cyan/spriteLoader.txt
+sprites/red/!sprites/red/spriteLoader.txt
+sprites/green/!sprites/green/spriteLoader.txt
