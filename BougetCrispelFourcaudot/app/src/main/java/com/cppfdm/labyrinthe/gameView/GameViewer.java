@@ -8,16 +8,12 @@ import android.graphics.Paint;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.cppfdm.labyrinthe.EndGameActivity;
-import com.cppfdm.labyrinthe.gameView.tileset.RoadTileSet;
 import com.cppfdm.labyrinthe.utils.SpriteEnum;
 import com.cppfdm.labyrinthe.game.Case;
-import com.cppfdm.labyrinthe.game.Coord;
+import com.cppfdm.labyrinthe.game.Coordinate;
 import com.cppfdm.labyrinthe.game.Enemy;
 import com.cppfdm.labyrinthe.game.Labyrinth;
 import com.cppfdm.labyrinthe.game.Player;
-import com.cppfdm.labyrinthe.gameView.tileset.GrassTileSet;
-import com.cppfdm.labyrinthe.gameView.tileset.HarborTileSet;
-import com.cppfdm.labyrinthe.utils.AssetsCommand;
 import com.cppfdm.labyrinthe.utils.ViewerCommand;
 import com.cppfdm.labyrinthe.view.Viewer;
 import com.cppfdm.labyrinthe.view.core.AbstractDrawable;
@@ -37,13 +33,13 @@ public class GameViewer extends AbstractDrawable {
     EnemyViewer[] enemyViewers;
     PlayerViewer playerViewer;
     TilesetResizer tileset;
-    private Coord lastCoordinates;
-    private Coord playerCoordinates;
+    private Coordinate lastCoordinates;
+    private Coordinate playerCoordinates;
     private int xOffset = 0;
     private int yOffset = 0;
     private int animationFrame = 1;
     private int animationWinDead = 0;
-    private TilesInterfaces tilesInterfaces;
+    private final TilesInterfaces tilesInterfaces;
     int enemyCalc = 0;
     Bitmap win;
     Bitmap died;
@@ -62,7 +58,7 @@ public class GameViewer extends AbstractDrawable {
      */
     public GameViewer(Player player, SpriteEnum playerSprite, SpriteEnum monsterSprite, TilesInterfaces tilesInterfaces) {
         this.player = player;
-        lastCoordinates = player.getCurrentCase().getCoord();
+        lastCoordinates = player.getCurrentCase().getCoordinate();
         this.playerSprite = playerSprite;
         this.monsterSprite = monsterSprite;
         this.tilesInterfaces = tilesInterfaces;
@@ -123,13 +119,13 @@ public class GameViewer extends AbstractDrawable {
      * @param position position
      * @return Coordinates of the position
      */
-    public Coord calcPosition(Coord position) {
+    public Coordinate calcPosition(Coordinate position) {
         int width = root.getWidth();
         int height = root.getHeight();
-        Coord playerCase = playerCoordinates;
+        Coordinate playerCase = playerCoordinates;
         int x = (position.getX() - playerCase.getX()) * scale + (width / 2) - xOffset + (xOffset / ANIMATION_DELAY) * animationFrame;
         int y = (position.getY() - playerCase.getY()) * scale + (height / 2) - yOffset + (yOffset / ANIMATION_DELAY) * animationFrame;
-        return new Coord(x, y);
+        return new Coordinate(x, y);
     }
 
     /**
@@ -167,7 +163,7 @@ public class GameViewer extends AbstractDrawable {
             player.getLaby().moveEnemies();
             enemyCalc = 0;
         }
-        playerCoordinates = player.getCurrentCase().getCoord();
+        playerCoordinates = player.getCurrentCase().getCoordinate();
         enemyCalc++;
         if (!lastCoordinates.equals(playerCoordinates)) {
             xOffset = (lastCoordinates.getX() - playerCoordinates.getX()) * scale;
@@ -176,20 +172,20 @@ public class GameViewer extends AbstractDrawable {
         }
 
         Labyrinth labyrinth = player.getLaby();
-        Coord startView = new Coord(
+        Coordinate startView = new Coordinate(
                 playerCoordinates.getX() - NUMBER_VIEW,
                 playerCoordinates.getY() - NUMBER_VIEW
         );
-        Coord endView = new Coord(
+        Coordinate endView = new Coordinate(
                 playerCoordinates.getX() + NUMBER_VIEW,
                 playerCoordinates.getY() + NUMBER_VIEW
         );
         Bitmap background = tileset.getBackgroundTiles();
         for (int xSize = startView.getX(); xSize < endView.getX(); xSize++) {
             for (int ySize = startView.getY(); ySize < endView.getY(); ySize++) {
-                Case aCase = labyrinth.getCase(new Coord(xSize, ySize));
+                Case aCase = labyrinth.getCase(new Coordinate(xSize, ySize));
                 Bitmap bitmap = tileset.getTiles(aCase);
-                Coord bitPos = calcPosition(new Coord(xSize, ySize));
+                Coordinate bitPos = calcPosition(new Coordinate(xSize, ySize));
                 if (background != null) {
                     canvas.drawBitmap(
                             background,
@@ -208,14 +204,14 @@ public class GameViewer extends AbstractDrawable {
                 }
             }
         }
-        Coord exitPos = calcPosition(labyrinth.getEndCoord());
+        Coordinate exitPos = calcPosition(labyrinth.getEndCoordinate());
         canvas.drawBitmap(
                 tileset.getExitTiles(),
                 exitPos.getX(),
                 exitPos.getY(),
                 paint
         );
-        Coord beginPos = calcPosition(labyrinth.getStartCoord());
+        Coordinate beginPos = calcPosition(labyrinth.getStartCoordinate());
         canvas.drawBitmap(
                 tileset.getStartTiles(),
                 beginPos.getX(),

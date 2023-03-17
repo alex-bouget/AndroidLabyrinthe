@@ -7,15 +7,12 @@ import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.cppfdm.labyrinthe.utils.SpriteEnum;
 import com.cppfdm.labyrinthe.utils.TilesetEnum;
-import com.cppfdm.labyrinthe.utils.ViewerCommand;
 
 import java.util.Random;
 
@@ -34,8 +31,8 @@ public class TilesetChoiceActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sprite_choice);
-        linearLayout = (LinearLayout) findViewById(R.id.scrollSprite);
+        setContentView(R.layout.activity_choice);
+        linearLayout = (LinearLayout) findViewById(R.id.scroller);
         int index = 0;
         for (TilesetEnum tilesetEnum : TilesetEnum.getAllTileset()) {
             Button imageButton = createSprite(tilesetEnum);
@@ -69,7 +66,7 @@ public class TilesetChoiceActivity extends AppCompatActivity {
         params.rightMargin = 50;
         textView.setLayoutParams(params);
         if (tilesetEnum == null) {
-            textView.setText("Aléatoire");
+            textView.setText(getResources().getText(R.string.Choice_random));
         } else {
             textView.setText(tilesetEnum.getName());
         }
@@ -99,7 +96,7 @@ public class TilesetChoiceActivity extends AppCompatActivity {
         }
 
         Drawable bg = imageButton.getBackground();
-        /**
+        /*
          * Function of the button
          * @param View the button
          */
@@ -117,7 +114,7 @@ public class TilesetChoiceActivity extends AppCompatActivity {
      *
      * @param view the button
      */
-    public void SpriteChoiceButton(View view) {
+    public void choiceButton(View view) {
         Intent intent = new Intent();
         if (choice == null) {
             TilesetEnum[] tilesetEnums = TilesetEnum.getAllTileset();

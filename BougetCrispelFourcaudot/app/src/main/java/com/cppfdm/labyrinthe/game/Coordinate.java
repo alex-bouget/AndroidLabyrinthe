@@ -1,26 +1,30 @@
 package com.cppfdm.labyrinthe.game;
 
+import androidx.annotation.NonNull;
+
 import java.util.Objects;
 
 /**
  * Class to store and make easy operation on Cartesian coordinates
  */
-public class Coord {
-    private int x;
-    private int y;
+public class Coordinate {
+    private final int x;
+    private final int y;
 
     /**
-     * Constructor of Coord object
+     * Constructor of Coordinate object
+     *
      * @param x : the x element of a coordinate
      * @param y : the y element of a coordinate
      */
-    public Coord(int x, int y) {
+    public Coordinate(int x, int y) {
         this.x = x;
         this.y = y;
     }
 
     /**
      * Getter of x
+     *
      * @return the x element
      */
     public int getX() {
@@ -29,6 +33,7 @@ public class Coord {
 
     /**
      * Getter of  y
+     *
      * @return the y element
      */
     public int getY() {
@@ -37,6 +42,7 @@ public class Coord {
 
     /**
      * Is the object equals
+     *
      * @param o the object to test
      * @return true if equals
      */
@@ -44,12 +50,13 @@ public class Coord {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Coord coord = (Coord) o;
-        return x == coord.x && y == coord.y;
+        Coordinate coordinate = (Coordinate) o;
+        return x == coordinate.x && y == coordinate.y;
     }
 
     /**
      * Hashcode function
+     *
      * @return the hashcode of the object
      */
     @Override
@@ -62,9 +69,10 @@ public class Coord {
      *
      * @return string
      */
+    @NonNull
     @Override
     public String toString() {
-        return "Coord{" +
+        return "Coordinate{" +
                 "x=" + x +
                 ", y=" + y +
                 '}';

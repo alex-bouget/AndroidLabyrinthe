@@ -23,12 +23,11 @@ public class MainActivity extends AppCompatActivity {
     public static final int INTENT_ID = 203;
     private Viewer game;
     private Player hero;
-    private final int MAP_CODE = 14;
     private GameViewer viewer;
 
 
     /***
-     * Called when the appliction is created
+     * Called when the application is created
      *
      * @param savedInstanceState the instance that the application have to create
      */
@@ -39,19 +38,18 @@ public class MainActivity extends AppCompatActivity {
         initComponent();
         game = (Viewer) findViewById(R.id.game);
         Handler handler = new Handler();
-        handler.postDelayed(new Runnable() {
-            public void run() {
-                game.setMinimumHeight(game.getWidth());
-                Labyrinth labyrinth = (Labyrinth) Serializer.get(getIntent().getStringExtra("labyrinth"));
-                SpriteEnum heroSprite = (SpriteEnum) Serializer.get(getIntent().getStringExtra("player"));
-                SpriteEnum monsterSprite =  (SpriteEnum) Serializer.get(getIntent().getStringExtra("monster"));
-                TilesInterfaces tilesInterfaces = (TilesInterfaces) Serializer.get(getIntent().getStringExtra("tileset"));
-                hero = new Player(labyrinth);
-                viewer = new GameViewer(hero, heroSprite, monsterSprite, tilesInterfaces);
-                game.addDrawable(viewer);
-                game.stop();
-                game.start();
-            }
+        handler.postDelayed(() -> {
+            game.setMinimumHeight(game.getWidth());
+            Labyrinth labyrinth = (Labyrinth) Serializer.get(getIntent().getStringExtra("labyrinth"));
+            assert labyrinth != null;
+            SpriteEnum heroSprite = (SpriteEnum) Serializer.get(getIntent().getStringExtra("player"));
+            SpriteEnum monsterSprite = (SpriteEnum) Serializer.get(getIntent().getStringExtra("monster"));
+            TilesInterfaces tilesInterfaces = (TilesInterfaces) Serializer.get(getIntent().getStringExtra("tileset"));
+            hero = new Player(labyrinth);
+            viewer = new GameViewer(hero, heroSprite, monsterSprite, tilesInterfaces);
+            game.addDrawable(viewer);
+            game.stop();
+            game.start();
         }, 500);   //2 seconds
     }
 
@@ -116,13 +114,14 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent();
         intent.setClass(this, MapActivity.class);
         intent.putExtra("hero", Serializer.addToSerializer(hero));
+        int MAP_CODE = 14;
         startActivityForResult(intent, MAP_CODE);
     }
 
     /**
      * initialize all component
      */
-    private void initComponent(){
+    private void initComponent() {
         DisplayMetrics displayMetrics = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
         int height = displayMetrics.heightPixels;
@@ -134,13 +133,13 @@ public class MainActivity extends AppCompatActivity {
 
         //UP button layout
         LinearLayout up = findViewById(R.id.up);
-        up.getLayoutParams().height = (int)((height-game.getLayoutParams().height)/3);
+        up.getLayoutParams().height = (int) ((height - game.getLayoutParams().height) / 3);
         up.getLayoutParams().width = up.getLayoutParams().height;
 
         //LEFT and RIGHT layout
         LinearLayout lR = findViewById(R.id.leftAndRight);
-        lR.getLayoutParams().height = (int)((height-game.getLayoutParams().height)/3);
-        lR.getLayoutParams().width = (int)(2.5*lR.getLayoutParams().height);
+        lR.getLayoutParams().height = (int) ((height - game.getLayoutParams().height) / 3);
+        lR.getLayoutParams().width = (int) (2.5 * lR.getLayoutParams().height);
 
         //LEFT button
         Button left = findViewById(R.id.left);
@@ -152,27 +151,28 @@ public class MainActivity extends AppCompatActivity {
 
         //DOWN button layout
         LinearLayout down = findViewById(R.id.down);
-        down.getLayoutParams().height = (int)((height-game.getLayoutParams().height)/3);
+        down.getLayoutParams().height = (int) ((height - game.getLayoutParams().height) / 3);
         down.getLayoutParams().width = up.getLayoutParams().height;
 
         //MAP button
         LinearLayout map = findViewById(R.id.map);
-        map.setPadding(width-width/10,(int)(height/1.8),0,0);
+        map.setPadding(width - width / 10, (int) (height / 1.8), 0, 0);
 
         //MENU button
         LinearLayout menu = findViewById(R.id.menu);
-        menu.setPadding(width/70,(int)(height/1.8),0,0);
+        menu.setPadding(width / 70, (int) (height / 1.8), 0, 0);
 
         //all buttons
         LinearLayout buttons = findViewById(R.id.buttons);
-        buttons.setPadding(0,game.getLayoutParams().height + (height - game.getLayoutParams().height)/35,0,0);
+        buttons.setPadding(0, game.getLayoutParams().height + (height - game.getLayoutParams().height) / 35, 0, 0);
     }
+
     /***
      * Show the menu to choose labyrinth
      *
      * @param view view where the action come from
      */
-    public void showMenu(View view){
+    public void showMenu(View view) {
         finish();
     }
 
@@ -187,6 +187,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         if (requestCode == EndGameActivity.INTENT_ID) {
             if (resultCode == RESULT_OK) {
+                assert data != null;
                 String result = data.getStringExtra("result");
                 if (result.equals("return")) {
                     finish();

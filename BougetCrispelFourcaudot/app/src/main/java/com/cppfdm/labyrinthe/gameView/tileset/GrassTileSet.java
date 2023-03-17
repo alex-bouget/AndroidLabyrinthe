@@ -4,7 +4,7 @@ import android.content.res.AssetManager;
 import android.view.View;
 
 import com.cppfdm.labyrinthe.game.Case;
-import com.cppfdm.labyrinthe.game.Coord;
+import com.cppfdm.labyrinthe.game.Coordinate;
 import com.cppfdm.labyrinthe.game.Labyrinth;
 import com.cppfdm.labyrinthe.view.tileset.AbstractTileset;
 
@@ -16,8 +16,8 @@ public class GrassTileSet extends AbstractTileset {
 
     private final static String ASSETS_PATH = "tiles/grass/";
     // Store each tile type to not make calculations for each render
-    private String[][] casesTiles;
-    private Set<String> allTiles;
+    private final String[][] casesTiles;
+    private final Set<String> allTiles;
 
     public GrassTileSet(View v, Labyrinth laby) {
         super(v);
@@ -41,30 +41,33 @@ public class GrassTileSet extends AbstractTileset {
 
     /**
      * Generate the tile type for a tile in the laby
-     * @param i X coordinate in the labyrinth
-     * @param j Y coordinate in the labyrinth
+     *
+     * @param i    X coordinate in the labyrinth
+     * @param j    Y coordinate in the labyrinth
      * @param laby the labyrinth
      */
     private void generateTileType(int i, int j, Labyrinth laby) {
-        if (laby.getCase(new Coord(i, j)) == null) {
+        if (laby.getCase(new Coordinate(i, j)) == null) {
             return;
         }
-        String imgPath = "";
+        StringBuilder imgPath = new StringBuilder();
         for (int offX = -1; offX < 2; offX++) {
             for (int offY = -1; offY < 2; offY++) {
-                imgPath += laby.getCase(new Coord(i + offY, j + offX)) == null ? "0" : "1";
+                imgPath.append(laby.getCase(new Coordinate(i + offY, j + offX)) == null ? "0" : "1");
             }
         }
-        if (imgPath.equals("111111111")) {
-            imgPath = "C_" + (int) (new Random().nextInt(12) + 1);
-        } else if (!allTiles.contains(imgPath)) {
-            imgPath = this.resolveImgPath(imgPath);
+        String imagePath = null;
+        if (imgPath.toString().equals("111111111")) {
+            imagePath = "C_" + (int) (new Random().nextInt(12) + 1);
+        } else if (!allTiles.contains(imgPath.toString())) {
+            imagePath = this.resolveImgPath(imgPath.toString());
         }
-        casesTiles[i][j] = imgPath;
+        casesTiles[i][j] = imagePath;
     }
 
     /**
      * Change a non existing img path to an existing img path
+     *
      * @param img the imgPath
      * @return the new imgPath
      */
@@ -87,6 +90,7 @@ public class GrassTileSet extends AbstractTileset {
 
     /**
      * return the appropriate tile name
+     *
      * @param aCase the case for the tiles
      * @return the tile name or null if background
      */
@@ -95,21 +99,23 @@ public class GrassTileSet extends AbstractTileset {
         if (aCase == null) {
             return null;
         }
-        Coord c = aCase.getCoord();
+        Coordinate c = aCase.getCoordinate();
         return this.casesTiles[c.getX()][c.getY()];
     }
 
     /**
      * Get the name of the exit tile
-     * @return
+     *
+     * @return the exit tile name
      */
     @Override
     public String getExitTilesName() {
-        return "end" + (int)(frame%5);
+        return "end" + (int) (frame % 5);
     }
 
     /**
      * Get the name of the entrance tile
+     *
      * @return the entrance tile name
      */
     @Override
@@ -119,10 +125,11 @@ public class GrassTileSet extends AbstractTileset {
 
     /**
      * Get the background tile name
+     *
      * @return the background tile name
      */
     @Override
     public String getBackgroundTilesName() {
-        return "water" + (int)((frame%8/2)+1);
+        return "water" + (int) ((frame % 8 / 2) + 1);
     }
 }

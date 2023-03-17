@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -14,121 +13,116 @@
         android:orientation="vertical">
 
         <!--Drawable surface for the labyrinth-->
-        <!--Height set with dp th correspond to Density-independant Pixel-->
+        <!--Height set with dp th correspond to Density-independent Pixel-->
         <com.cppfdm.labyrinthe.view.Viewer
             android:id="@+id/game"
             android:layout_width="match_parent"
             android:layout_height="320dp" />
     </LinearLayout>
+
     <LinearLayout
+        android:id="@+id/buttons"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center_horizontal"
-        android:id="@+id/buttons"
         android:orientation="vertical">
         <!--Layout with UP button-->
         <LinearLayout
+            android:id="@+id/up"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:id="@+id/up"
-            android:gravity="center_horizontal">
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
             <!--UP button-->
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:gravity="center"
-                android:rotation="90"
                 android:background="@drawable/arrow"
+                android:gravity="center"
                 android:onClick="moveUp"
-                />
+                android:rotation="90" />
         </LinearLayout>
 
         <!--Layout with LEFT and RIGHT button-->
         <LinearLayout
+            android:id="@+id/leftAndRight"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:id="@+id/leftAndRight"
-            android:gravity="center_horizontal">
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
 
             <!--LEFT button-->
             <Button
+                android:id="@+id/left"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:gravity="center"
-                android:id="@+id/left"
                 android:background="@drawable/arrow"
-                android:onClick="moveLeft"
-                />
+                android:gravity="center"
+                android:onClick="moveLeft" />
 
             <!--RIGHT button-->
             <Button
+                android:id="@+id/right"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:gravity="center"
-                android:rotation="180"
+                android:layout_marginStart="30dp"
                 android:background="@drawable/arrow"
-                android:id="@+id/right"
+                android:gravity="center"
                 android:onClick="moveRight"
-                android:layout_marginLeft="30dp"
-                />
+                android:rotation="180" />
         </LinearLayout>
 
         <!--Layout with DOWN button-->
         <LinearLayout
+            android:id="@+id/down"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:id="@+id/down"
-            android:gravity="center_horizontal">
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
 
-        <!--DOWN button -->
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:rotation="270"
-            android:background="@drawable/arrow"
-            android:gravity="center"
-            android:onClick="moveDown"
-            />
+            <!--DOWN button -->
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/arrow"
+                android:gravity="center"
+                android:onClick="moveDown"
+                android:rotation="270" />
         </LinearLayout>
     </LinearLayout>
 
     <!--Layout with MAP button-->
     <LinearLayout
+        android:id="@+id/map"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/map"
-        android:orientation="horizontal"
-        android:gravity="center_horizontal">
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
 
         <!--MAP button -->
         <Button
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:gravity="center"
             android:background="@drawable/round_button"
-            android:onClick="showMap"
-            />
+            android:gravity="center"
+            android:onClick="showMap" />
     </LinearLayout>
 
     <!--Layout with MENU button-->
     <LinearLayout
+        android:id="@+id/menu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/menu"
-        android:orientation="horizontal"
-        android:gravity="center_horizontal">
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
 
         <!--MENU button -->
         <Button
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:gravity="center"
             android:background="@drawable/round_button"
-            android:onClick="showMenu"
-            />
+            android:gravity="center"
+            android:onClick="showMenu" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

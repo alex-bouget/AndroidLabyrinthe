@@ -1,20 +1,17 @@
 package com.cppfdm.labyrinthe;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.content.res.Configuration;
-import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.cppfdm.labyrinthe.utils.SpriteEnum;
 import com.cppfdm.labyrinthe.utils.ViewerCommand;
@@ -37,8 +34,8 @@ public class SpriteChoiceActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sprite_choice);
-        linearLayout = (LinearLayout) findViewById(R.id.scrollSprite);
+        setContentView(R.layout.activity_choice);
+        linearLayout = (LinearLayout) findViewById(R.id.scroller);
         int index = 0;
         for (SpriteEnum spriteEnum : SpriteEnum.getAllSprite()) {
             ImageButton imageButton = createSprite(spriteEnum);
@@ -72,12 +69,12 @@ public class SpriteChoiceActivity extends AppCompatActivity {
         params.rightMargin = 50;
         textView.setLayoutParams(params);
         if (spriteEnum == null) {
-            textView.setText("Aléatoire");
+            textView.setText(getResources().getText(R.string.Choice_random));
         } else {
             textView.setText(spriteEnum.getName());
         }
 
-        // Change text color aaccording to the theme
+        // Change text color according to the theme
         switch (getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK) {
             case Configuration.UI_MODE_NIGHT_YES:
                 textView.setTextColor(getResources().getColor(R.color.naplesYellow));
@@ -111,7 +108,7 @@ public class SpriteChoiceActivity extends AppCompatActivity {
         }
 
         Drawable bg = imageButton.getBackground();
-        /**
+        /*
          * Function of the button
          * @param View the button
          */
@@ -129,7 +126,7 @@ public class SpriteChoiceActivity extends AppCompatActivity {
      *
      * @param view the button
      */
-    public void SpriteChoiceButton(View view) {
+    public void choiceButton(View view) {
         Intent intent = new Intent();
         if (choice == null) {
             SpriteEnum[] spriteEnums = SpriteEnum.getAllSprite();

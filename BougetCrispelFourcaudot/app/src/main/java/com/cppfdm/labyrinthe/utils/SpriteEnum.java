@@ -16,7 +16,7 @@ public enum SpriteEnum {
     COCKATRICE("COCKATRICE", "sprites/cockatrice/"),
     FOXES("FOXES", "sprites/foxes/"),
     PIG("PIG", "sprites/pigs/"),
-    PINGUINS("PINGUINS", "sprites/pinguins/"),
+    PENGUIN("PENGUIN", "sprites/pinguins/"),
     BOAR("BOAR", "sprites/boar/"),
     OWL("OWL", "sprites/owl/"),
     RACCOON("RACCOON", "sprites/raccoon/"),
@@ -37,13 +37,13 @@ public enum SpriteEnum {
     private final String path;
     private final String loaderPath;
 
-    private SpriteEnum(String name, String path, String loaderPath) {
+    SpriteEnum(String name, String path, String loaderPath) {
         this.name = name;
         this.path = path;
         this.loaderPath = loaderPath;
     }
 
-    private SpriteEnum(String name, String path) {
+    SpriteEnum(String name, String path) {
         this.name = name;
         this.path = path;
         this.loaderPath = path + "spriteLoader.txt";

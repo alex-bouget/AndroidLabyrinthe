@@ -11,6 +11,7 @@ class CoreRunner extends Thread {
 
     /**
      * Constructor
+     *
      * @param callback CoreRunnerCallback
      */
     public CoreRunner(CoreRunnerCallback callback) {

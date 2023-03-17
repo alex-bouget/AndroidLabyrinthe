@@ -10,7 +10,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class Sprites {
-    private View v;
+    private final View v;
 
     private ArrayList<Bitmap>[] sprites;
     private ArrayList<Bitmap>[] resizedSprites;
@@ -21,8 +21,8 @@ public class Sprites {
     /**
      * Constructor
      *
-     * @param v the view
-     * @param path path to the sprites folder
+     * @param v          the view
+     * @param path       path to the sprites folder
      * @param loaderPath sprite loader
      * @throws IOException sprite loader can't be read
      */
@@ -34,7 +34,7 @@ public class Sprites {
     /**
      * Read a spriteLoader.txt
      *
-     * @param path path to the sprites folder
+     * @param path       path to the sprites folder
      * @param loaderPath sprite loader
      * @throws IOException sprite loader can't be read
      */
@@ -45,8 +45,8 @@ public class Sprites {
         }
         String[] each = loader.split("\n");
         if (each[0].equals("!")) {
-            int size = each.length-1;
-            int choice = (int)(Math.random() * size)+1;
+            int size = each.length - 1;
+            int choice = (int) (Math.random() * size) + 1;
             System.out.println(choice);
             String[] newLoader = each[choice].split("!");
             System.out.println(newLoader[0]);
@@ -57,11 +57,11 @@ public class Sprites {
         sprites = new ArrayList[each.length];
         resizedSprites = new ArrayList[each.length];
         int i = 0;
-        for (String line: each) {
+        for (String line : each) {
             sprites[i] = new ArrayList<>();
             resizedSprites[i] = new ArrayList<>();
             String[] gifs = line.split(">");
-            for (String gif: gifs) {
+            for (String gif : gifs) {
                 sprites[i].add(ViewerCommand.getBitmap(v, path + gif));
             }
             i++;
@@ -70,12 +70,13 @@ public class Sprites {
 
     /**
      * Resized the sprites
+     *
      * @param scale scale
      */
     public void resized(int scale) {
-        for (int i=0; i < resizedSprites.length; i++) {
+        for (int i = 0; i < resizedSprites.length; i++) {
             resizedSprites[i].clear();
-            for (Bitmap m: sprites[i]) {
+            for (Bitmap m : sprites[i]) {
                 resizedSprites[i].add(ViewerCommand.resizeBitmapWidth(m, scale));
             }
         }
@@ -117,14 +118,15 @@ public class Sprites {
 
     /**
      * Return the sprite
+     *
      * @return bitmap
      */
     public Bitmap handleSprite() {
         frame++;
-        int frameToGet = (int)(frame * animationPath);
+        int frameToGet = (int) (frame * animationPath);
         if (frameToGet > getSize()) {
             frameToGet = 0;
         }
-        return resizedSprites[movement].get(frameToGet%getSize());
+        return resizedSprites[movement].get(frameToGet % getSize());
     }
 }

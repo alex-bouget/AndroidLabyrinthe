@@ -11,7 +11,8 @@ import java.io.InputStreamReader;
 public class AssetsCommand {
     /**
      * Read a file in assets
-     * @param v the view
+     *
+     * @param v    the view
      * @param path path
      * @return String file
      */

@@ -1,12 +1,11 @@
 package com.cppfdm.labyrinthe.view.core;
 
-import java.io.IOException;
-
 public abstract class AbstractDrawable implements Drawable {
     Drawable parent;
 
     /**
      * Get the parent of the element
+     *
      * @return Drawable parent
      */
     @Override
@@ -16,6 +15,7 @@ public abstract class AbstractDrawable implements Drawable {
 
     /**
      * Get the viewer
+     *
      * @return Drawable viewer
      */
     @Override
@@ -25,6 +25,7 @@ public abstract class AbstractDrawable implements Drawable {
 
     /**
      * set the parent of the element
+     *
      * @param drawable parent
      */
     @Override

@@ -4,9 +4,8 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Rect;
-import android.view.View;
 
-import com.cppfdm.labyrinthe.game.Coord;
+import com.cppfdm.labyrinthe.game.Coordinate;
 import com.cppfdm.labyrinthe.game.Enemy;
 import com.cppfdm.labyrinthe.game.Labyrinth;
 import com.cppfdm.labyrinthe.game.Player;
@@ -55,13 +54,13 @@ public class MapViewer extends AbstractDrawable {
         atCase.setColor(Color.rgb(255, 255, 255));
         for (int xSize = 0; xSize < player.getLaby().getCOL(); xSize++) {
             for (int ySize = 0; ySize < player.getLaby().getROW(); ySize++) {
-                if (player.getLaby().getCase(new Coord(xSize, ySize)) == null) {
+                if (player.getLaby().getCase(new Coordinate(xSize, ySize)) == null) {
                     continue;
                 }
-                drawMap(new Coord(xSize, ySize), canvas, atCase);
+                drawMap(new Coordinate(xSize, ySize), canvas, atCase);
             }
         }
-        Coord playerCoordinates = player.getCurrentCase().getCoord();
+        Coordinate playerCoordinates = player.getCurrentCase().getCoordinate();
         Paint playerPaint = new Paint();
         playerPaint.setColor(Color.rgb(0, 0, 255));
         drawMap(playerCoordinates, canvas, playerPaint);
@@ -74,7 +73,7 @@ public class MapViewer extends AbstractDrawable {
 
         Paint exitPaint = new Paint();
         exitPaint.setColor(Color.rgb(0, 255, 0));
-        drawMap(player.getLaby().getEndCoord(), canvas, exitPaint);
+        drawMap(player.getLaby().getEndCoordinate(), canvas, exitPaint);
     }
 
     /**
@@ -84,7 +83,7 @@ public class MapViewer extends AbstractDrawable {
      * @param canvas      canvas
      * @param paint       paint
      */
-    public void drawMap(Coord coordinates, Canvas canvas, Paint paint) {
+    public void drawMap(Coordinate coordinates, Canvas canvas, Paint paint) {
         canvas.drawRect(
                 new Rect(
                         scale * coordinates.getX(),

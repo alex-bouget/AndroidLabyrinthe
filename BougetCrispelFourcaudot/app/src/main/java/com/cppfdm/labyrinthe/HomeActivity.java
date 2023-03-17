@@ -1,8 +1,5 @@
 package com.cppfdm.labyrinthe;
 
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
@@ -11,10 +8,10 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.cppfdm.labyrinthe.game.Labyrinth;
-import com.cppfdm.labyrinthe.game.Player;
-import com.cppfdm.labyrinthe.gameView.GameViewer;
-import com.cppfdm.labyrinthe.utils.AssetsCommand;
 import com.cppfdm.labyrinthe.utils.SpriteEnum;
 import com.cppfdm.labyrinthe.utils.TilesetEnum;
 import com.cppfdm.labyrinthe.utils.ViewerCommand;
@@ -28,7 +25,7 @@ public class HomeActivity extends AppCompatActivity {
 
 
     /***
-     * Called when the appliction is created
+     * Called when the application is created
      *
      * @param savedInstanceState the instance that the application have to create
      */
@@ -54,21 +51,17 @@ public class HomeActivity extends AppCompatActivity {
 
         Button runButton = (Button) findViewById(R.id.runButton);
 
-        if (labyrinthName == null || heroSprite == null || monsterSprite == null || tileset == null) {
-            runButton.setEnabled(false);
-        } else {
-            runButton.setEnabled(true);
-        }
+        runButton.setEnabled(labyrinthName != null && heroSprite != null && monsterSprite != null && tileset != null);
 
         TextView tilesetTextView = (TextView) findViewById(R.id.tilesetTextView);
         String tileString = getResources().getText(R.string.Home_tileset).toString();
+        String txt;
         if (tileset == null) {
-            String txt = tileString + getResources().getText(R.string.Home_none).toString();
-            tilesetTextView.setText(txt);
+            txt = tileString + getResources().getText(R.string.Home_none).toString();
         } else {
-            String txt = tileString + tileset.getName();
-            tilesetTextView.setText(txt);
+            txt = tileString + tileset.getName();
         }
+        tilesetTextView.setText(txt);
 
         TextView textView = (TextView) findViewById(R.id.labyrinthTextView);
         if (labyrinthName == null) {
@@ -156,16 +149,20 @@ public class HomeActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         if (resultCode == RESULT_OK) {
             if (requestCode == LabyrintheChooserActivity.INTENT_ID) {
+                assert data != null;
                 labyrinth = (Labyrinth) Serializer.get(data.getStringExtra("labyrinth"));
                 labyrinthName = data.getStringExtra("name");
             }
             if (requestCode == SpriteChoiceActivity.INTENT_ID) {
+                assert data != null;
                 heroSprite = (SpriteEnum) Serializer.get(data.getStringExtra("sprite"));
             }
             if (requestCode == SpriteChoiceActivity.INTENT_ID + 1) {
+                assert data != null;
                 monsterSprite = (SpriteEnum) Serializer.get(data.getStringExtra("sprite"));
             }
             if (requestCode == TilesetChoiceActivity.INTENT_ID) {
+                assert data != null;
                 tileset = (TilesetEnum) Serializer.get(data.getStringExtra("tileset"));
             }
         }

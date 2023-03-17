@@ -3,19 +3,21 @@ package com.cppfdm.labyrinthe.game;
 public class Player {
 
     Labyrinth laby;
-    Coord pos;
+    Coordinate pos;
 
     /**
      * Constructor of player
+     *
      * @param laby_ the laby where the player will play
      */
     public Player(Labyrinth laby_) {
         this.laby = laby_;
-        this.pos = laby_.getStartCoord();
+        this.pos = laby_.getStartCoordinate();
     }
 
     /**
      * Get the case object where the player is
+     *
      * @return the Case
      */
     public Case getCurrentCase() {
@@ -24,19 +26,25 @@ public class Player {
 
     /**
      * Getter of laby
+     *
      * @return the Labyrinth object
      */
-    public Labyrinth getLaby() { return this.laby; }
+    public Labyrinth getLaby() {
+        return this.laby;
+    }
 
     /**
      * Make the player move left
+     *
      * @return if the movement has been done
      */
     public boolean moveLeft() {
-        Coord target = new Coord(this.pos.getX()-1, this.pos.getY());
+        Coordinate target = new Coordinate(this.pos.getX() - 1, this.pos.getY());
         for (Case current : this.getCurrentCase().getNeighbours()) {
-            if (current == null) { continue; }
-            if (current.getCoord().equals(target)) {
+            if (current == null) {
+                continue;
+            }
+            if (current.getCoordinate().equals(target)) {
                 this.pos = target;
             }
         }
@@ -45,13 +53,16 @@ public class Player {
 
     /**
      * Make the player move right
+     *
      * @return if the movement has been done
      */
     public boolean moveRight() {
-        Coord target = new Coord(this.pos.getX()+1, this.pos.getY());
+        Coordinate target = new Coordinate(this.pos.getX() + 1, this.pos.getY());
         for (Case current : this.getCurrentCase().getNeighbours()) {
-            if (current == null) { continue; }
-            if (current.getCoord().equals(target)) {
+            if (current == null) {
+                continue;
+            }
+            if (current.getCoordinate().equals(target)) {
                 this.pos = target;
             }
         }
@@ -60,13 +71,16 @@ public class Player {
 
     /**
      * make the player move up
+     *
      * @return if the movement has been done
      */
     public boolean moveUp() {
-        Coord target = new Coord(this.pos.getX(), this.pos.getY()-1);
+        Coordinate target = new Coordinate(this.pos.getX(), this.pos.getY() - 1);
         for (Case current : this.getCurrentCase().getNeighbours()) {
-            if (current == null) { continue; }
-            if (current.getCoord().equals(target)) {
+            if (current == null) {
+                continue;
+            }
+            if (current.getCoordinate().equals(target)) {
                 this.pos = target;
             }
         }
@@ -75,13 +89,16 @@ public class Player {
 
     /**
      * make the player move down
+     *
      * @return if the movement has been done
      */
     public boolean moveDown() {
-        Coord target = new Coord(this.pos.getX(), this.pos.getY()+1);
+        Coordinate target = new Coordinate(this.pos.getX(), this.pos.getY() + 1);
         for (Case current : this.getCurrentCase().getNeighbours()) {
-            if (current == null) { continue; }
-            if (current.getCoord().equals(target)) {
+            if (current == null) {
+                continue;
+            }
+            if (current.getCoordinate().equals(target)) {
                 this.pos = target;
             }
         }
@@ -90,14 +107,16 @@ public class Player {
 
     /**
      * Return if player finish the labyrinth
+     *
      * @return true if the labyrinth finished, false else
      */
     public boolean isWin() {
-        return this.pos.equals(laby.getEndCoord());
+        return this.pos.equals(laby.getEndCoordinate());
     }
 
     /**
      * Return if the player collide with one of the enemy
+     *
      * @return true if the is a collision, false else
      */
     public boolean isDead() {
@@ -113,7 +132,7 @@ public class Player {
      * Reset the player and enemies position
      */
     public void reset() {
-        pos = laby.getStartCoord();
+        pos = laby.getStartCoordinate();
         laby.resetEnemyCoordinates();
     }
 }
