@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">BougetCrispelFourcaudotLaby</string>
+    <string name="LabyChooser_choice">Pona</string>
+    <string name="LabyChooser_msg_not">Labyrinthe moko te pona</string>
+    <string name="Home_playerChoice">Pona joueur</string>
+    <string name="Home_enemyChoice">Pona ennemi</string>
+    <string name="Home_tilesChoice">Pona tileset</string>
+    <string name="Home_LabyChoice">Pona labyrinthe</string>
+    <string name="Home_tileset">Tileset</string>
+    <string name="Home_none">Ata moko te</string>
+    <string name="Home_Launch">Kobwaka</string>
+    <string name="Choice_random">Aleratoire</string>
+    <string name="back">Back</string>
+    <string name="EndGame_Win">Olongi!!</string>
+    <string name="EndGame_Died">Obungisi...</string>
+    <string name="EndGame_Not">Osali nionso bouger...</string>
+    <string name="EndGame_Retry">Kobanda lisusu</string>
+    <string name="EndGame_Stop">Zonga na menu</string>
+    <string name="EndGame_Score">Tango etikali</string>
+</resources>

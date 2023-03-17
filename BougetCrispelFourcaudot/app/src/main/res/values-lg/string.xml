@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">BougetCrispelFourcaudotLaby</string>
+    <string name="LabyChooser_choice">Okulonda</string>
+    <string name="LabyChooser_msg_not">Teri labyrinth erondeddwa</string>
+    <string name="Home_playerChoice">Okulonda omuzannyi</string>
+    <string name="Home_enemyChoice">Okulonda omulabe</string>
+    <string name="Home_tilesChoice">Okulonda tileset</string>
+    <string name="Home_LabyChoice">Okulonda labyrinth</string>
+    <string name="Home_tileset">Tileset</string>
+    <string name="Home_none">Tewali</string>
+    <string name="Home_Launch">Okukuba</string>
+    <string name="Choice_random">Okwewaggula</string>
+    <string name="back">Okudda emabega</string>
+    <string name="EndGame_Win">Owangudde!!</string>
+    <string name="EndGame_Died">Ofiiriddwa...</string>
+    <string name="EndGame_Not">Bwoze buli kimu...</string>
+    <string name="EndGame_Retry">Yongera okutandika</string>
+    <string name="EndGame_Stop">Ddayo ku menyu</string>
+    <string name="EndGame_Score">Ekiseera ekisigaddeyo</string>
+</resources>

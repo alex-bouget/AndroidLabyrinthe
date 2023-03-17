@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">BougetCrispelFourcaudotLaby</string>
+    <string name="LabyChooser_choice">Sarudza</string>
+    <string name="LabyChooser_msg_not">hapana labyrinth yakasarudzwa</string>
+    <string name="Home_playerChoice">Sarudza mutambi</string>
+    <string name="Home_enemyChoice">Sarudza muvengi</string>
+    <string name="Home_tilesChoice">Sarudza tile set</string>
+    <string name="Home_LabyChoice">Sarudza labyrinth</string>
+    <string name="Home_tileset">Tile set</string>
+    <string name="Home_none">Hapana</string>
+    <string name="Home_Launch">Push</string>
+    <string name="Choice_random">Random</string>
+    <string name="back">Back</string>
+    <string name="EndGame_Win">Wakahwina!!</string>
+    <string name="EndGame_Died">Wakarasikirwa...</string>
+    <string name="EndGame_Not">Wakaita kuti zvese zvinyorwe...</string>
+    <string name="EndGame_Retry">Tangazve</string>
+    <string name="EndGame_Stop">Dzokera kumenyu</string>
+    <string name="EndGame_Score">Nguva yasara</string>
+</resources>

@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">BougetCrispelFourcaudotLaby</string>
+    <string name="LabyChooser_choice">Zaɓi</string>
+    <string name="LabyChooser_msg_not">Babu labyrinth da aka zaɓa</string>
+    <string name="Home_playerChoice">Zaɓi mai kunnawa</string>
+    <string name="Home_enemyChoice">Zaɓi maƙiyi</string>
+    <string name="Home_tilesChoice">Zaɓi tileset</string>
+    <string name="Home_LabyChoice">Zaɓi labyrinth</string>
+    <string name="Home_tileset">Tileset</string>
+    <string name="Home_none">Babu</string>
+    <string name="Home_Launch">jefawa</string>
+    <string name="Choice_random">Rashin daidaito</string>
+    <string name="back">Baya</string>
+    <string name="EndGame_Win">Kun ci nasara!!</string>
+    <string name="EndGame_Died">Kun yi asara...</string>
+    <string name="EndGame_Not">Kun sa komai ya yi bugu...</string>
+    <string name="EndGame_Retry">Sake farawa</string>
+    <string name="EndGame_Stop">Komawa menu</string>
+    <string name="EndGame_Score">Lokaci ya rage</string>
+</resources>

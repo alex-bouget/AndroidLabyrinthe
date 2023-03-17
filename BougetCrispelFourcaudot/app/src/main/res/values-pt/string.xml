@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">BougetCrispelFourcaudotLaby</string>
+    <string name="LabyChooser_choice">Escolher</string>
+    <string name="LabyChooser_msg_not">nenhum labirinto escolhido</string>
+    <string name="Home_playerChoice">Escolher o jogador</string>
+    <string name="Home_enemyChoice">Escolher o inimigo</string>
+    <string name="Home_tilesChoice">Escolher o tileset</string>
+    <string name="Home_LabyChoice">Escolher o labirinto</string>
+    <string name="Home_tileset">Tileset</string>
+    <string name="Home_none">Nenhum</string>
+    <string name="Home_Launch">Lançar</string>
+    <string name="Choice_random">Aleatório</string>
+    <string name="back">De volta</string>
+    <string name="EndGame_Win">Você ganhou!!</string>
+    <string name="EndGame_Died">Você perdeu...</string>
+    <string name="EndGame_Not">Você fez tudo bugar...</string>
+    <string name="EndGame_Retry">Reiniciar</string>
+    <string name="EndGame_Stop">Voltar ao menu</string>
+    <string name="EndGame_Score">Tempo restante</string>
+</resources>

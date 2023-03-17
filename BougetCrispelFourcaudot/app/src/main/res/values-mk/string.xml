@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">BougetCrispelFourcaudotLaby</string>
+    <string name="LabyChooser_choice">Изберете</string>
+    <string name="LabyChooser_msg_not">Не е избран лавиринт</string>
+    <string name="Home_playerChoice">Изберете играч</string>
+    <string name="Home_enemyChoice">Изберете непријател</string>
+    <string name="Home_tilesChoice">Изберете тилесет</string>
+    <string name="Home_LabyChoice">Изберете лавиринт</string>
+    <string name="Home_tileset">Тилесет</string>
+    <string name="Home_none">Никој</string>
+    <string name="Home_Launch">Фрлете</string>
+    <string name="Choice_random">Избежна</string>
+    <string name="back">Назад</string>
+    <string name="EndGame_Win">Вие победив!!</string>
+    <string name="EndGame_Died">Вие изгубил...</string>
+    <string name="EndGame_Not">Ти направи сè бугур...</string>
+    <string name="EndGame_Retry">Почнат повторно</string>
+    <string name="EndGame_Stop">Враќање на менито</string>
+    <string name="EndGame_Score">Останатиот време</string>
+</resources>

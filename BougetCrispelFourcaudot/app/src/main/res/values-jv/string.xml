@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">BougetCrispelFourcaudotLaby</string>
+    <string name="LabyChooser_choice">Milih</string>
+    <string name="LabyChooser_msg_not">Ora ana labirin sing dipilih</string>
+    <string name="Home_playerChoice">Pilih pemain</string>
+    <string name="Home_enemyChoice">Pilih mungsuh</string>
+    <string name="Home_tilesChoice">Pilih tileset</string>
+    <string name="Home_LabyChoice">Pilih labirin</string>
+    <string name="Home_tileset">Tileset</string>
+    <string name="Home_none">Ora ana</string>
+    <string name="Home_Launch">Luncur</string>
+    <string name="Choice_random">Alergi</string>
+    <string name="back">Mbalik maneh</string>
+    <string name="EndGame_Win">Sampeyan menang!!</string>
+    <string name="EndGame_Died">Sampeyan kalah...</string>
+    <string name="EndGame_Not">Sampeyan wis nggawe kabeh buguer...</string>
+    <string name="EndGame_Retry">Mulai maneh</string>
+    <string name="EndGame_Stop">Bali menyang menu</string>
+    <string name="EndGame_Score">Wektu slamet</string>
+</resources>

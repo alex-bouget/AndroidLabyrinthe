@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">BougetCrispelFourcaudotLaby</string>
+    <string name="LabyChooser_choice">Kies</string>
+    <string name="LabyChooser_msg_not">Geen labyrint gekozen</string>
+    <string name="Home_playerChoice">Kies de speler</string>
+    <string name="Home_enemyChoice">Kies de vijand</string>
+    <string name="Home_tilesChoice">Kies de tegelset</string>
+    <string name="Home_LabyChoice">Kies het labyrint</string>
+    <string name="Home_tileset">Tegelset</string>
+    <string name="Home_none">Geen</string>
+    <string name="Home_Launch">Gooien</string>
+    <string name="Choice_random">Willekeurig</string>
+    <string name="back">Terug</string>
+    <string name="EndGame_Win">Je hebt gewonnen!!</string>
+    <string name="EndGame_Died">Je hebt verloren...</string>
+    <string name="EndGame_Not">Je hebt alles laten buggeren...</string>
+    <string name="EndGame_Retry">Herbegin</string>
+    <string name="EndGame_Stop">Terug naar het menu</string>
+    <string name="EndGame_Score">Overgebleven tijd</string>
+</resources>

@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">BougetCrispelFourcaudotLaby</string>
+    <string name="LabyChooser_choice">Һайлау</string>
+    <string name="LabyChooser_msg_not">һайланған лабиринт юҡ</string>
+    <string name="Home_playerChoice">уйынсыны һайлау</string>
+    <string name="Home_enemyChoice">дошманды һайлау</string>
+    <string name="Home_tilesChoice">плитканы һайлау</string>
+    <string name="Home_LabyChoice">лабиринтты һайлау</string>
+    <string name="Home_tileset">плитканы ҡуйыу</string>
+    <string name="Home_none">бер кем дә</string>
+    <string name="Home_Launch">ырғытыу</string>
+    <string name="Choice_random">осраҡлы</string>
+    <string name="back">кире</string>
+    <string name="EndGame_Win">Һеҙ еңдегеҙ!!</string>
+    <string name="EndGame_Died">Һеҙ еңдегеҙ...</string>
+    <string name="EndGame_Not">Һеҙ барыһын да бугур иттегеҙ...</string>
+    <string name="EndGame_Retry">яңынан башлау</string>
+    <string name="EndGame_Stop">Менюға кире ҡайтыу</string>
+    <string name="EndGame_Score">Ҡалған ваҡыт</string>
+</resources>

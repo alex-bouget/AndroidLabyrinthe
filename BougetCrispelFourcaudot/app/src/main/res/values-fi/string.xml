@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">BougetCrispelFourcaudotLaby</string>
+    <string name="LabyChooser_choice">Valitse</string>
+    <string name="LabyChooser_msg_not">ei ole valittu labyrinttia</string>
+    <string name="Home_playerChoice">valitse pelaaja</string>
+    <string name="Home_enemyChoice">valitse vihollinen</string>
+    <string name="Home_tilesChoice">valitse tileset</string>
+    <string name="Home_LabyChoice">valitse labyrintti</string>
+    <string name="Home_tileset">tileset</string>
+    <string name="Home_none">kukaan</string>
+    <string name="Home_Launch">heittää</string>
+    <string name="Choice_random">satunnainen</string>
+    <string name="back">takaisin</string>
+    <string name="EndGame_Win">olet voittanut!!</string>
+    <string name="EndGame_Died">olet menettänyt...</string>
+    <string name="EndGame_Not">olet tehnyt kaiken bugger...</string>
+    <string name="EndGame_Retry">aloittaa uudelleen</string>
+    <string name="EndGame_Stop">palata ruokalistalle</string>
+    <string name="EndGame_Score">jäljellä oleva aika</string>
+</resources>

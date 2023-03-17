@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">BougetCrispelFourcaudotLaby</string>
+    <string name="LabyChooser_choice">Soro</string>
+    <string name="LabyChooser_msg_not">Mbeni labyrinthe so a soro ni pëpe</string>
+    <string name="Home_playerChoice">Soro zo ti pikango ni</string>
+    <string name="Home_enemyChoice">Soro wato ni</string>
+    <string name="Home_tilesChoice">Soro tileset</string>
+    <string name="Home_LabyChoice">Soro labyrinthe ni</string>
+    <string name="Home_tileset">Tileset</string>
+    <string name="Home_none">Oko pëpe</string>
+    <string name="Home_Launch">Fâ ni</string>
+    <string name="Choice_random">Ndara</string>
+    <string name="back">Back</string>
+    <string name="EndGame_Win">Mo sö benda awe!!</string>
+    <string name="EndGame_Died">Mo girisa awe...</string>
+    <string name="EndGame_Not">Mo sara si ye kue abuba awe...</string>
+    <string name="EndGame_Retry">To nda ni</string>
+    <string name="EndGame_Stop">Kiri na menu</string>
+    <string name="EndGame_Score">Ngoi so angbâ</string>
+</resources>

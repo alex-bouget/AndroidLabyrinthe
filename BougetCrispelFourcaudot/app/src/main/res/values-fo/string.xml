@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">BougetCrispelFourcaudotLaby</string>
+    <string name="LabyChooser_choice">Vel</string>
+    <string name="LabyChooser_msg_not">eingin labyrint valdur</string>
+    <string name="Home_playerChoice">vel spælaran</string>
+    <string name="Home_enemyChoice">vel fíggindan</string>
+    <string name="Home_tilesChoice">vel flísset</string>
+    <string name="Home_LabyChoice">vel labyrint</string>
+    <string name="Home_tileset">flísset</string>
+    <string name="Home_none">ongin</string>
+    <string name="Home_Launch">kasta</string>
+    <string name="Choice_random">óvæntaður</string>
+    <string name="back">aftur</string>
+    <string name="EndGame_Win">tú hevur vunnið!!</string>
+    <string name="EndGame_Died">tú hevur tapt...</string>
+    <string name="EndGame_Not">tú hevur gjørt alt at rigga...</string>
+    <string name="EndGame_Retry">byrja aftur</string>
+    <string name="EndGame_Stop">far aftur til matskránna</string>
+    <string name="EndGame_Score">eftirverandi tíð</string>
+</resources>

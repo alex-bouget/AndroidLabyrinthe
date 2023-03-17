@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">BougetCrispelFourcaudotLaby</string>
+    <string name="LabyChooser_choice">Tia</string>
+    <string name="LabyChooser_msg_not">Labyrinth aɖeke metia o</string>
+    <string name="Home_playerChoice">Tia fefewɔla</string>
+    <string name="Home_enemyChoice">Tia futɔ</string>
+    <string name="Home_tilesChoice">Tia aɖaka</string>
+    <string name="Home_LabyChoice">Tia aɖaka</string>
+    <string name="Home_tileset">Tia aɖaka</string>
+    <string name="Home_none">Tileset</string>
+    <string name="Home_Launch">Amegbetɔ aɖeke o</string>
+    <string name="Choice_random">Dae</string>
+    <string name="back">Alea-nue</string>
+    <string name="EndGame_Win">Back</string>
+    <string name="EndGame_Died">You won!!</string>
+    <string name="EndGame_Not">You lost...</string>
+    <string name="EndGame_Retry">You made everything buguer...</string>
+    <string name="EndGame_Stop">Start again</string>
+    <string name="EndGame_Score">Return to menu</string>
+</resources>

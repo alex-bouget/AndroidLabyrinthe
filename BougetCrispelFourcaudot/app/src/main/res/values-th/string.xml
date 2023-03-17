@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">BougetCrispelFourcaudotLaby</string>
+    <string name="LabyChooser_choice">เลือก</string>
+    <string name="LabyChooser_msg_not">ไม่มีการเลือก labyrinth</string>
+    <string name="Home_playerChoice">เลือกผู้เล่น</string>
+    <string name="Home_enemyChoice">เลือกศัตรู</string>
+    <string name="Home_tilesChoice">เลือก tileset</string>
+    <string name="Home_LabyChoice">เลือก labyrinth</string>
+    <string name="Home_tileset">Tileset</string>
+    <string name="Home_none">ไม่มีใคร</string>
+    <string name="Home_Launch">โยน</string>
+    <string name="Choice_random">ล้มเหลว</string>
+    <string name="back">ย้อนหลัง</string>
+    <string name="EndGame_Win">คุณชนะ!!</string>
+    <string name="EndGame_Died">คุณเสีย...</string>
+    <string name="EndGame_Not">คุณทําทุกอย่าง buguer...</string>
+    <string name="EndGame_Retry">เริ่มต้นใหม่</string>
+    <string name="EndGame_Stop">กลับไปเมนู</string>
+    <string name="EndGame_Score">เวลาเหลือ</string>
+</resources>

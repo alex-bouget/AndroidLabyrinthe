@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">BougetCrispelFourcaudotLaby</string>
+    <string name="LabyChooser_choice">Agħżel</string>
+    <string name="LabyChooser_msg_not">L-ebda labirint magħżul</string>
+    <string name="Home_playerChoice">Agħżel il-plejer</string>
+    <string name="Home_enemyChoice">Agħżel l-għadu</string>
+    <string name="Home_tilesChoice">Agħżel it-tileset</string>
+    <string name="Home_LabyChoice">Agħżel il-labirint</string>
+    <string name="Home_tileset">Tileset</string>
+    <string name="Home_none">L-ebda wieħed</string>
+    <string name="Home_Launch">Jitfgħu</string>
+    <string name="Choice_random">Aħjar</string>
+    <string name="back">lura</string>
+    <string name="EndGame_Win">Rebbieħ!!</string>
+    <string name="EndGame_Died">Titlef...</string>
+    <string name="EndGame_Not">Għamel kollox bugger...</string>
+    <string name="EndGame_Retry">Ibda mill-ġdid</string>
+    <string name="EndGame_Stop">Erġa \'lura għall-menu</string>
+    <string name="EndGame_Score">Żmien li fadal</string>
+</resources>

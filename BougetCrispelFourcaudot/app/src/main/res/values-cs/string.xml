@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">BougetCrispelFourcaudotLaby</string>
+    <string name="LabyChooser_choice">Vyberte</string>
+    <string name="LabyChooser_msg_not">Žádný labyrint vybrán</string>
+    <string name="Home_playerChoice">Vyberte hráče</string>
+    <string name="Home_enemyChoice">Vyberte nepřítele</string>
+    <string name="Home_tilesChoice">Vyberte žebříček</string>
+    <string name="Home_LabyChoice">Vyberte labyrint</string>
+    <string name="Home_tileset">Žebříček</string>
+    <string name="Home_none">Žádný</string>
+    <string name="Home_Launch">Hrát</string>
+    <string name="Choice_random">Náhodné</string>
+    <string name="back">Zpět</string>
+    <string name="EndGame_Win">Vyhrál jste!!</string>
+    <string name="EndGame_Died">Prohrál jste...</string>
+    <string name="EndGame_Not">Všechno jste udělal...</string>
+    <string name="EndGame_Retry">Znovu začít</string>
+    <string name="EndGame_Stop">Zpět na menu</string>
+    <string name="EndGame_Score">Zbývající čas</string>
+</resources>

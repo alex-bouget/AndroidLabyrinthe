@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">BougetCrispelFourcaudotLaby</string>
+    <string name="LabyChooser_choice">Choose</string>
+    <string name="LabyChooser_msg_not">No maze selected</string>
+    <string name="Home_playerChoice">Choose the player</string>
+    <string name="Home_enemyChoice">Choose the enemy</string>
+    <string name="Home_tilesChoice">Choose the tile set</string>
+    <string name="Home_LabyChoice">Choose the maze</string>
+    <string name="Home_tileset">Tile set</string>
+    <string name="Home_none">None</string>
+    <string name="Home_Launch">Start</string>
+    <string name="Choice_random">Random</string>
+    <string name="back">Back</string>
+    <string name="EndGame_Win">You won!!</string>
+    <string name="EndGame_Died">You lost...</string>
+    <string name="EndGame_Not">You made everything bugaboo...</string>
+    <string name="EndGame_Retry">Start again</string>
+    <string name="EndGame_Stop">Return to the menu</string>
+    <string name="EndGame_Score">Time left</string>
+</resources>

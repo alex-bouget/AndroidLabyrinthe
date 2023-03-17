@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">BougetCrispelFourcaudotLaby</string>
+    <string name="LabyChooser_choice">Họrọ</string>
+    <string name="LabyChooser_msg_not">Ọ dịghị labyrinth ahọrọ</string>
+    <string name="Home_playerChoice">Họrọ onye ọkpụkpọ</string>
+    <string name="Home_enemyChoice">Họrọ onye iro</string>
+    <string name="Home_tilesChoice">Họrọ tile set</string>
+    <string name="Home_LabyChoice">Họrọ labyrinth</string>
+    <string name="Home_tileset">Tileset</string>
+    <string name="Home_none">Ọ dịghị onye</string>
+    <string name="Home_Launch">Tụgharịa</string>
+    <string name="Choice_random">Random</string>
+    <string name="back">Back</string>
+    <string name="EndGame_Win">I meriri!!</string>
+    <string name="EndGame_Died">I furu efu...</string>
+    <string name="EndGame_Not">I meela ka ihe niile daa...</string>
+    <string name="EndGame_Retry">Malitegharịa</string>
+    <string name="EndGame_Stop">Laghachi na menu</string>
+    <string name="EndGame_Score">Oge fọdụrụ</string>
+</resources>
