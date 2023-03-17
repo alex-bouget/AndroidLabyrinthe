@@ -103,7 +103,9 @@ public class SpriteChoiceActivity extends AppCompatActivity {
         params.rightMargin = 50;
         imageButton.setLayoutParams(params);
 
-        if (spriteEnum != null) {
+        if (spriteEnum == null) {
+            imageButton.setImageBitmap(ViewerCommand.resizeBitmap(ViewerCommand.getBitmap(imageButton, "img/random.png"), imageSize, imageSize));
+        } else {
             imageButton.setImageBitmap(ViewerCommand.resizeBitmap(spriteEnum.getIcon(linearLayout), imageSize, imageSize));
         }
 

@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+import java.text.DecimalFormat;
+
 public class EndGameActivity extends AppCompatActivity {
     public static final int INTENT_ID = 507;
 
@@ -20,6 +22,7 @@ public class EndGameActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_end_game);
         String result = getIntent().getStringExtra("result");
+        double score = getIntent().getDoubleExtra("score", -1);
         TextView text = (TextView) findViewById(R.id.textEndGame);
         if (result.equals("win")) {
             text.setText(getResources().getText(R.string.EndGame_Win));
@@ -27,6 +30,9 @@ public class EndGameActivity extends AppCompatActivity {
         if (result.equals("died")) {
             text.setText(getResources().getText(R.string.EndGame_Died));
         }
+        text = (TextView) findViewById(R.id.textEndScore);
+        String scoreText = getResources().getText(R.string.EndGame_Score).toString() + ": " + new DecimalFormat("#.##").format(score) + "s";
+        text.setText(scoreText);
     }
 
     /**
