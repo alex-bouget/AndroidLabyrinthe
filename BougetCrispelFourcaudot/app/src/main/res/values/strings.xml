@@ -6,6 +6,8 @@
     <string name="Home_enemyChoice">Choisir l\'ennemie</string>
     <string name="Home_tilesChoice">Choisir le tileset</string>
     <string name="Home_LabyChoice">Choisir le labyrinthe</string>
+    <string name="Home_tileset">Tileset: </string>
+    <string name="Home_none">Aucun</string>
     <string name="Home_Launch">Lancer</string>
     <string name="back">Back</string>
     <string name="EndGame_Win">Vous avez gagné !!</string>
