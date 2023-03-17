@@ -28,6 +28,7 @@ public class GameViewer extends AbstractDrawable {
 
     private int frame = 0;
     private int scale = 96;
+    private double score = 0;
     Viewer root;
     Player player;
     EnemyViewer[] enemyViewers;
@@ -153,6 +154,7 @@ public class GameViewer extends AbstractDrawable {
             AppCompatActivity app = (AppCompatActivity) root.getContext();
             intent.setClass(app, EndGameActivity.class);
             intent.putExtra("result", (win.equals(winOrDead)) ? "win" : "died");
+            intent.putExtra("score", score);
             app.startActivityForResult(intent, EndGameActivity.INTENT_ID);
             animationWinDead = 0;
             root.pause();
@@ -231,5 +233,6 @@ public class GameViewer extends AbstractDrawable {
             }
         }
         frame = (frame + 1) % 100;
+        score = score + 0.1;
     }
 }

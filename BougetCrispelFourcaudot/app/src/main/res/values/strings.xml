@@ -6,7 +6,7 @@
     <string name="Home_enemyChoice">Choisir l\'ennemie</string>
     <string name="Home_tilesChoice">Choisir le tileset</string>
     <string name="Home_LabyChoice">Choisir le labyrinthe</string>
-    <string name="Home_tileset">Tileset: </string>
+    <string name="Home_tileset">Tileset</string>
     <string name="Home_none">Aucun</string>
     <string name="Home_Launch">Lancer</string>
     <string name="Choice_random">Aléatoire</string>
@@ -16,4 +16,5 @@
     <string name="EndGame_Not">T\'as tout fait buguer...</string>
     <string name="EndGame_Retry">Recommencer</string>
     <string name="EndGame_Stop">Retourner au menu</string>
+    <string name="EndGame_Score">Temps survécu</string>
 </resources>

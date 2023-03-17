@@ -54,7 +54,7 @@ public class HomeActivity extends AppCompatActivity {
         runButton.setEnabled(labyrinthName != null && heroSprite != null && monsterSprite != null && tileset != null);
 
         TextView tilesetTextView = (TextView) findViewById(R.id.tilesetTextView);
-        String tileString = getResources().getText(R.string.Home_tileset).toString();
+        String tileString = getResources().getText(R.string.Home_tileset).toString() + ": ";
         String txt;
         if (tileset == null) {
             txt = tileString + getResources().getText(R.string.Home_none).toString();
